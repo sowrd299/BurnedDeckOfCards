@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13f39c59327b042abed5056ff854760, type: 3}
+  m_Name: UIDefinitions
+  m_EditorClassIdentifier: Assembly-CSharp::Ashworld.UIDefinitions
+  suitSprites:
+  - suit: 1
+    sprite: {fileID: 21300000, guid: 79bc6c0df331791978a9f06117a6cea7, type: 3}
+  - suit: 2
+    sprite: {fileID: 21300000, guid: efc27f67cc1a30e9da67912bd75b8138, type: 3}
+  - suit: 3
+    sprite: {fileID: 21300000, guid: e357a4ed3770720d39a666f1635599bf, type: 3}
+  - suit: 4
+    sprite: {fileID: 21300000, guid: c39e74c49bc29cfc3b58e16b05d7be0f, type: 3}
+  - suit: 5
+    sprite: {fileID: 21300000, guid: 8cc809c9e8a77b5bd91120fdee754a6c, type: 3}
+  - suit: 6
+    sprite: {fileID: 21300000, guid: 8d122ebed8381d71ba14472cbcc541ec, type: 3}
+  - suit: 7
+    sprite: {fileID: 21300000, guid: a2d66b58297b8a9848a6eae2b8b94d21, type: 3}
+  - suit: 8
+    sprite: {fileID: 21300000, guid: 6cb7d3424fc45e8e6a7e445b60a3af30, type: 3}
+  - suit: 9
+    sprite: {fileID: 21300000, guid: 038420436d8645fae8d1d4fc8a2f3d3a, type: 3}
+  abilityStrings:
+  - ability: 1
+    displayText: Location
+  - ability: 2
+    displayText: Unique
+  - ability: 3
+    displayText: Boon
+  requirementStrings:
+  - requirement: 1
+    displayText: Harmony
+  - requirement: 2
+    displayText: Hierarchy
+  - requirement: 3
+    displayText: Might
+  - requirement: 4
+    displayText: Fealty
+  - requirement: 5
+    displayText: Heroism

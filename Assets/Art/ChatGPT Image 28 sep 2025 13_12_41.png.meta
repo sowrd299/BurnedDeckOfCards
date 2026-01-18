@@ -1,0 +1,1846 @@
+fileFormatVersion: 2
+guid: d9d1441d7133a2a89b72acf3dbe4a48e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3432441592858108070
+    second: ChatGPT Image 28 sep 2025 13_12_41_0
+  - first:
+      213: -4848246140082104861
+    second: ChatGPT Image 28 sep 2025 13_12_41_1
+  - first:
+      213: 6928953515448281042
+    second: ChatGPT Image 28 sep 2025 13_12_41_2
+  - first:
+      213: 3110751530142465773
+    second: ChatGPT Image 28 sep 2025 13_12_41_3
+  - first:
+      213: 4869607247198955787
+    second: ChatGPT Image 28 sep 2025 13_12_41_4
+  - first:
+      213: 5210160388083176391
+    second: ChatGPT Image 28 sep 2025 13_12_41_5
+  - first:
+      213: -224434643723332121
+    second: ChatGPT Image 28 sep 2025 13_12_41_6
+  - first:
+      213: 6528491611633237053
+    second: ChatGPT Image 28 sep 2025 13_12_41_7
+  - first:
+      213: 8166515101574972411
+    second: ChatGPT Image 28 sep 2025 13_12_41_8
+  - first:
+      213: -6569345878812524695
+    second: ChatGPT Image 28 sep 2025 13_12_41_9
+  - first:
+      213: -4288022913584463423
+    second: ChatGPT Image 28 sep 2025 13_12_41_10
+  - first:
+      213: 3035342803730965051
+    second: ChatGPT Image 28 sep 2025 13_12_41_11
+  - first:
+      213: -8598960609898056811
+    second: ChatGPT Image 28 sep 2025 13_12_41_12
+  - first:
+      213: 7958823193487380705
+    second: ChatGPT Image 28 sep 2025 13_12_41_13
+  - first:
+      213: -1970088958197744851
+    second: ChatGPT Image 28 sep 2025 13_12_41_14
+  - first:
+      213: -4157365013479113840
+    second: ChatGPT Image 28 sep 2025 13_12_41_15
+  - first:
+      213: 3601042425676292036
+    second: ChatGPT Image 28 sep 2025 13_12_41_16
+  - first:
+      213: -3106903476092011579
+    second: ChatGPT Image 28 sep 2025 13_12_41_17
+  - first:
+      213: -3906300654095994344
+    second: ChatGPT Image 28 sep 2025 13_12_41_18
+  - first:
+      213: 6669241845896976666
+    second: ChatGPT Image 28 sep 2025 13_12_41_19
+  - first:
+      213: -1428169397159422735
+    second: ChatGPT Image 28 sep 2025 13_12_41_20
+  - first:
+      213: -6155853190261397792
+    second: ChatGPT Image 28 sep 2025 13_12_41_21
+  - first:
+      213: 4175663594465579483
+    second: ChatGPT Image 28 sep 2025 13_12_41_22
+  - first:
+      213: 7335574296911863796
+    second: ChatGPT Image 28 sep 2025 13_12_41_23
+  - first:
+      213: -4633394626376621790
+    second: ChatGPT Image 28 sep 2025 13_12_41_24
+  - first:
+      213: -8796332954323592930
+    second: ChatGPT Image 28 sep 2025 13_12_41_25
+  - first:
+      213: -623636458302035843
+    second: ChatGPT Image 28 sep 2025 13_12_41_26
+  - first:
+      213: 4258406241175134472
+    second: ChatGPT Image 28 sep 2025 13_12_41_27
+  - first:
+      213: -1749049843789718466
+    second: ChatGPT Image 28 sep 2025 13_12_41_28
+  - first:
+      213: -1672875080984301378
+    second: ChatGPT Image 28 sep 2025 13_12_41_29
+  - first:
+      213: 5881623184971686245
+    second: ChatGPT Image 28 sep 2025 13_12_41_30
+  - first:
+      213: -5231448060526828366
+    second: ChatGPT Image 28 sep 2025 13_12_41_31
+  - first:
+      213: -7289856356707454188
+    second: ChatGPT Image 28 sep 2025 13_12_41_32
+  - first:
+      213: 8422569489861807987
+    second: ChatGPT Image 28 sep 2025 13_12_41_33
+  - first:
+      213: 2976764245309115281
+    second: ChatGPT Image 28 sep 2025 13_12_41_34
+  - first:
+      213: -7715249987895806996
+    second: ChatGPT Image 28 sep 2025 13_12_41_35
+  - first:
+      213: -2063509144234722055
+    second: ChatGPT Image 28 sep 2025 13_12_41_36
+  - first:
+      213: -2875252821739425503
+    second: ChatGPT Image 28 sep 2025 13_12_41_37
+  - first:
+      213: -7571780130219405930
+    second: ChatGPT Image 28 sep 2025 13_12_41_38
+  - first:
+      213: -6509471962136645361
+    second: ChatGPT Image 28 sep 2025 13_12_41_39
+  - first:
+      213: 860965915289423178
+    second: ChatGPT Image 28 sep 2025 13_12_41_40
+  - first:
+      213: -3569304806676680374
+    second: ChatGPT Image 28 sep 2025 13_12_41_41
+  - first:
+      213: 8720944178921301215
+    second: ChatGPT Image 28 sep 2025 13_12_41_42
+  - first:
+      213: 7603399470118860388
+    second: ChatGPT Image 28 sep 2025 13_12_41_43
+  - first:
+      213: -2989015074889130573
+    second: ChatGPT Image 28 sep 2025 13_12_41_44
+  - first:
+      213: -3809510775007660234
+    second: ChatGPT Image 28 sep 2025 13_12_41_45
+  - first:
+      213: 5685201934291973354
+    second: ChatGPT Image 28 sep 2025 13_12_41_46
+  - first:
+      213: -1349117189160403223
+    second: ChatGPT Image 28 sep 2025 13_12_41_47
+  - first:
+      213: 7846573507268517416
+    second: ChatGPT Image 28 sep 2025 13_12_41_48
+  - first:
+      213: -5940537591056970446
+    second: ChatGPT Image 28 sep 2025 13_12_41_49
+  - first:
+      213: 5674251889372014794
+    second: ChatGPT Image 28 sep 2025 13_12_41_50
+  - first:
+      213: 4905000059548743258
+    second: ChatGPT Image 28 sep 2025 13_12_41_51
+  - first:
+      213: 3269454282587547006
+    second: ChatGPT Image 28 sep 2025 13_12_41_52
+  - first:
+      213: 2880071682550189193
+    second: ChatGPT Image 28 sep 2025 13_12_41_53
+  - first:
+      213: 1660077027961069807
+    second: ChatGPT Image 28 sep 2025 13_12_41_54
+  - first:
+      213: -5952737220421443823
+    second: ChatGPT Image 28 sep 2025 13_12_41_55
+  - first:
+      213: -8516473353729924213
+    second: ChatGPT Image 28 sep 2025 13_12_41_56
+  - first:
+      213: -1266511089067767725
+    second: ChatGPT Image 28 sep 2025 13_12_41_57
+  - first:
+      213: 3547613642915064986
+    second: ChatGPT Image 28 sep 2025 13_12_41_58
+  - first:
+      213: -4514466237449935353
+    second: ChatGPT Image 28 sep 2025 13_12_41_59
+  - first:
+      213: -8187966872189771990
+    second: ChatGPT Image 28 sep 2025 13_12_41_60
+  - first:
+      213: 6604411927808728102
+    second: ChatGPT Image 28 sep 2025 13_12_41_61
+  - first:
+      213: -2863787867929883266
+    second: ChatGPT Image 28 sep 2025 13_12_41_62
+  - first:
+      213: -5979387183288457215
+    second: ChatGPT Image 28 sep 2025 13_12_41_63
+  - first:
+      213: -6858288557839246838
+    second: ChatGPT Image 28 sep 2025 13_12_41_64
+  - first:
+      213: -5417971485697903201
+    second: ChatGPT Image 28 sep 2025 13_12_41_65
+  - first:
+      213: -8089515308517083075
+    second: ChatGPT Image 28 sep 2025 13_12_41_66
+  - first:
+      213: -1013354646669650931
+    second: ChatGPT Image 28 sep 2025 13_12_41_67
+  - first:
+      213: -3852512930989880916
+    second: ChatGPT Image 28 sep 2025 13_12_41_68
+  - first:
+      213: -6859609330938609947
+    second: ChatGPT Image 28 sep 2025 13_12_41_69
+  - first:
+      213: -5014338808444732341
+    second: ChatGPT Image 28 sep 2025 13_12_41_70
+  - first:
+      213: -5867095642938473122
+    second: ChatGPT Image 28 sep 2025 13_12_41_71
+  - first:
+      213: 130897071581800855
+    second: ChatGPT Image 28 sep 2025 13_12_41_72
+  - first:
+      213: -6278163852904544250
+    second: ChatGPT Image 28 sep 2025 13_12_41_73
+  - first:
+      213: -6581638490800318017
+    second: ChatGPT Image 28 sep 2025 13_12_41_74
+  - first:
+      213: -946147906013176193
+    second: ChatGPT Image 28 sep 2025 13_12_41_75
+  - first:
+      213: -1433373554176796869
+    second: ChatGPT Image 28 sep 2025 13_12_41_76
+  - first:
+      213: 3962008173314508824
+    second: ChatGPT Image 28 sep 2025 13_12_41_77
+  - first:
+      213: 2747744967645968006
+    second: ChatGPT Image 28 sep 2025 13_12_41_78
+  - first:
+      213: 8638035577213971818
+    second: ChatGPT Image 28 sep 2025 13_12_41_79
+  - first:
+      213: 7353999412776699784
+    second: ChatGPT Image 28 sep 2025 13_12_41_80
+  - first:
+      213: 4209726174350698726
+    second: ChatGPT Image 28 sep 2025 13_12_41_81
+  - first:
+      213: -6070839422887566456
+    second: ChatGPT Image 28 sep 2025 13_12_41_82
+  - first:
+      213: 5312118597937700173
+    second: ChatGPT Image 28 sep 2025 13_12_41_83
+  - first:
+      213: -3684648123225072886
+    second: ChatGPT Image 28 sep 2025 13_12_41_84
+  - first:
+      213: -8110661454982516796
+    second: ChatGPT Image 28 sep 2025 13_12_41_85
+  - first:
+      213: 236237758507390613
+    second: ChatGPT Image 28 sep 2025 13_12_41_86
+  - first:
+      213: 8389343961149329996
+    second: ChatGPT Image 28 sep 2025 13_12_41_87
+  - first:
+      213: -750264385003318997
+    second: ChatGPT Image 28 sep 2025 13_12_41_88
+  - first:
+      213: -8467754875074673031
+    second: ChatGPT Image 28 sep 2025 13_12_41_89
+  - first:
+      213: -3194459475211511997
+    second: ChatGPT Image 28 sep 2025 13_12_41_90
+  - first:
+      213: -2705508460368366099
+    second: ChatGPT Image 28 sep 2025 13_12_41_91
+  - first:
+      213: 1177331554971736276
+    second: ChatGPT Image 28 sep 2025 13_12_41_92
+  - first:
+      213: -7526093277869516968
+    second: ChatGPT Image 28 sep 2025 13_12_41_93
+  - first:
+      213: 6289733253877591818
+    second: ChatGPT Image 28 sep 2025 13_12_41_94
+  - first:
+      213: 5313334519619839115
+    second: ChatGPT Image 28 sep 2025 13_12_41_95
+  - first:
+      213: -2668645576962047410
+    second: ChatGPT Image 28 sep 2025 13_12_41_96
+  - first:
+      213: -2047726052099134795
+    second: ChatGPT Image 28 sep 2025 13_12_41_97
+  - first:
+      213: -1988594307766721359
+    second: ChatGPT Image 28 sep 2025 13_12_41_98
+  - first:
+      213: 7241814728847241676
+    second: ChatGPT Image 28 sep 2025 13_12_41_99
+  - first:
+      213: -7996287415826587499
+    second: ChatGPT Image 28 sep 2025 13_12_41_100
+  - first:
+      213: -972927844633774462
+    second: ChatGPT Image 28 sep 2025 13_12_41_101
+  - first:
+      213: -663009382814015755
+    second: ChatGPT Image 28 sep 2025 13_12_41_102
+  - first:
+      213: 566269820148045615
+    second: ChatGPT Image 28 sep 2025 13_12_41_103
+  - first:
+      213: -8909534373785664922
+    second: ChatGPT Image 28 sep 2025 13_12_41_104
+  - first:
+      213: 5409877321041743834
+    second: ChatGPT Image 28 sep 2025 13_12_41_105
+  - first:
+      213: -8752921988352467888
+    second: ChatGPT Image 28 sep 2025 13_12_41_106
+  - first:
+      213: -5216957123182242575
+    second: ChatGPT Image 28 sep 2025 13_12_41_107
+  - first:
+      213: 4032807946993794672
+    second: ChatGPT Image 28 sep 2025 13_12_41_108
+  - first:
+      213: 6802072113965818401
+    second: ChatGPT Image 28 sep 2025 13_12_41_109
+  - first:
+      213: -6399995957259815715
+    second: ChatGPT Image 28 sep 2025 13_12_41_110
+  - first:
+      213: 6289316595316500947
+    second: ChatGPT Image 28 sep 2025 13_12_41_111
+  - first:
+      213: 3101976295063332389
+    second: ChatGPT Image 28 sep 2025 13_12_41_112
+  - first:
+      213: 3233639456997136790
+    second: ChatGPT Image 28 sep 2025 13_12_41_113
+  - first:
+      213: 1768651426933338278
+    second: ChatGPT Image 28 sep 2025 13_12_41_114
+  - first:
+      213: 4742375500933265821
+    second: ChatGPT Image 28 sep 2025 13_12_41_115
+  - first:
+      213: -1738815382707695622
+    second: ChatGPT Image 28 sep 2025 13_12_41_116
+  - first:
+      213: -488907978211101766
+    second: ChatGPT Image 28 sep 2025 13_12_41_117
+  - first:
+      213: -1274348544417152475
+    second: ChatGPT Image 28 sep 2025 13_12_41_118
+  - first:
+      213: -70504846855159502
+    second: ChatGPT Image 28 sep 2025 13_12_41_119
+  - first:
+      213: -1149406171487500800
+    second: ChatGPT Image 28 sep 2025 13_12_41_120
+  - first:
+      213: 949228174686808589
+    second: ChatGPT Image 28 sep 2025 13_12_41_121
+  - first:
+      213: 5649850555908547260
+    second: ChatGPT Image 28 sep 2025 13_12_41_122
+  - first:
+      213: 7655829452135031024
+    second: ChatGPT Image 28 sep 2025 13_12_41_123
+  - first:
+      213: -1954956110831080436
+    second: ChatGPT Image 28 sep 2025 13_12_41_124
+  - first:
+      213: -7250223698749876743
+    second: ChatGPT Image 28 sep 2025 13_12_41_125
+  - first:
+      213: 5501719000335333628
+    second: ChatGPT Image 28 sep 2025 13_12_41_126
+  - first:
+      213: -4488059266236414699
+    second: ChatGPT Image 28 sep 2025 13_12_41_127
+  - first:
+      213: 6064084678353675050
+    second: ChatGPT Image 28 sep 2025 13_12_41_128
+  - first:
+      213: 8594117963645734099
+    second: ChatGPT Image 28 sep 2025 13_12_41_129
+  - first:
+      213: 3139484088374083113
+    second: ChatGPT Image 28 sep 2025 13_12_41_130
+  - first:
+      213: -1877154066013236907
+    second: ChatGPT Image 28 sep 2025 13_12_41_131
+  - first:
+      213: 300154009343995351
+    second: ChatGPT Image 28 sep 2025 13_12_41_132
+  - first:
+      213: -2988744363170395225
+    second: ChatGPT Image 28 sep 2025 13_12_41_133
+  - first:
+      213: -5412158974048007332
+    second: ChatGPT Image 28 sep 2025 13_12_41_134
+  - first:
+      213: -4450216248165185817
+    second: ChatGPT Image 28 sep 2025 13_12_41_135
+  - first:
+      213: 7850236449326605503
+    second: ChatGPT Image 28 sep 2025 13_12_41_136
+  - first:
+      213: -8772916412496995204
+    second: ChatGPT Image 28 sep 2025 13_12_41_137
+  - first:
+      213: -5546403935097524529
+    second: ChatGPT Image 28 sep 2025 13_12_41_138
+  - first:
+      213: -3918136666395781101
+    second: ChatGPT Image 28 sep 2025 13_12_41_139
+  - first:
+      213: -622623799936155397
+    second: ChatGPT Image 28 sep 2025 13_12_41_140
+  - first:
+      213: -8362109448301947273
+    second: ChatGPT Image 28 sep 2025 13_12_41_141
+  - first:
+      213: -1265281283607568921
+    second: ChatGPT Image 28 sep 2025 13_12_41_142
+  - first:
+      213: 8232657020387556058
+    second: ChatGPT Image 28 sep 2025 13_12_41_143
+  - first:
+      213: 2757336324031013544
+    second: ChatGPT Image 28 sep 2025 13_12_41_144
+  - first:
+      213: -3267570204069743914
+    second: ChatGPT Image 28 sep 2025 13_12_41_145
+  - first:
+      213: -4113481389011963554
+    second: ChatGPT Image 28 sep 2025 13_12_41_146
+  - first:
+      213: 4610153510394030579
+    second: ChatGPT Image 28 sep 2025 13_12_41_147
+  - first:
+      213: 4799458811043281021
+    second: ChatGPT Image 28 sep 2025 13_12_41_148
+  - first:
+      213: -5270777987746934624
+    second: ChatGPT Image 28 sep 2025 13_12_41_149
+  - first:
+      213: -4599789456945163245
+    second: ChatGPT Image 28 sep 2025 13_12_41_150
+  - first:
+      213: -2957077439805906647
+    second: ChatGPT Image 28 sep 2025 13_12_41_151
+  - first:
+      213: -3546793548474970639
+    second: ChatGPT Image 28 sep 2025 13_12_41_152
+  - first:
+      213: -22799561220955114
+    second: ChatGPT Image 28 sep 2025 13_12_41_153
+  - first:
+      213: -4813311067268830469
+    second: ChatGPT Image 28 sep 2025 13_12_41_154
+  - first:
+      213: -2202629317806830744
+    second: ChatGPT Image 28 sep 2025 13_12_41_155
+  - first:
+      213: -6778371827663187832
+    second: ChatGPT Image 28 sep 2025 13_12_41_156
+  - first:
+      213: -168266209508923898
+    second: ChatGPT Image 28 sep 2025 13_12_41_157
+  - first:
+      213: 5792277471226302982
+    second: ChatGPT Image 28 sep 2025 13_12_41_158
+  - first:
+      213: -433342612821076648
+    second: ChatGPT Image 28 sep 2025 13_12_41_159
+  - first:
+      213: -7715467221727325450
+    second: ChatGPT Image 28 sep 2025 13_12_41_160
+  - first:
+      213: -387795508626125547
+    second: ChatGPT Image 28 sep 2025 13_12_41_161
+  - first:
+      213: -4962019505223000226
+    second: ChatGPT Image 28 sep 2025 13_12_41_162
+  - first:
+      213: -1643346843641948351
+    second: ChatGPT Image 28 sep 2025 13_12_41_163
+  - first:
+      213: -6182803154378594286
+    second: ChatGPT Image 28 sep 2025 13_12_41_164
+  - first:
+      213: 1124059224312966970
+    second: ChatGPT Image 28 sep 2025 13_12_41_165
+  - first:
+      213: -5705730552034966122
+    second: ChatGPT Image 28 sep 2025 13_12_41_166
+  - first:
+      213: -3697996740115366193
+    second: ChatGPT Image 28 sep 2025 13_12_41_167
+  - first:
+      213: -8291249192203375688
+    second: ChatGPT Image 28 sep 2025 13_12_41_168
+  - first:
+      213: 9171948551222486360
+    second: ChatGPT Image 28 sep 2025 13_12_41_169
+  - first:
+      213: 9061830044184612271
+    second: ChatGPT Image 28 sep 2025 13_12_41_170
+  - first:
+      213: 3481719129677788078
+    second: ChatGPT Image 28 sep 2025 13_12_41_171
+  - first:
+      213: 482220892476966278
+    second: ChatGPT Image 28 sep 2025 13_12_41_172
+  - first:
+      213: -2514866414109307348
+    second: ChatGPT Image 28 sep 2025 13_12_41_173
+  - first:
+      213: 1589757806810862397
+    second: ChatGPT Image 28 sep 2025 13_12_41_174
+  - first:
+      213: 8979830475635929361
+    second: ChatGPT Image 28 sep 2025 13_12_41_175
+  - first:
+      213: 3005495028073053012
+    second: ChatGPT Image 28 sep 2025 13_12_41_176
+  - first:
+      213: 1714901245181305184
+    second: ChatGPT Image 28 sep 2025 13_12_41_177
+  - first:
+      213: -1010456175405237811
+    second: ChatGPT Image 28 sep 2025 13_12_41_178
+  - first:
+      213: -3845437178698862297
+    second: ChatGPT Image 28 sep 2025 13_12_41_179
+  - first:
+      213: -2759909381643516982
+    second: ChatGPT Image 28 sep 2025 13_12_41_180
+  - first:
+      213: -336781843348531227
+    second: ChatGPT Image 28 sep 2025 13_12_41_181
+  - first:
+      213: -4719668002233015068
+    second: ChatGPT Image 28 sep 2025 13_12_41_182
+  - first:
+      213: 1597908930872095410
+    second: ChatGPT Image 28 sep 2025 13_12_41_183
+  - first:
+      213: -8702965665184557736
+    second: ChatGPT Image 28 sep 2025 13_12_41_184
+  - first:
+      213: 7390222635753595611
+    second: ChatGPT Image 28 sep 2025 13_12_41_185
+  - first:
+      213: -697129360368386639
+    second: ChatGPT Image 28 sep 2025 13_12_41_186
+  - first:
+      213: -596989152931464174
+    second: ChatGPT Image 28 sep 2025 13_12_41_187
+  - first:
+      213: 7863290801087838119
+    second: ChatGPT Image 28 sep 2025 13_12_41_188
+  - first:
+      213: 8658599312802567571
+    second: ChatGPT Image 28 sep 2025 13_12_41_189
+  - first:
+      213: 8337885995478245251
+    second: ChatGPT Image 28 sep 2025 13_12_41_190
+  - first:
+      213: -9189938077782956924
+    second: ChatGPT Image 28 sep 2025 13_12_41_191
+  - first:
+      213: -1837328363681412117
+    second: ChatGPT Image 28 sep 2025 13_12_41_192
+  - first:
+      213: 6143960445345902926
+    second: ChatGPT Image 28 sep 2025 13_12_41_193
+  - first:
+      213: 4352292440531605043
+    second: ChatGPT Image 28 sep 2025 13_12_41_194
+  - first:
+      213: -7304700105887855291
+    second: ChatGPT Image 28 sep 2025 13_12_41_195
+  - first:
+      213: 4394743446608978245
+    second: ChatGPT Image 28 sep 2025 13_12_41_196
+  - first:
+      213: -6275691729933187134
+    second: ChatGPT Image 28 sep 2025 13_12_41_197
+  - first:
+      213: -3213842065477615265
+    second: ChatGPT Image 28 sep 2025 13_12_41_198
+  - first:
+      213: -2935341573926043935
+    second: ChatGPT Image 28 sep 2025 13_12_41_199
+  - first:
+      213: -8945619171825570692
+    second: ChatGPT Image 28 sep 2025 13_12_41_200
+  - first:
+      213: -7402673066176941645
+    second: ChatGPT Image 28 sep 2025 13_12_41_201
+  - first:
+      213: 867951874874480221
+    second: ChatGPT Image 28 sep 2025 13_12_41_202
+  - first:
+      213: -2420792507356129657
+    second: ChatGPT Image 28 sep 2025 13_12_41_203
+  - first:
+      213: 2972296317002336594
+    second: ChatGPT Image 28 sep 2025 13_12_41_204
+  - first:
+      213: 4107240976294495042
+    second: ChatGPT Image 28 sep 2025 13_12_41_205
+  - first:
+      213: 147582300664356061
+    second: ChatGPT Image 28 sep 2025 13_12_41_206
+  - first:
+      213: -2945048329597009437
+    second: ChatGPT Image 28 sep 2025 13_12_41_207
+  - first:
+      213: -1259749600649492433
+    second: ChatGPT Image 28 sep 2025 13_12_41_208
+  - first:
+      213: 2594059521481486116
+    second: ChatGPT Image 28 sep 2025 13_12_41_209
+  - first:
+      213: -4950310101941094268
+    second: ChatGPT Image 28 sep 2025 13_12_41_210
+  - first:
+      213: -4616083769990828256
+    second: ChatGPT Image 28 sep 2025 13_12_41_211
+  - first:
+      213: -6658427205942477630
+    second: ChatGPT Image 28 sep 2025 13_12_41_212
+  - first:
+      213: -2218018997750368167
+    second: ChatGPT Image 28 sep 2025 13_12_41_213
+  - first:
+      213: 4413565902482972245
+    second: ChatGPT Image 28 sep 2025 13_12_41_214
+  - first:
+      213: -2186602716396064051
+    second: ChatGPT Image 28 sep 2025 13_12_41_215
+  - first:
+      213: 6951076932656999380
+    second: ChatGPT Image 28 sep 2025 13_12_41_216
+  - first:
+      213: 7165381877116206575
+    second: ChatGPT Image 28 sep 2025 13_12_41_217
+  - first:
+      213: -1169473963295402485
+    second: ChatGPT Image 28 sep 2025 13_12_41_218
+  - first:
+      213: -5305273986093527206
+    second: ChatGPT Image 28 sep 2025 13_12_41_219
+  - first:
+      213: -9222164062982233702
+    second: ChatGPT Image 28 sep 2025 13_12_41_220
+  - first:
+      213: 2180472790127728577
+    second: ChatGPT Image 28 sep 2025 13_12_41_221
+  - first:
+      213: 7540160023665971531
+    second: ChatGPT Image 28 sep 2025 13_12_41_222
+  - first:
+      213: 2540634138680107861
+    second: ChatGPT Image 28 sep 2025 13_12_41_223
+  - first:
+      213: 2936367711871025331
+    second: ChatGPT Image 28 sep 2025 13_12_41_224
+  - first:
+      213: 5510316241486370287
+    second: ChatGPT Image 28 sep 2025 13_12_41_225
+  - first:
+      213: 2959031813487847957
+    second: ChatGPT Image 28 sep 2025 13_12_41_226
+  - first:
+      213: -860051375712178344
+    second: ChatGPT Image 28 sep 2025 13_12_41_227
+  - first:
+      213: 6188510365212539007
+    second: ChatGPT Image 28 sep 2025 13_12_41_228
+  - first:
+      213: 3168080251858597357
+    second: ChatGPT Image 28 sep 2025 13_12_41_229
+  - first:
+      213: -9139681263614593516
+    second: ChatGPT Image 28 sep 2025 13_12_41_230
+  - first:
+      213: 4748832326240561385
+    second: ChatGPT Image 28 sep 2025 13_12_41_231
+  - first:
+      213: -3019228588834413949
+    second: ChatGPT Image 28 sep 2025 13_12_41_232
+  - first:
+      213: -7259930453866731223
+    second: ChatGPT Image 28 sep 2025 13_12_41_233
+  - first:
+      213: -6225615915169063319
+    second: ChatGPT Image 28 sep 2025 13_12_41_234
+  - first:
+      213: -8401098305829024015
+    second: ChatGPT Image 28 sep 2025 13_12_41_235
+  - first:
+      213: -5706935996797923005
+    second: ChatGPT Image 28 sep 2025 13_12_41_236
+  - first:
+      213: -6059054498908698267
+    second: ChatGPT Image 28 sep 2025 13_12_41_237
+  - first:
+      213: 3921133471042530700
+    second: ChatGPT Image 28 sep 2025 13_12_41_238
+  - first:
+      213: 8722849290109729137
+    second: ChatGPT Image 28 sep 2025 13_12_41_239
+  - first:
+      213: -3628931456027905316
+    second: ChatGPT Image 28 sep 2025 13_12_41_240
+  - first:
+      213: 6564644295236554709
+    second: ChatGPT Image 28 sep 2025 13_12_41_241
+  - first:
+      213: 4019834776900773603
+    second: ChatGPT Image 28 sep 2025 13_12_41_242
+  - first:
+      213: 3801699708713585180
+    second: ChatGPT Image 28 sep 2025 13_12_41_243
+  - first:
+      213: 6795672655700488043
+    second: ChatGPT Image 28 sep 2025 13_12_41_244
+  - first:
+      213: 7370077588110978738
+    second: ChatGPT Image 28 sep 2025 13_12_41_245
+  - first:
+      213: 2158608754187374213
+    second: ChatGPT Image 28 sep 2025 13_12_41_246
+  - first:
+      213: -1368017907560993059
+    second: ChatGPT Image 28 sep 2025 13_12_41_247
+  - first:
+      213: 3885865263545749319
+    second: ChatGPT Image 28 sep 2025 13_12_41_248
+  - first:
+      213: -1350018384277810804
+    second: ChatGPT Image 28 sep 2025 13_12_41_249
+  - first:
+      213: 7781096570148845408
+    second: ChatGPT Image 28 sep 2025 13_12_41_250
+  - first:
+      213: -5196119648066555076
+    second: ChatGPT Image 28 sep 2025 13_12_41_251
+  - first:
+      213: 6624192086238063985
+    second: ChatGPT Image 28 sep 2025 13_12_41_252
+  - first:
+      213: -8687024637680439389
+    second: ChatGPT Image 28 sep 2025 13_12_41_253
+  - first:
+      213: 7328659993683610210
+    second: ChatGPT Image 28 sep 2025 13_12_41_254
+  - first:
+      213: -4506174043852729695
+    second: ChatGPT Image 28 sep 2025 13_12_41_255
+  - first:
+      213: -2497495914355776332
+    second: ChatGPT Image 28 sep 2025 13_12_41_256
+  - first:
+      213: -6021268740451255599
+    second: ChatGPT Image 28 sep 2025 13_12_41_257
+  - first:
+      213: -9145892834149127290
+    second: ChatGPT Image 28 sep 2025 13_12_41_258
+  - first:
+      213: -1064570927477272913
+    second: ChatGPT Image 28 sep 2025 13_12_41_259
+  - first:
+      213: -776099387983813692
+    second: ChatGPT Image 28 sep 2025 13_12_41_260
+  - first:
+      213: 126816672849297261
+    second: ChatGPT Image 28 sep 2025 13_12_41_261
+  - first:
+      213: 3711274402692271861
+    second: ChatGPT Image 28 sep 2025 13_12_41_262
+  - first:
+      213: -3083474112664280973
+    second: ChatGPT Image 28 sep 2025 13_12_41_263
+  - first:
+      213: 8581793286749879595
+    second: ChatGPT Image 28 sep 2025 13_12_41_264
+  - first:
+      213: -2712331759928702830
+    second: ChatGPT Image 28 sep 2025 13_12_41_265
+  - first:
+      213: -7824642320163402447
+    second: ChatGPT Image 28 sep 2025 13_12_41_266
+  - first:
+      213: 5068747220127907209
+    second: ChatGPT Image 28 sep 2025 13_12_41_267
+  - first:
+      213: -1194585632005171805
+    second: ChatGPT Image 28 sep 2025 13_12_41_268
+  - first:
+      213: -7557024760425620152
+    second: ChatGPT Image 28 sep 2025 13_12_41_269
+  - first:
+      213: 716700636442566531
+    second: ChatGPT Image 28 sep 2025 13_12_41_270
+  - first:
+      213: -3616802979536410852
+    second: ChatGPT Image 28 sep 2025 13_12_41_271
+  - first:
+      213: -3805295814912555052
+    second: ChatGPT Image 28 sep 2025 13_12_41_272
+  - first:
+      213: -6563707240168912002
+    second: ChatGPT Image 28 sep 2025 13_12_41_273
+  - first:
+      213: -4641352960690768835
+    second: ChatGPT Image 28 sep 2025 13_12_41_274
+  - first:
+      213: -2290405745764227716
+    second: ChatGPT Image 28 sep 2025 13_12_41_275
+  - first:
+      213: 5212185376759775397
+    second: ChatGPT Image 28 sep 2025 13_12_41_276
+  - first:
+      213: -7363271921641490312
+    second: ChatGPT Image 28 sep 2025 13_12_41_277
+  - first:
+      213: 7971475152738901191
+    second: ChatGPT Image 28 sep 2025 13_12_41_278
+  - first:
+      213: -8693285475080878258
+    second: ChatGPT Image 28 sep 2025 13_12_41_279
+  - first:
+      213: 4275270646097833502
+    second: ChatGPT Image 28 sep 2025 13_12_41_280
+  - first:
+      213: 714327531704346923
+    second: ChatGPT Image 28 sep 2025 13_12_41_281
+  - first:
+      213: 521559869779875443
+    second: ChatGPT Image 28 sep 2025 13_12_41_282
+  - first:
+      213: 4858192304440967791
+    second: ChatGPT Image 28 sep 2025 13_12_41_283
+  - first:
+      213: -7628475127633967996
+    second: ChatGPT Image 28 sep 2025 13_12_41_284
+  - first:
+      213: 288495974713287740
+    second: ChatGPT Image 28 sep 2025 13_12_41_285
+  - first:
+      213: -5885718870192231530
+    second: ChatGPT Image 28 sep 2025 13_12_41_286
+  - first:
+      213: -6867287645875220535
+    second: ChatGPT Image 28 sep 2025 13_12_41_287
+  - first:
+      213: 4192953539536289988
+    second: ChatGPT Image 28 sep 2025 13_12_41_288
+  - first:
+      213: 4393220979517055962
+    second: ChatGPT Image 28 sep 2025 13_12_41_289
+  - first:
+      213: 2780095152424207398
+    second: ChatGPT Image 28 sep 2025 13_12_41_290
+  - first:
+      213: -6308267387728308343
+    second: ChatGPT Image 28 sep 2025 13_12_41_291
+  - first:
+      213: 6280872274054757320
+    second: ChatGPT Image 28 sep 2025 13_12_41_292
+  - first:
+      213: 789477779163089285
+    second: ChatGPT Image 28 sep 2025 13_12_41_293
+  - first:
+      213: -3271556964852115631
+    second: ChatGPT Image 28 sep 2025 13_12_41_294
+  - first:
+      213: 5694759757538401064
+    second: ChatGPT Image 28 sep 2025 13_12_41_295
+  - first:
+      213: 416856014289818903
+    second: ChatGPT Image 28 sep 2025 13_12_41_296
+  - first:
+      213: 6219251817963243817
+    second: ChatGPT Image 28 sep 2025 13_12_41_297
+  - first:
+      213: 20638099703836761
+    second: ChatGPT Image 28 sep 2025 13_12_41_298
+  - first:
+      213: 4704719569118690759
+    second: ChatGPT Image 28 sep 2025 13_12_41_299
+  - first:
+      213: -7630789211165096316
+    second: ChatGPT Image 28 sep 2025 13_12_41_300
+  - first:
+      213: -366523906507091971
+    second: ChatGPT Image 28 sep 2025 13_12_41_301
+  - first:
+      213: 7851023360501140720
+    second: ChatGPT Image 28 sep 2025 13_12_41_302
+  - first:
+      213: 8954741039181807527
+    second: ChatGPT Image 28 sep 2025 13_12_41_303
+  - first:
+      213: -1433233223683004146
+    second: ChatGPT Image 28 sep 2025 13_12_41_304
+  - first:
+      213: -8773346420324520378
+    second: ChatGPT Image 28 sep 2025 13_12_41_305
+  - first:
+      213: -6805451082557588665
+    second: ChatGPT Image 28 sep 2025 13_12_41_306
+  - first:
+      213: -6957604352456281458
+    second: ChatGPT Image 28 sep 2025 13_12_41_307
+  - first:
+      213: -7411834405994995392
+    second: ChatGPT Image 28 sep 2025 13_12_41_308
+  - first:
+      213: -7973082445103597995
+    second: ChatGPT Image 28 sep 2025 13_12_41_309
+  - first:
+      213: 6894119978131328028
+    second: ChatGPT Image 28 sep 2025 13_12_41_310
+  - first:
+      213: -3813016354834157093
+    second: ChatGPT Image 28 sep 2025 13_12_41_311
+  - first:
+      213: -7387929936602782041
+    second: ChatGPT Image 28 sep 2025 13_12_41_312
+  - first:
+      213: -3752749117654303028
+    second: ChatGPT Image 28 sep 2025 13_12_41_313
+  - first:
+      213: 2396687272140112873
+    second: ChatGPT Image 28 sep 2025 13_12_41_314
+  - first:
+      213: 2694032737893097454
+    second: ChatGPT Image 28 sep 2025 13_12_41_315
+  - first:
+      213: -2116062267868616625
+    second: ChatGPT Image 28 sep 2025 13_12_41_316
+  - first:
+      213: 3484347942211133634
+    second: ChatGPT Image 28 sep 2025 13_12_41_317
+  - first:
+      213: 1472125781749529921
+    second: ChatGPT Image 28 sep 2025 13_12_41_318
+  - first:
+      213: 9154861192821454616
+    second: ChatGPT Image 28 sep 2025 13_12_41_319
+  - first:
+      213: 2011871154264423363
+    second: ChatGPT Image 28 sep 2025 13_12_41_320
+  - first:
+      213: 2045987738695123409
+    second: ChatGPT Image 28 sep 2025 13_12_41_321
+  - first:
+      213: -60994254547919483
+    second: ChatGPT Image 28 sep 2025 13_12_41_322
+  - first:
+      213: 2578927937323880900
+    second: ChatGPT Image 28 sep 2025 13_12_41_323
+  - first:
+      213: -432538871558091274
+    second: ChatGPT Image 28 sep 2025 13_12_41_324
+  - first:
+      213: -8863507913168494019
+    second: ChatGPT Image 28 sep 2025 13_12_41_325
+  - first:
+      213: -8620547969492720079
+    second: ChatGPT Image 28 sep 2025 13_12_41_326
+  - first:
+      213: -5093882489248822985
+    second: ChatGPT Image 28 sep 2025 13_12_41_327
+  - first:
+      213: -5968506218488858343
+    second: ChatGPT Image 28 sep 2025 13_12_41_328
+  - first:
+      213: 125771737062435223
+    second: ChatGPT Image 28 sep 2025 13_12_41_329
+  - first:
+      213: -2063814789483007837
+    second: ChatGPT Image 28 sep 2025 13_12_41_330
+  - first:
+      213: 2717141156333870867
+    second: ChatGPT Image 28 sep 2025 13_12_41_331
+  - first:
+      213: 4685396310741546062
+    second: ChatGPT Image 28 sep 2025 13_12_41_332
+  - first:
+      213: -3255403149543430420
+    second: ChatGPT Image 28 sep 2025 13_12_41_333
+  - first:
+      213: 1401262151683949589
+    second: ChatGPT Image 28 sep 2025 13_12_41_334
+  - first:
+      213: 7361027258076372975
+    second: ChatGPT Image 28 sep 2025 13_12_41_335
+  - first:
+      213: -3063716184760328677
+    second: ChatGPT Image 28 sep 2025 13_12_41_336
+  - first:
+      213: 8674684272382206896
+    second: ChatGPT Image 28 sep 2025 13_12_41_337
+  - first:
+      213: 4867405300379032383
+    second: ChatGPT Image 28 sep 2025 13_12_41_338
+  - first:
+      213: -6339355977344671340
+    second: ChatGPT Image 28 sep 2025 13_12_41_339
+  - first:
+      213: 1755183694635099026
+    second: ChatGPT Image 28 sep 2025 13_12_41_340
+  - first:
+      213: 4767461636167052278
+    second: ChatGPT Image 28 sep 2025 13_12_41_341
+  - first:
+      213: -8249172110245287810
+    second: ChatGPT Image 28 sep 2025 13_12_41_342
+  - first:
+      213: -8673610718133874530
+    second: ChatGPT Image 28 sep 2025 13_12_41_343
+  - first:
+      213: 8297974844007768154
+    second: ChatGPT Image 28 sep 2025 13_12_41_344
+  - first:
+      213: 4451283502412672736
+    second: ChatGPT Image 28 sep 2025 13_12_41_345
+  - first:
+      213: -5084952558441540073
+    second: ChatGPT Image 28 sep 2025 13_12_41_346
+  - first:
+      213: -4484562531234671718
+    second: ChatGPT Image 28 sep 2025 13_12_41_347
+  - first:
+      213: -2360610762397353344
+    second: ChatGPT Image 28 sep 2025 13_12_41_348
+  - first:
+      213: -6762469535572673451
+    second: ChatGPT Image 28 sep 2025 13_12_41_349
+  - first:
+      213: -1600679394639308664
+    second: ChatGPT Image 28 sep 2025 13_12_41_350
+  - first:
+      213: -6868726286261090815
+    second: ChatGPT Image 28 sep 2025 13_12_41_351
+  - first:
+      213: 9041362434324100122
+    second: ChatGPT Image 28 sep 2025 13_12_41_352
+  - first:
+      213: -2412476685502771045
+    second: ChatGPT Image 28 sep 2025 13_12_41_353
+  - first:
+      213: -1311436266821095136
+    second: ChatGPT Image 28 sep 2025 13_12_41_354
+  - first:
+      213: 5886273905131448143
+    second: ChatGPT Image 28 sep 2025 13_12_41_355
+  - first:
+      213: -7609275379471039118
+    second: ChatGPT Image 28 sep 2025 13_12_41_356
+  - first:
+      213: 8745344434997393872
+    second: ChatGPT Image 28 sep 2025 13_12_41_357
+  - first:
+      213: -2090881152454788135
+    second: ChatGPT Image 28 sep 2025 13_12_41_358
+  - first:
+      213: -4645063834666682892
+    second: ChatGPT Image 28 sep 2025 13_12_41_359
+  - first:
+      213: -6501467916284957899
+    second: ChatGPT Image 28 sep 2025 13_12_41_360
+  - first:
+      213: -1014017647171936253
+    second: ChatGPT Image 28 sep 2025 13_12_41_361
+  - first:
+      213: 8696197890472042804
+    second: ChatGPT Image 28 sep 2025 13_12_41_362
+  - first:
+      213: 2577401826708738445
+    second: ChatGPT Image 28 sep 2025 13_12_41_363
+  - first:
+      213: 2861132734502710752
+    second: ChatGPT Image 28 sep 2025 13_12_41_364
+  - first:
+      213: 4659982716315596498
+    second: ChatGPT Image 28 sep 2025 13_12_41_365
+  - first:
+      213: -8681566982961051824
+    second: ChatGPT Image 28 sep 2025 13_12_41_366
+  - first:
+      213: -8826256543095616970
+    second: ChatGPT Image 28 sep 2025 13_12_41_367
+  - first:
+      213: -5653293748970122500
+    second: ChatGPT Image 28 sep 2025 13_12_41_368
+  - first:
+      213: 6025167042411981049
+    second: ChatGPT Image 28 sep 2025 13_12_41_369
+  - first:
+      213: 2881702214158869897
+    second: ChatGPT Image 28 sep 2025 13_12_41_370
+  - first:
+      213: -4076246603053635175
+    second: ChatGPT Image 28 sep 2025 13_12_41_371
+  - first:
+      213: 4266277232564925967
+    second: ChatGPT Image 28 sep 2025 13_12_41_372
+  - first:
+      213: -5752675140192082193
+    second: ChatGPT Image 28 sep 2025 13_12_41_373
+  - first:
+      213: 4594049360478042113
+    second: ChatGPT Image 28 sep 2025 13_12_41_374
+  - first:
+      213: -4815472395155160817
+    second: ChatGPT Image 28 sep 2025 13_12_41_375
+  - first:
+      213: 5657283165162866926
+    second: ChatGPT Image 28 sep 2025 13_12_41_376
+  - first:
+      213: -4558102271696404565
+    second: ChatGPT Image 28 sep 2025 13_12_41_377
+  - first:
+      213: 1384410832658973800
+    second: ChatGPT Image 28 sep 2025 13_12_41_378
+  - first:
+      213: -2050252490771124660
+    second: ChatGPT Image 28 sep 2025 13_12_41_379
+  - first:
+      213: 4637231592677099689
+    second: ChatGPT Image 28 sep 2025 13_12_41_380
+  - first:
+      213: -4169011402026489233
+    second: ChatGPT Image 28 sep 2025 13_12_41_381
+  - first:
+      213: 2261728078011883814
+    second: ChatGPT Image 28 sep 2025 13_12_41_382
+  - first:
+      213: 1020324571581693206
+    second: ChatGPT Image 28 sep 2025 13_12_41_383
+  - first:
+      213: 5861870212206230824
+    second: ChatGPT Image 28 sep 2025 13_12_41_384
+  - first:
+      213: -275462790782895815
+    second: ChatGPT Image 28 sep 2025 13_12_41_385
+  - first:
+      213: 1149142507484155301
+    second: ChatGPT Image 28 sep 2025 13_12_41_386
+  - first:
+      213: 8505948867260715224
+    second: ChatGPT Image 28 sep 2025 13_12_41_387
+  - first:
+      213: -5041737436257793863
+    second: ChatGPT Image 28 sep 2025 13_12_41_388
+  - first:
+      213: 9008287563604536110
+    second: ChatGPT Image 28 sep 2025 13_12_41_389
+  - first:
+      213: -698687692145819120
+    second: ChatGPT Image 28 sep 2025 13_12_41_390
+  - first:
+      213: -5212890997512532615
+    second: ChatGPT Image 28 sep 2025 13_12_41_391
+  - first:
+      213: 4457731943740767611
+    second: ChatGPT Image 28 sep 2025 13_12_41_392
+  - first:
+      213: -8192275847459555774
+    second: ChatGPT Image 28 sep 2025 13_12_41_393
+  - first:
+      213: 7144147771090773661
+    second: ChatGPT Image 28 sep 2025 13_12_41_394
+  - first:
+      213: 6565758454928184833
+    second: ChatGPT Image 28 sep 2025 13_12_41_395
+  - first:
+      213: -2778124646802964828
+    second: ChatGPT Image 28 sep 2025 13_12_41_396
+  - first:
+      213: -1146982502708795841
+    second: ChatGPT Image 28 sep 2025 13_12_41_397
+  - first:
+      213: 5028059167942434206
+    second: ChatGPT Image 28 sep 2025 13_12_41_398
+  - first:
+      213: -7962068588600567058
+    second: ChatGPT Image 28 sep 2025 13_12_41_399
+  - first:
+      213: -4464051931892341569
+    second: ChatGPT Image 28 sep 2025 13_12_41_400
+  - first:
+      213: 8824810012612056783
+    second: ChatGPT Image 28 sep 2025 13_12_41_401
+  - first:
+      213: -3810652949801354356
+    second: ChatGPT Image 28 sep 2025 13_12_41_402
+  - first:
+      213: -1065009537461865579
+    second: ChatGPT Image 28 sep 2025 13_12_41_403
+  - first:
+      213: -4656971892922053205
+    second: ChatGPT Image 28 sep 2025 13_12_41_404
+  - first:
+      213: 3561434112540560443
+    second: ChatGPT Image 28 sep 2025 13_12_41_405
+  - first:
+      213: -5177806101667158424
+    second: ChatGPT Image 28 sep 2025 13_12_41_406
+  - first:
+      213: -6729537456090558755
+    second: ChatGPT Image 28 sep 2025 13_12_41_407
+  - first:
+      213: 3645765458549553230
+    second: ChatGPT Image 28 sep 2025 13_12_41_408
+  - first:
+      213: -4355977340859671030
+    second: ChatGPT Image 28 sep 2025 13_12_41_409
+  - first:
+      213: -5331600816474922646
+    second: ChatGPT Image 28 sep 2025 13_12_41_410
+  - first:
+      213: -2971255166587184684
+    second: ChatGPT Image 28 sep 2025 13_12_41_411
+  - first:
+      213: 2068410508199862396
+    second: ChatGPT Image 28 sep 2025 13_12_41_412
+  - first:
+      213: 3994537350066791102
+    second: ChatGPT Image 28 sep 2025 13_12_41_413
+  - first:
+      213: 9052058481754366548
+    second: ChatGPT Image 28 sep 2025 13_12_41_414
+  - first:
+      213: -3942188924052823353
+    second: ChatGPT Image 28 sep 2025 13_12_41_415
+  - first:
+      213: 904206424970134769
+    second: ChatGPT Image 28 sep 2025 13_12_41_416
+  - first:
+      213: -9220070558494091847
+    second: ChatGPT Image 28 sep 2025 13_12_41_417
+  - first:
+      213: -1190615249734753667
+    second: ChatGPT Image 28 sep 2025 13_12_41_418
+  - first:
+      213: 5642193056127783080
+    second: ChatGPT Image 28 sep 2025 13_12_41_419
+  - first:
+      213: -3215777550368247997
+    second: ChatGPT Image 28 sep 2025 13_12_41_420
+  - first:
+      213: 4704890894999520525
+    second: ChatGPT Image 28 sep 2025 13_12_41_421
+  - first:
+      213: 6070149561094126356
+    second: ChatGPT Image 28 sep 2025 13_12_41_422
+  - first:
+      213: 1874671839601818077
+    second: ChatGPT Image 28 sep 2025 13_12_41_423
+  - first:
+      213: 5541586240943656051
+    second: ChatGPT Image 28 sep 2025 13_12_41_424
+  - first:
+      213: -3152930175067052144
+    second: ChatGPT Image 28 sep 2025 13_12_41_425
+  - first:
+      213: -4423488011859412556
+    second: ChatGPT Image 28 sep 2025 13_12_41_426
+  - first:
+      213: -3705921261766412917
+    second: ChatGPT Image 28 sep 2025 13_12_41_427
+  - first:
+      213: -6184312830910981833
+    second: ChatGPT Image 28 sep 2025 13_12_41_428
+  - first:
+      213: -3294926868508529451
+    second: ChatGPT Image 28 sep 2025 13_12_41_429
+  - first:
+      213: 1159266368351660682
+    second: ChatGPT Image 28 sep 2025 13_12_41_430
+  - first:
+      213: -8730652499021382169
+    second: ChatGPT Image 28 sep 2025 13_12_41_431
+  - first:
+      213: 3759750368601983590
+    second: ChatGPT Image 28 sep 2025 13_12_41_432
+  - first:
+      213: -5440940919380558980
+    second: ChatGPT Image 28 sep 2025 13_12_41_433
+  - first:
+      213: -8846985544746622078
+    second: ChatGPT Image 28 sep 2025 13_12_41_434
+  - first:
+      213: -2914870671895405233
+    second: ChatGPT Image 28 sep 2025 13_12_41_435
+  - first:
+      213: 6404948160161420363
+    second: ChatGPT Image 28 sep 2025 13_12_41_436
+  - first:
+      213: 838795582157841303
+    second: ChatGPT Image 28 sep 2025 13_12_41_437
+  - first:
+      213: 6602048376373529924
+    second: ChatGPT Image 28 sep 2025 13_12_41_438
+  - first:
+      213: -5092125822787744232
+    second: ChatGPT Image 28 sep 2025 13_12_41_439
+  - first:
+      213: 4799059809297443684
+    second: ChatGPT Image 28 sep 2025 13_12_41_440
+  - first:
+      213: -8454483522683300536
+    second: ChatGPT Image 28 sep 2025 13_12_41_441
+  - first:
+      213: -6137403230029160437
+    second: ChatGPT Image 28 sep 2025 13_12_41_442
+  - first:
+      213: 4896273371912550675
+    second: ChatGPT Image 28 sep 2025 13_12_41_443
+  - first:
+      213: -7237120452786484103
+    second: ChatGPT Image 28 sep 2025 13_12_41_444
+  - first:
+      213: 79728814461279066
+    second: ChatGPT Image 28 sep 2025 13_12_41_445
+  - first:
+      213: 4235805220174256953
+    second: ChatGPT Image 28 sep 2025 13_12_41_446
+  - first:
+      213: 5432839249136387379
+    second: ChatGPT Image 28 sep 2025 13_12_41_447
+  - first:
+      213: 2760788829615853295
+    second: ChatGPT Image 28 sep 2025 13_12_41_448
+  - first:
+      213: 51707029344877675
+    second: ChatGPT Image 28 sep 2025 13_12_41_449
+  - first:
+      213: 1736827721628628596
+    second: ChatGPT Image 28 sep 2025 13_12_41_450
+  - first:
+      213: 6570306252718283666
+    second: ChatGPT Image 28 sep 2025 13_12_41_451
+  - first:
+      213: 3345158540284572076
+    second: ChatGPT Image 28 sep 2025 13_12_41_452
+  - first:
+      213: 2782847484536034402
+    second: ChatGPT Image 28 sep 2025 13_12_41_453
+  - first:
+      213: -6231313660922832003
+    second: ChatGPT Image 28 sep 2025 13_12_41_454
+  - first:
+      213: 3068575655937936393
+    second: ChatGPT Image 28 sep 2025 13_12_41_455
+  - first:
+      213: -4567626166338200666
+    second: ChatGPT Image 28 sep 2025 13_12_41_456
+  - first:
+      213: 3402867538967245220
+    second: ChatGPT Image 28 sep 2025 13_12_41_457
+  - first:
+      213: -7619166274345565192
+    second: ChatGPT Image 28 sep 2025 13_12_41_458
+  - first:
+      213: 1475101925809035188
+    second: ChatGPT Image 28 sep 2025 13_12_41_459
+  - first:
+      213: 3023136368258979549
+    second: ChatGPT Image 28 sep 2025 13_12_41_460
+  - first:
+      213: -519156171932511733
+    second: ChatGPT Image 28 sep 2025 13_12_41_461
+  - first:
+      213: -5147127109807864577
+    second: ChatGPT Image 28 sep 2025 13_12_41_462
+  - first:
+      213: 1896061850063874792
+    second: ChatGPT Image 28 sep 2025 13_12_41_463
+  - first:
+      213: 3871678208201522959
+    second: ChatGPT Image 28 sep 2025 13_12_41_464
+  - first:
+      213: 4703660491224655078
+    second: ChatGPT Image 28 sep 2025 13_12_41_465
+  - first:
+      213: 5122290324975063835
+    second: ChatGPT Image 28 sep 2025 13_12_41_466
+  - first:
+      213: -5883062867280273787
+    second: ChatGPT Image 28 sep 2025 13_12_41_467
+  - first:
+      213: 8770801493341643393
+    second: ChatGPT Image 28 sep 2025 13_12_41_468
+  - first:
+      213: 2114372590568476331
+    second: ChatGPT Image 28 sep 2025 13_12_41_469
+  - first:
+      213: -141818817102102769
+    second: ChatGPT Image 28 sep 2025 13_12_41_470
+  - first:
+      213: -7858627521537672141
+    second: ChatGPT Image 28 sep 2025 13_12_41_471
+  - first:
+      213: 7544697072911473196
+    second: ChatGPT Image 28 sep 2025 13_12_41_472
+  - first:
+      213: 2850610032609018728
+    second: ChatGPT Image 28 sep 2025 13_12_41_473
+  - first:
+      213: -8668459592741066948
+    second: ChatGPT Image 28 sep 2025 13_12_41_474
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 768
+        width: 418
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a0659e517b72af20800000000000000
+      internalID: 3432441592858108070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 768
+        width: 491
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 35, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c2fe8b3e7fef168aa96b3350d14b5e
+      internalID: -4848246140082104861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_2
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 767
+        width: 327
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e9ef423b43922b48b9dc53d04f4d07
+      internalID: 6928953515448281042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_3
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 768
+        width: 384
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 49, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab6b00a7bf5c7b57aef43200361795d
+      internalID: 3110751530142465773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 664
+        width: 1196
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8097a3e2f9a12079e9d046234bbbf2f5
+      internalID: 4869607247198955787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 1196
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b7022a95b5175249cad6736134db51
+      internalID: 5210160388083176391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_7
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 512
+        width: 384
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 44, y: 0, z: 47, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d5c843f9844103ab92a26cd4c359d1
+      internalID: 6528491611633237053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_8
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 148
+        width: 736
+        height: 365
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad64ab4cf48669d393049e4819275af
+      internalID: 8166515101574972411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 384
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aaa6f2966d9a5f75838e3193176262d
+      internalID: -6569345878812524695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_10
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 185
+        width: 353
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55476e5f2267cfe5396f9bb3804522af
+      internalID: -4288022913584463423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_12
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 36
+        width: 105
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2c7c7a7592961a4ae6f9890115a7d1
+      internalID: -8598960609898056811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_13
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 27
+        width: 384
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f8233488ba88fc6d87257f02650840c
+      internalID: 7958823193487380705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChatGPT Image 28 sep 2025 13_12_41_6
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 34
+        width: 81
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1c7e4bcefe3eb188fe6b14b11bceeb
+      internalID: -224434643723332121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ff99f908106870f639199d491c2681ef
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":384.0,"y":256.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ChatGPT Image 28 sep 2025 13_12_41_0: 3432441592858108070
+      ChatGPT Image 28 sep 2025 13_12_41_1: -4848246140082104861
+      ChatGPT Image 28 sep 2025 13_12_41_10: -4288022913584463423
+      ChatGPT Image 28 sep 2025 13_12_41_11: -1768890075
+      ChatGPT Image 28 sep 2025 13_12_41_12: -8598960609898056811
+      ChatGPT Image 28 sep 2025 13_12_41_13: 7958823193487380705
+      ChatGPT Image 28 sep 2025 13_12_41_14: -765653912
+      ChatGPT Image 28 sep 2025 13_12_41_15: 2048385616
+      ChatGPT Image 28 sep 2025 13_12_41_2: 6928953515448281042
+      ChatGPT Image 28 sep 2025 13_12_41_3: 3110751530142465773
+      ChatGPT Image 28 sep 2025 13_12_41_4: 4869607247198955787
+      ChatGPT Image 28 sep 2025 13_12_41_5: 5210160388083176391
+      ChatGPT Image 28 sep 2025 13_12_41_6: -224434643723332121
+      ChatGPT Image 28 sep 2025 13_12_41_7: 6528491611633237053
+      ChatGPT Image 28 sep 2025 13_12_41_8: 8166515101574972411
+      ChatGPT Image 28 sep 2025 13_12_41_9: -6569345878812524695
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

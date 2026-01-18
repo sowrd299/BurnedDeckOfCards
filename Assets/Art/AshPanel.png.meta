@@ -1,0 +1,1495 @@
+fileFormatVersion: 2
+guid: 5495b1d7ba552408a87fef992b6dc523
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7308347542437040782
+    second: AshPanel_0
+  - first:
+      213: 6768970270129040497
+    second: AshPanel_1
+  - first:
+      213: -6263699378717610091
+    second: AshPanel_2
+  - first:
+      213: 7574842109296433286
+    second: AshPanel_3
+  - first:
+      213: 5353748653876617223
+    second: AshPanel_4
+  - first:
+      213: -4934038504136139836
+    second: AshPanel_5
+  - first:
+      213: 7391090369144541522
+    second: AshPanel_6
+  - first:
+      213: -5199739727444816037
+    second: AshPanel_7
+  - first:
+      213: 6305477285890611542
+    second: AshPanel_8
+  - first:
+      213: -1749421076720644668
+    second: AshPanel_9
+  - first:
+      213: -4316738833995274726
+    second: AshPanel_10
+  - first:
+      213: -3249699057912402917
+    second: AshPanel_11
+  - first:
+      213: 1732889271408741734
+    second: AshPanel_12
+  - first:
+      213: 2403372952693471267
+    second: AshPanel_13
+  - first:
+      213: -1804177826614277226
+    second: AshPanel_14
+  - first:
+      213: 6853033284403874351
+    second: AshPanel_15
+  - first:
+      213: -3837705368347341886
+    second: AshPanel_16
+  - first:
+      213: -5066141583830852209
+    second: AshPanel_17
+  - first:
+      213: 7983678424915010615
+    second: AshPanel_18
+  - first:
+      213: -3750679608149566734
+    second: AshPanel_19
+  - first:
+      213: -3797487530503449306
+    second: AshPanel_20
+  - first:
+      213: -1870293799682093148
+    second: AshPanel_21
+  - first:
+      213: -563161150400013453
+    second: AshPanel_22
+  - first:
+      213: -7839610421290205914
+    second: AshPanel_23
+  - first:
+      213: -9113319104089588802
+    second: AshPanel_24
+  - first:
+      213: -8221716798211750841
+    second: AshPanel_25
+  - first:
+      213: 4719265825806031810
+    second: AshPanel_26
+  - first:
+      213: 3309490553515192651
+    second: AshPanel_27
+  - first:
+      213: 1716396434136251287
+    second: AshPanel_28
+  - first:
+      213: -6669032718010873429
+    second: AshPanel_29
+  - first:
+      213: -6385806407948065189
+    second: AshPanel_30
+  - first:
+      213: 3281603999030391108
+    second: AshPanel_31
+  - first:
+      213: 6007558353285456764
+    second: AshPanel_32
+  - first:
+      213: -1523272524833749336
+    second: AshPanel_33
+  - first:
+      213: 5664552304754780065
+    second: AshPanel_34
+  - first:
+      213: -1623639820826855870
+    second: AshPanel_35
+  - first:
+      213: 3965290027697621304
+    second: AshPanel_36
+  - first:
+      213: 2095773363781184148
+    second: AshPanel_37
+  - first:
+      213: -6474475947616064788
+    second: AshPanel_38
+  - first:
+      213: 3874910872431394049
+    second: AshPanel_39
+  - first:
+      213: -5272170256457367240
+    second: AshPanel_40
+  - first:
+      213: -988008877733692508
+    second: AshPanel_41
+  - first:
+      213: 6643124646004937224
+    second: AshPanel_42
+  - first:
+      213: -8095899027921146729
+    second: AshPanel_43
+  - first:
+      213: -8333916245648162484
+    second: AshPanel_44
+  - first:
+      213: 7764427505508337483
+    second: AshPanel_45
+  - first:
+      213: 9123378072037762003
+    second: AshPanel_46
+  - first:
+      213: -670570994761966202
+    second: AshPanel_47
+  - first:
+      213: -6548786738913484067
+    second: AshPanel_48
+  - first:
+      213: 6025957583612883880
+    second: AshPanel_49
+  - first:
+      213: -9080249422484375198
+    second: AshPanel_50
+  - first:
+      213: 3147065000673979996
+    second: AshPanel_51
+  - first:
+      213: 1910173990638461933
+    second: AshPanel_52
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AshPanel_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 619
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e821f0a5e577c6560800000000000000
+      internalID: 7308347542437040782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 319
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ca83ed89630fd50800000000000000
+      internalID: 6768970270129040497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 315
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59fa3bff99ed219a0800000000000000
+      internalID: -6263699378717610091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 317
+        width: 40
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688d842e3ce3f1960800000000000000
+      internalID: 7574842109296433286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_4
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 319
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 700aa0b09065c4a40800000000000000
+      internalID: 5353748653876617223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_5
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 323
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cb9dd44f16c68bb0800000000000000
+      internalID: -4934038504136139836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_6
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 289
+        width: 92
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 251dba3f78d629660800000000000000
+      internalID: 7391090369144541522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_7
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 316
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f4a2d6440d6d7b0800000000000000
+      internalID: -5199739727444816037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_8
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 319
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659ddc40f2e818750800000000000000
+      internalID: 6305477285890611542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_9
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 324
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd0c7faccec8b7e0800000000000000
+      internalID: -1749421076720644668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_10
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 324
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a16e39bc6ecd714c0800000000000000
+      internalID: -4316738833995274726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_11
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 323
+        width: 27
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ca53aacefb6e2d0800000000000000
+      internalID: -3249699057912402917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_12
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 323
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d47617c957c0810800000000000000
+      internalID: 1732889271408741734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_13
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 316
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 328731487fe7a5120800000000000000
+      internalID: 2403372952693471267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_14
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 316
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b050d53d546f6e0800000000000000
+      internalID: -1804177826614277226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_15
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 305
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a42d6967dda1f50800000000000000
+      internalID: 6853033284403874351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_16
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 304
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cb0c0fec4bbdbac0800000000000000
+      internalID: -3837705368347341886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_17
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 310
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d5de1321371b9b0800000000000000
+      internalID: -5066141583830852209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_18
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 291
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73462066a39bbce60800000000000000
+      internalID: 7983678424915010615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_19
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 289
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa91f1b4c8e2fbc0800000000000000
+      internalID: -3750679608149566734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_20
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 297
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625dd51063d9c4bc0800000000000000
+      internalID: -3797487530503449306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_21
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 293
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af455cc2b16b06e0800000000000000
+      internalID: -1870293799682093148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_22
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 265
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37b5b1fdaef3f28f0800000000000000
+      internalID: -563161150400013453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_23
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 283
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62dfb8d9bdb143390800000000000000
+      internalID: -7839610421290205914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_24
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 284
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb75fb2f8cf68180800000000000000
+      internalID: -9113319104089588802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_25
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 275
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7440abee12896ed80800000000000000
+      internalID: -8221716798211750841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_26
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 274
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cb1fcbc3433e7140800000000000000
+      internalID: 4719265825806031810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_27
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 266
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41b8cdbf1caded20800000000000000
+      internalID: 3309490553515192651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_28
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 227
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79b3076867dd1d710800000000000000
+      internalID: 1716396434136251287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 255
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba90187b316d273a0800000000000000
+      internalID: -6669032718010873429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_30
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 246
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b56a7d9c7ee0167a0800000000000000
+      internalID: -6385806407948065189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_31
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 248
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44135bf43799a8d20800000000000000
+      internalID: 3281603999030391108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_32
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 244
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c73a20f2e722f5350800000000000000
+      internalID: 6007558353285456764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_33
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 204
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a60c2595bf3cdae0800000000000000
+      internalID: -1523272524833749336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_34
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 224
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a767802f488c9e40800000000000000
+      internalID: 5664552304754780065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_35
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 173
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 246bf647f2ca779e0800000000000000
+      internalID: -1623639820826855870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_36
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 178
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839c05c654a870730800000000000000
+      internalID: 3965290027697621304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_37
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 186
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a27ed35cea51d10800000000000000
+      internalID: 2095773363781184148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_38
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 166
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceaa88bcd6a0626a0800000000000000
+      internalID: -6474475947616064788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_39
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 151
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d729788e276c530800000000000000
+      internalID: 3874910872431394049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_40
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 119
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8318a7cb51d75d6b0800000000000000
+      internalID: -5272170256457367240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_41
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 120
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab30cf0923e942f0800000000000000
+      internalID: -988008877733692508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_42
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 59
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80254c33bae113c50800000000000000
+      internalID: 6643124646004937224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_43
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 95
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c645f5ab695af80800000000000000
+      internalID: -8095899027921146729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_44
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 45
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41c84e545bf75c80800000000000000
+      internalID: -8333916245648162484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_45
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 58
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47c816bda9c0cb60800000000000000
+      internalID: 7764427505508337483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_46
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 54
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d3266fc400cc9e70800000000000000
+      internalID: 9123378072037762003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_47
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 62
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d588cab37a1b6f0800000000000000
+      internalID: -670570994761966202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_48
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 19
+        width: 42
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2e54d68290e15a0800000000000000
+      internalID: -6548786738913484067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_49
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 43
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a331d2de7080a350800000000000000
+      internalID: 6025957583612883880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_50
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 19
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2697fdc62497cf180800000000000000
+      internalID: -9080249422484375198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_51
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 0
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5eac3ab1fe9cab20800000000000000
+      internalID: 3147065000673979996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AshPanel_52
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 0
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3223bbf1d428a10800000000000000
+      internalID: 1910173990638461933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AshPanel_0: 7308347542437040782
+      AshPanel_1: 6768970270129040497
+      AshPanel_10: -4316738833995274726
+      AshPanel_11: -3249699057912402917
+      AshPanel_12: 1732889271408741734
+      AshPanel_13: 2403372952693471267
+      AshPanel_14: -1804177826614277226
+      AshPanel_15: 6853033284403874351
+      AshPanel_16: -3837705368347341886
+      AshPanel_17: -5066141583830852209
+      AshPanel_18: 7983678424915010615
+      AshPanel_19: -3750679608149566734
+      AshPanel_2: -6263699378717610091
+      AshPanel_20: -3797487530503449306
+      AshPanel_21: -1870293799682093148
+      AshPanel_22: -563161150400013453
+      AshPanel_23: -7839610421290205914
+      AshPanel_24: -9113319104089588802
+      AshPanel_25: -8221716798211750841
+      AshPanel_26: 4719265825806031810
+      AshPanel_27: 3309490553515192651
+      AshPanel_28: 1716396434136251287
+      AshPanel_29: -6669032718010873429
+      AshPanel_3: 7574842109296433286
+      AshPanel_30: -6385806407948065189
+      AshPanel_31: 3281603999030391108
+      AshPanel_32: 6007558353285456764
+      AshPanel_33: -1523272524833749336
+      AshPanel_34: 5664552304754780065
+      AshPanel_35: -1623639820826855870
+      AshPanel_36: 3965290027697621304
+      AshPanel_37: 2095773363781184148
+      AshPanel_38: -6474475947616064788
+      AshPanel_39: 3874910872431394049
+      AshPanel_4: 5353748653876617223
+      AshPanel_40: -5272170256457367240
+      AshPanel_41: -988008877733692508
+      AshPanel_42: 6643124646004937224
+      AshPanel_43: -8095899027921146729
+      AshPanel_44: -8333916245648162484
+      AshPanel_45: 7764427505508337483
+      AshPanel_46: 9123378072037762003
+      AshPanel_47: -670570994761966202
+      AshPanel_48: -6548786738913484067
+      AshPanel_49: 6025957583612883880
+      AshPanel_5: -4934038504136139836
+      AshPanel_50: -9080249422484375198
+      AshPanel_51: 3147065000673979996
+      AshPanel_52: 1910173990638461933
+      AshPanel_6: 7391090369144541522
+      AshPanel_7: -5199739727444816037
+      AshPanel_8: 6305477285890611542
+      AshPanel_9: -1749421076720644668
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

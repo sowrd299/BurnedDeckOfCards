@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590380d2a41709306aa159cfae7a5c32, type: 3}
+  m_Name: ImperiallPlayerDeck
+  m_EditorClassIdentifier: Assembly-CSharp::Ashworld.DeckDefinitionAsset
+  deckDefinition:
+    heroCard: {fileID: 11400000, guid: aa82e4737592fcd0b851045d232e53c6, type: 2}
+    entries:
+    - cardDefinitionAsset: {fileID: 11400000, guid: 9597e825b0f8cba978a9618d1a37b3ce, type: 2}
+      count: 1
+    - cardDefinitionAsset: {fileID: 11400000, guid: 657d2db68697e2fc9a9a20fd2500f786, type: 2}
+      count: 4
+    - cardDefinitionAsset: {fileID: 11400000, guid: e4d65082cbb404f3b8da431c854c5038, type: 2}
+      count: 4
