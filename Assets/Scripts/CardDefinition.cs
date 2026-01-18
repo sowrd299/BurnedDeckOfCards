@@ -106,13 +106,20 @@ namespace Ashworld
                     return partySum >= oppSum;
 
                 case Requirement.Fealty:
-                    // TODO: Reimplement this
                     if (party.Count == 0) return false;
-                    var firstSuits = party[0].Suits;
-                    foreach (var card in party)
-                        if (!card.Suits.TrueForAll(s => firstSuits.Contains(s)))
-                            return false;
-                    return true;
+                    
+                    // Fealty: All cards must share at least one suit.
+                    // Start with the suits of the first card, and intersect with every other card.
+                    HashSet<Suit> commonSuits = new HashSet<Suit>(party[0].Suits);
+                    
+                    for (int i = 1; i < party.Count; i++) {
+                        // IntersectWith modifies the set to contain only elements present in both
+                        // We need to convert card.Suits list to IEnumerable for IntersectWith
+                        // Note: List<T> implements IEnumerable<T>
+                        commonSuits.IntersectWith(party[i].Suits);
+                    }
+                    
+                    return commonSuits.Count > 0;
 
                 case Requirement.Heroism:
                     // always allowed to pass one Heroism for free
@@ -124,5 +131,3 @@ namespace Ashworld
         }
     }
 }
-
-NinthSword

@@ -34,26 +34,40 @@ namespace Ashworld
             UpdateDragging();
         }
 
+        public event Action<CardView> OnCardRightClicked;
+        public event Func<CardView, CardView, bool> OnCardDroppedOnCard;
+
         private void HandleMouseInput()
         {
+            CardView cardView = null;
+            Vector2 mouseWorld = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            var hit = Physics2D.Raycast(mouseWorld, Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                cardView = hit.collider.GetComponent<CardView>();
+            }
+            // Left Click - Dragging
             if (Mouse.current.leftButton.wasPressedThisFrame)
             {
-                Vector2 mouseWorld = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-                var hit = Physics2D.Raycast(mouseWorld, Vector2.zero);
-
-                if (hit.collider != null)
+                if (cardView != null)
                 {
-                    var cardView = hit.collider.GetComponent<CardView>();
-                    if (cardView != null)
-                    {
-                        StartDragging(cardView, mouseWorld);
-                    }
+                    StartDragging(cardView, mouseWorld);
                 }
             }
 
             if (Mouse.current.leftButton.wasReleasedThisFrame && isDragging)
             {
                 EndDragging();
+            }
+
+            // Right Click - Context Action (Pick Up)
+            if (Mouse.current.rightButton.wasPressedThisFrame)
+            {
+                if (cardView != null)
+                {
+                    OnCardRightClicked?.Invoke(cardView);
+                }
             }
         }
 
@@ -87,6 +101,26 @@ namespace Ashworld
             Vector2 mouseWorld = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             var hits = Physics2D.RaycastAll(mouseWorld, Vector2.zero);
 
+            // 1. Priority: Check if dropped on another CARD (e.g. Attack)
+            foreach (var hit in hits) {
+                 if (hit.collider != null && hit.collider.gameObject != draggingCard.gameObject)
+                 {
+                     var targetCard = hit.collider.GetComponent<CardView>();
+                     if (targetCard != null) {
+                         bool handled = OnCardDroppedOnCard != null && OnCardDroppedOnCard.Invoke(draggingCard, targetCard);
+                         if (handled) {
+                              // If attack successful/handled, maybe we don't snap to zone? 
+                              // Or we let GameLogic handle the visual movement.
+                              // For valid attack: Card might enter discard pile (Ash/History).
+                              // So we accept the drop and stop.
+                              draggingCard = null;
+                              return;
+                         }
+                     }
+                 }
+            }
+
+            // 2. Check zones
             foreach (var hit in hits) {
                 if (hit.collider != null)
                 {
@@ -132,8 +166,8 @@ namespace Ashworld
                 obj.position = Vector3.Lerp(obj.position, target, Time.deltaTime * speed);
                 yield return null;
             }
-            obj.position = target;
-        }
+                obj.position = target;
+            }
 
         /// <summary>
         /// Register a callback for when a card is dropped in this zone.

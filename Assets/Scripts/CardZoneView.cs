@@ -14,56 +14,63 @@ namespace Ashworld
         private readonly Dictionary<Card, Transform> activeCardPositions = new Dictionary<Card, Transform>();
 
         /// <summary>
-        /// Sets up this zone to display the given cards.
+        /// Synchronizes the zone to display the given cards, reusing views from the cache where possible.
         /// </summary>
-        public void SetUpForCards(List<Card> cards)
+        public void SyncCards(List<Card> cards, Dictionary<Card, CardView> globalCache)
         {
             if (cards == null) return;
 
-            // Keep track of which cards should remain
-            HashSet<Card> incomingCards = new HashSet<Card>(cards);
+            // Clear local tracking (we will rebuild it)
+            activeCardViews.Clear();
+            activeCardPositions.Clear();
 
-            // Remove views for cards no longer present
-            List<Card> toRemove = new List<Card>();
-            foreach (var kvp in activeCardViews)
-            {
-                if (!incomingCards.Contains(kvp.Key))
-                {
-                    if (kvp.Value != null)
-                        Destroy(kvp.Value.gameObject);
-
-                    toRemove.Add(kvp.Key);
-                }
-            }
-            foreach (var card in toRemove) {
-                activeCardViews.Remove(card);
-                activeCardPositions.Remove(card);
-            }
-
-            // Create or update views for incoming cards
             for (int i = 0; i < cards.Count; i++)
             {
                 Card card = cards[i];
                 Transform targetPosition = (i < cardPositions.Count) ? cardPositions[i] : null;
 
-                if (!activeCardViews.TryGetValue(card, out var view) || view == null)
+                // 1. Resolve View
+                if (!globalCache.TryGetValue(card, out CardView view) || view == null)
                 {
-                    // Instantiate new view
-                    var instance = Instantiate(cardViewPrefab, cardsRoot);
-                    view = instance;
-                    activeCardViews[card] = view;
-
-                    // Update view content
+                    // Create new if doesn't exist globally
+                    view = Instantiate(cardViewPrefab, cardsRoot);
                     view.SetUpForCard(card);
+                    globalCache[card] = view;
                 }
 
-                // Update position if slots are available
+                // 2. Ensure it's in this zone
+                if (view.transform.parent != cardsRoot)
+                {
+                    view.transform.SetParent(cardsRoot);
+                }
+
+                // 3. Track locally
+                activeCardViews[card] = view;
+
+                // 4. Update Position
                 if (targetPosition != null)
                 {
+                    // We record the target position so other systems (like input) know where it SHOULD be
+                    activeCardPositions[card] = targetPosition;
+
+                    // SNAP position for now to ensure layout. 
+                    // Note: If InputManager is animating this card, we might fight it.
+                    // But usually Sync is called after a logical state change.
+                    // If we just dropped it, InputManager might want to Lerp it.
+                    // If we snap it here, Lerp might jump.
+                    // BUT, fixing the crash is priority.
+                    
+                    // Optional: Only snap if distance is significant? Or let InputManager handle it?
+                    // For "Programmatic" moves (Draw Card), we want it to appear in hand.
+                    // For "Drag Drops", InputManager calls SnapCardToZone.
+                    
+                    // Let's set rotation, but maybe be careful with position?
+                    // If we don't set position, newly created cards (Instantiated) will be at (0,0,0) or parent origin.
+                    // We must set position for new cards.
+                    
+                    // Simple approach: Always snap. InputManager's Lerp will just act on the new position (or look odd for a frame).
                     view.transform.position = targetPosition.position;
                     view.transform.rotation = targetPosition.rotation;
-
-                    activeCardPositions[card] = targetPosition;
                 }
             }
         }
