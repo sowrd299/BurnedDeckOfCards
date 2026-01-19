@@ -28,6 +28,10 @@ namespace Ashworld {
         [SerializeField] private Button advanceButton;
         [SerializeField] private Button endTurnButton;
 
+        [Header("Animations")]
+        [SerializeField] private ChapterAnimationView playerChapterAnim;
+        [SerializeField] private ChapterAnimationView opponentChapterAnim;
+
         [Header("AI Opponent")]
         [SerializeField] private DeckDefinitionAsset opponentDeckDefinition;
         [SerializeField] private QuestDefinitionAsset opponentQuestDefinition;
@@ -173,8 +177,7 @@ namespace Ashworld {
                         break;
                     case OpponentAction.ActionType.Advance:
                         // Perform Advance
-                        opponent.StartNextQuestChapter();
-                        DecrementActions();
+                        yield return StartCoroutine(HandleQuestAdvancement(opponent));
                         success = true;
                         break;
                 }
@@ -404,10 +407,32 @@ namespace Ashworld {
                     return;
                 }
 
-                player.StartNextQuestChapter();
+                StartCoroutine(HandleQuestAdvancement(player));
+            }
+        }
 
+        private System.Collections.IEnumerator HandleQuestAdvancement(Player p) {
+            
+            // 1. Update Model
+            p.StartNextQuestChapter();
+            DecrementActions();
+
+            // 2. Identify Animation & Data
+            ChapterAnimationView anim = (p == player) ? playerChapterAnim : opponentChapterAnim;
+            string chapterName = "The End";
+            
+            // Get Chapter Name from the appropriate QuestDefinition
+            var questDef = p.questDefinition;
+            chapterName = questDef.GetChapterName(p.chapterInd);
+
+            // 3. Play Animation
+            if (anim != null) {
+                yield return anim.PlayTransition(p.chapterInd, chapterName, () => {
+                    UpdateCardViews();
+                });
+            } else {
+                // Fallback if no animation object
                 UpdateCardViews();
-                DecrementActions();
             }
         }
 

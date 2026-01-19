@@ -8,7 +8,7 @@ namespace Ashworld {
         private string id;
         public string Id => id;
         private DeckDefinition deckDefinition;
-        private QuestDefinition questDefintion;
+        public QuestDefinition questDefinition { get; private set; }
 
         private List<Card> deck;
         public List<Card> hand { get; private set; }
@@ -28,7 +28,7 @@ namespace Ashworld {
             this.id = id;
             this.deckDefinition = deckDefinition;
             this.deck = deckDefinition.GetCards(id);
-            this.questDefintion = questDefintion;
+            this.questDefinition = questDefintion;
             this.hand = new List<Card>();
             this.party = new List<Card>();
             this.defense = new List<Card>();
@@ -195,7 +195,7 @@ namespace Ashworld {
         }
 
         public void AddCardForQuestChapterToDefense() {
-            foreach (Card card in questDefintion.GetCardsForChapter(chapterInd)) {
+            foreach (Card card in questDefinition.GetCardsForChapter(chapterInd)) {
                 AddToDefense(card);
             }
         }

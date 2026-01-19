@@ -26,6 +26,13 @@ namespace Ashworld {
 
             return cards;
         }
+
+        public string GetChapterName(int index) {
+            if (index < 0 || index >= chapters.Count) return "Unknown";
+            if (chapters[index].cards == null || chapters[index].cards.Count == 0) return "Empty";
+            
+            return chapters[index].cards[0].Definition.CardName;
+        }
     }
 
 }
