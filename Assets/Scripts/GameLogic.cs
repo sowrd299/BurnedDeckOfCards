@@ -78,8 +78,8 @@ namespace Ashworld {
             foreach (var p in allPlayers) 
             {
                 p.Shuffle();
-                p.Draw(5);
-                p.AddToParty(p.GetHeroCard());
+                p.Draw(4);
+                p.AddToHand(p.GetHeroCard());
                 p.AddCardForQuestChapterToDefense();
             }
 
