@@ -11,7 +11,7 @@ namespace Ashworld
         [SerializeField] private CardView cardViewPrefab;
 
         private readonly Dictionary<Card, CardView> activeCardViews = new Dictionary<Card, CardView>();
-        private readonly Dictionary<Card, Transform> activeCardPositions = new Dictionary<Card, Transform>();
+        private readonly Dictionary<Card, Vector3> activeCardPositions = new Dictionary<Card, Vector3>();
 
         public void SyncCards(List<Card> cards, Dictionary<Card, CardView> globalCache, bool faceDown = false)
         {
@@ -24,7 +24,8 @@ namespace Ashworld
             for (int i = 0; i < cards.Count; i++)
             {
                 Card card = cards[i];
-                Transform targetPosition = (i < cardPositions.Count) ? cardPositions[i] : null;
+                Vector3 targetPosition = GetTargetPosition(i);
+                Quaternion targetRotation = (i < cardPositions.Count) ? cardPositions[i].rotation : cardPositions[cardPositions.Count - 1].rotation;
 
                 // 1. Resolve View
                 if (!globalCache.TryGetValue(card, out CardView view) || view == null)
@@ -45,49 +46,54 @@ namespace Ashworld
 
                 // 3. Track locally
                 activeCardViews[card] = view;
+                activeCardPositions[card] = targetPosition;
 
                 // 4. Update Position
-                if (targetPosition != null)
-                {
-                    // We record the target position so other systems (like input) know where it SHOULD be
-                    activeCardPositions[card] = targetPosition;
-
-                    // SNAP position for now to ensure layout. 
-                    // Note: If InputManager is animating this card, we might fight it.
-                    // But usually Sync is called after a logical state change.
-                    // If we just dropped it, InputManager might want to Lerp it.
-                    // If we snap it here, Lerp might jump.
-                    // BUT, fixing the crash is priority.
-                    
-                    // Optional: Only snap if distance is significant? Or let InputManager handle it?
-                    // For "Programmatic" moves (Draw Card), we want it to appear in hand.
-                    // For "Drag Drops", InputManager calls SnapCardToZone.
-                    
-                    // Let's set rotation, but maybe be careful with position?
-                    // If we don't set position, newly created cards (Instantiated) will be at (0,0,0) or parent origin.
-                    // We must set position for new cards.
-                    
-                    // Simple approach: Always snap. InputManager's Lerp will just act on the new position (or look odd for a frame).
-                    view.transform.position = targetPosition.position;
-                    view.transform.rotation = targetPosition.rotation;
-                }
+                // Simple approach: Always snap.
+                view.transform.position = targetPosition;
+                view.transform.rotation = targetRotation;
             }
+        }
+
+        private Vector3 GetTargetPosition(int index) {
+            if (cardPositions == null || cardPositions.Count == 0) return transform.position;
+
+            if (index < cardPositions.Count) {
+                return cardPositions[index].position;
+            }
+
+            // Overflow logic
+            int overflowIndex = index - (cardPositions.Count - 1);
+            Vector3 lastPos = cardPositions[cardPositions.Count - 1].position;
+            
+            // Stagger: slightly right, down, and behind (Z+)
+            return lastPos + new Vector3(0.2f * overflowIndex, -0.2f * overflowIndex, 0.1f * overflowIndex);
         }
 
         public void AddCardView(CardView cardView) {
 
             cardView.transform.SetParent(cardsRoot);
 
-            foreach (Transform pos in cardPositions) {
-                if (!activeCardPositions.ContainsValue(pos)) {
-                    activeCardViews[cardView.Card] = cardView;
-                    activeCardPositions[cardView.Card] = pos;
-
-                    break;
+            int targetIndex = 0;
+            while (true)
+            {
+                Vector3 pos = GetTargetPosition(targetIndex);
+                bool occupied = false;
+                foreach (var activePos in activeCardPositions.Values)
+                {
+                    if (Vector3.SqrMagnitude(activePos - pos) < 0.001f)
+                    {
+                        occupied = true;
+                        break;
+                    }
                 }
+                if (!occupied) break;
+                targetIndex++;
             }
 
-            // TODO: For now this assumes the actual position moving will be handled by the InputManager
+            Vector3 targetPos = GetTargetPosition(targetIndex);
+            activeCardViews[cardView.Card] = cardView;
+            activeCardPositions[cardView.Card] = targetPos;
         }
 
         public void RemoveCardView(CardView cardView) {
@@ -100,7 +106,7 @@ namespace Ashworld
 
         public Vector3 GetDropPosition(Card card) {
             if (activeCardPositions.ContainsKey(card)) {
-                return activeCardPositions[card].position;
+                return activeCardPositions[card];
             }
 
             return Vector3.zero;

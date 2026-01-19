@@ -282,7 +282,7 @@ namespace Ashworld {
             if (actingPlayer.party.Contains(card)) {
                 
                 actingPlayer.party.Remove(card);
-                actingPlayer.hand.Add(card);
+                actingPlayer.AddToHand(card);
 
                 UpdateCardViews();
                 DecrementActions();

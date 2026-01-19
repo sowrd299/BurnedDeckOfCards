@@ -46,8 +46,15 @@ namespace Ashworld {
                 return;
             }
 
-            hand.Add(deck[0]);
+            AddToHand(deck[0]);
             deck.RemoveAt(0);
+        }
+
+        public void AddToHand(Card card) {
+            card.Refresh();
+            if (!hand.Contains(card)) {
+                hand.Add(card);
+            }
         }
 
         public void Draw(int n) {
@@ -147,7 +154,7 @@ namespace Ashworld {
                  }
 
                  if (card.HoldRequirements.Count > 0 && meetsHold) {
-                     this.hand.Add(card);
+                     this.AddToHand(card);
                  } else {
                      this.historyCards.Add(card);
                  }

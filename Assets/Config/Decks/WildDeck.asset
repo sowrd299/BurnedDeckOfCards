@@ -19,3 +19,5 @@ MonoBehaviour:
       count: 10
     - cardDefinitionAsset: {fileID: 11400000, guid: 14d253e2d7bf3146dbe44fa091bf9777, type: 2}
       count: 10
+    - cardDefinitionAsset: {fileID: 11400000, guid: 41dcacecd9ce70420b5d43553f769d78, type: 2}
+      count: 10

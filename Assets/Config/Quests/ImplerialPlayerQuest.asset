@@ -16,5 +16,12 @@ MonoBehaviour:
     chapters:
     - cards:
       - {fileID: 11400000, guid: 71638925344f1c4839e49a8850519a93, type: 2}
-      - {fileID: 11400000, guid: 14d253e2d7bf3146dbe44fa091bf9777, type: 2}
-      - {fileID: 11400000, guid: 14d253e2d7bf3146dbe44fa091bf9777, type: 2}
+    - cards:
+      - {fileID: 11400000, guid: 47a7d655b2a50ff6ab3a7e42300455bd, type: 2}
+    - cards:
+      - {fileID: 11400000, guid: 41dcacecd9ce70420b5d43553f769d78, type: 2}
+      - {fileID: 11400000, guid: 41dcacecd9ce70420b5d43553f769d78, type: 2}
+      - {fileID: 11400000, guid: 41dcacecd9ce70420b5d43553f769d78, type: 2}
+    - cards:
+      - {fileID: 11400000, guid: 206dd0b9c0d3317c18cb68d0575f9a16, type: 2}
+      - {fileID: 11400000, guid: 206dd0b9c0d3317c18cb68d0575f9a16, type: 2}
