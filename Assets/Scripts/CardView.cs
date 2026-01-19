@@ -30,6 +30,8 @@ namespace Ashworld
         [Header("State UI")]
         [SerializeField] private GameObject faceDownRoot;
         [SerializeField] private GameObject faceUpRoot; // Optional wrapper for content
+        [SerializeField] private SpriteRenderer background; // Reference to background sprite
+        [SerializeField] private GameObject exhaustedRoot; // Object to enable when exhausted
 
         private Card currentCard;
         public Card Card => currentCard;
@@ -115,6 +117,15 @@ namespace Ashworld
             if (illustration != null) {
                 illustration.sprite = card.Definition.Illustration;
             }
+
+            // Exhaustion State
+            UpdateExhaustedStatus();
+        }
+
+        public void UpdateExhaustedStatus() {
+            if (currentCard == null) return;
+            if (background != null) background.color = currentCard.IsExhausted ? Color.gray : Color.white;
+            if (exhaustedRoot != null) exhaustedRoot.SetActive(currentCard.IsExhausted);
         }
 
         private void ClearView()

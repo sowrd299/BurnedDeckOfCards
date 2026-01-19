@@ -2088,7 +2088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.InputManager
   followSpeed: 15
   snapSpeed: 12
-  dragOffsetZ: -1
+  dragOffsetZ: -2
 --- !u!1 &1537098346
 GameObject:
   m_ObjectHideFlags: 0

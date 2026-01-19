@@ -114,6 +114,11 @@ namespace Ashworld {
             if (opponentHandView != null) opponentHandView.SyncCards(opponent.hand, cardViewCache, true);
             if (opponentPartyView != null) opponentPartyView.SyncCards(opponent.party, cardViewCache);
             if (opponentDefenseView != null) opponentDefenseView.SyncCards(opponent.defense, cardViewCache);
+
+            // 4. Update Exhausted Status
+            foreach(var kvp in cardViewCache) {
+                 if (kvp.Value != null) kvp.Value.UpdateExhaustedStatus();
+            }
         }
 
         private void StartTurn(Player actingPlayer) {

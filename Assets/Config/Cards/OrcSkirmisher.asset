@@ -24,4 +24,4 @@ MonoBehaviour:
     subtypes:
     - Orc
     flavorText: 
-    illustration: {fileID: 0}
+    illustration: {fileID: 21300000, guid: b2710274843d1b263b6ccf192d0255cb, type: 3}
