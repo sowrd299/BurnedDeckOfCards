@@ -7,6 +7,7 @@ namespace Ashworld {
     public class GameLogic : MonoBehaviour
     {
         private const int MAX_PARTY_SIZE = 5;
+        private const int MAX_DEFENSE_SIZE = 5;
 
         [Header("Config")]
         [SerializeField] private DeckDefinitionAsset playerDeckDefinition;
@@ -18,28 +19,40 @@ namespace Ashworld {
         [SerializeField] private CardZoneView playerHandView;
         [SerializeField] private CardZoneView playerPartyView;
         [SerializeField] private CardZoneView playerDefenseView;
+        [SerializeField] private PlayerUIView opponentUIView;
+        [SerializeField] private CardZoneView opponentHandView;
+        [SerializeField] private CardZoneView opponentPartyView;
+        [SerializeField] private CardZoneView opponentDefenseView;
 
         [SerializeField] private GameObject advanceButtonRoot;
         [SerializeField] private Button advanceButton;
         [SerializeField] private Button endTurnButton;
 
-
+        [Header("AI Opponent")]
+        [SerializeField] private DeckDefinitionAsset opponentDeckDefinition;
+        [SerializeField] private QuestDefinitionAsset opponentQuestDefinition;
+        
         private Player player;
+        private Player opponent;
+        private List<Player> allPlayers = new List<Player>();
+
+        private Player currentTurnPlayer;
 
         private int currentTurnActions;
-        private bool isPlayerTurn => true; // Single player always active for now? Or state machine?
+        private bool isPlayerTurn => currentTurnPlayer == player; 
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start()
         {
             SetUpPlayer();
             SetUpInput();
-            StartTurn();
+            StartTurn(player);
         }
 
         private void SetUpInput() {
             input.RegisterZoneCallback(playerPartyView, OnCardDroppedInParty);
             input.RegisterZoneCallback(playerHandView, OnCardDroppedInHand); // Pick Card Up (Drag)
+            if (opponentDefenseView != null) input.RegisterZoneCallback(opponentDefenseView, OnCardDroppedInOpponentDefense);
             
             input.OnCardDroppedOnCard += OnCardAttack;
             input.OnCardRightClicked += OnCardPickUpRequest;
@@ -53,11 +66,22 @@ namespace Ashworld {
         private void SetUpPlayer() {
             player = new Player("Player", playerDeckDefinition.Definition, playerQuestDefintiion.Definition);
 
-            player.Shuffle();
-            player.Draw(5);
+            var aiDeck = (opponentDeckDefinition != null ? opponentDeckDefinition : playerDeckDefinition).Definition;
+            var aiQuest = (opponentQuestDefinition != null ? opponentQuestDefinition : playerQuestDefintiion).Definition;
+            
+            opponent = new Player("Opponent", aiDeck, aiQuest);
+            
+            allPlayers.Clear();
+            allPlayers.Add(player);
+            allPlayers.Add(opponent);
 
-            player.AddToParty(player.GetHeroCard());
-            player.AddCardForQuestChapterToDefense();
+            foreach (var p in allPlayers) 
+            {
+                p.Shuffle();
+                p.Draw(5);
+                p.AddToParty(p.GetHeroCard());
+                p.AddCardForQuestChapterToDefense();
+            }
 
             UpdateCardViews();
         }
@@ -65,9 +89,12 @@ namespace Ashworld {
         private void UpdateCardViews() {
             // 1. Identify valid cards
             HashSet<Card> validCards = new HashSet<Card>();
-            validCards.UnionWith(player.hand);
-            validCards.UnionWith(player.party);
-            validCards.UnionWith(player.defense);
+            
+            foreach(var p in allPlayers) {
+                validCards.UnionWith(p.hand);
+                validCards.UnionWith(p.party);
+                validCards.UnionWith(p.defense);
+            }
 
             // 2. Cleanup Stale Views
             List<Card> toRemove = new List<Card>();
@@ -83,94 +110,168 @@ namespace Ashworld {
             playerHandView.SyncCards(player.hand, cardViewCache);
             playerPartyView.SyncCards(player.party, cardViewCache);
             playerDefenseView.SyncCards(player.defense, cardViewCache);
+
+            if (opponentHandView != null) opponentHandView.SyncCards(opponent.hand, cardViewCache, true);
+            if (opponentPartyView != null) opponentPartyView.SyncCards(opponent.party, cardViewCache);
+            if (opponentDefenseView != null) opponentDefenseView.SyncCards(opponent.defense, cardViewCache);
         }
 
-        private void StartTurn() {
-
-            if (isPlayerTurn) {
-                player.Draw();
-            }
-
+        private void StartTurn(Player actingPlayer) {
+            currentTurnPlayer = actingPlayer;
+            actingPlayer.Draw();
             currentTurnActions = 3;
             UpdateUI();
         }
 
         private void OnEndTurnPressed() {
-             if (!isPlayerTurn) return; // Should likely be player turn to end it
+             if (isPlayerTurn) {
+                StartOpponentTurn();
+             }
+        }
+        
+        private void StartOpponentTurn() {
+            StartTurn(opponent);
+            StartCoroutine(OpponentTurnCoroutine());
+        }
 
-             StartTurn();
+        private System.Collections.IEnumerator OpponentTurnCoroutine() {
+            Debug.Log("AI Turn Start");
+            
+            // AI takes 3 actions
+            while (currentTurnActions > 0) {
+                yield return new WaitForSeconds(1.5f); // Simulated thinking
 
-             UpdateCardViews(); // Show new card
+                OpponentAction action = OpponentLogic.GetBestAction(opponent, player);
+
+                if (action == null) {
+                    Debug.Log("AI has no moves. Ending turn.");
+                    break;
+                }
+
+                bool success = false;
+                switch(action.Type) {
+                    case OpponentAction.ActionType.Attack:
+                        // Determine target player based on defender location
+                        Player target = opponent;
+                        if (player.party.Contains(action.Defender)) {
+                            target = player;
+                        }
+                        success = TryAttack(opponent, target, action.Attacker, action.Defender);
+                        break;
+                    case OpponentAction.ActionType.Play:
+                        if (action.PlayToDefense) {
+                             success = TryPlayCardToDefense(opponent, player, action.CardToPlay);
+                        } else {
+                             success = TryPlayCardToParty(opponent, action.CardToPlay);
+                        }
+                        break;
+                }
+
+                if (!success) {
+                    Debug.LogWarning("AI Attempted invalid move! Skipping turn to prevent loop.");
+                    break;
+                }
+                
+                UpdateCardViews();
+            }
+
+            // End AI Turn
+            yield return new WaitForSeconds(1.0f);
+            Debug.Log("AI Turn End. Player Start.");
+            
+            StartTurn(player);
+            UpdateCardViews();
         }
 
         // --- Actions ---
 
-        // Play Card
+        // Play Card (to Party)
         private bool OnCardDroppedInParty(CardView cardView) {
+            return TryPlayCardToParty(player, cardView.Card);
+        }
+
+        private bool OnCardDroppedInOpponentDefense(CardView cardView) {
+            return TryPlayCardToDefense(player, opponent, cardView.Card);
+        }
+
+        public bool CanPlayCard(Player actingPlayer, Card card, Player targetPlayer) {
             if (currentTurnActions <= 0) return false;
+            if (!actingPlayer.hand.Contains(card)) return false;
 
-            Card card = cardView.Card;
-            
-            if (!isPlayerTurn || player.party.Count >= MAX_PARTY_SIZE) return false;
-            
-            // 1. Must be in hand
-            if (!player.hand.Contains(card)) return false;
-
-            // 2. Constraints (Location, Unique)
-            if (card.HasAbility(SpecialAbility.Location)) {
-                if (player.party.Exists(c => c.HasAbility(SpecialAbility.Location))) {
-                    Debug.Log("Cannot play Location: Party already has one.");
-                    return false;
-                }
-            }
+            // Global Unique
             if (card.HasAbility(SpecialAbility.Unique)) {
-                // Check party and defense (rules: "in or defending against any party")
-                bool partyHas = player.party.Exists(c => c.CardName == card.CardName);
-                bool defenseHas = player.defense.Exists(c => c.CardName == card.CardName);
-                if (partyHas || defenseHas) {
-                    Debug.Log("Cannot play Unique: Card with same name already in play.");
-                    return false;
+                // Check ALL players zones
+                foreach(var p in allPlayers) {
+                    if (p.party.Exists(c => c.CardName == card.CardName) || 
+                        p.defense.Exists(c => c.CardName == card.CardName)) return false;
                 }
             }
 
-            // 3. History Cost
-            if (!player.CanPayHistoryCost(card.HistoryCost, card)) {
+            // Location (Target Context)
+            if (card.HasAbility(SpecialAbility.Location)) {
+                if (targetPlayer.party.Exists(c => c.HasAbility(SpecialAbility.Location)) || 
+                    targetPlayer.defense.Exists(c => c.HasAbility(SpecialAbility.Location))) return false;
+            }
+
+            // History Cost
+            if (!actingPlayer.CanPayHistoryCost(card.HistoryCost, card)) {
                 Debug.Log($"Cannot pay History Cost of {card.HistoryCost}.");
                 return false;
             }
 
-            // Execute Play
-            player.PayHistoryCost(card.HistoryCost, card);
+            return true;
+        }
 
-            player.hand.Remove(card);
-            player.party.Add(card);
+        public bool TryPlayCardToParty(Player actingPlayer, Card card) {
+            if (!CanPlayCard(actingPlayer, card, actingPlayer)) return false;
+            
+            if (actingPlayer.party.Count >= MAX_PARTY_SIZE) return false;
 
-            // Rebuild all views (since deck/history might have changed during payment)
+            actingPlayer.PayHistoryCost(card.HistoryCost, card);
+
+            actingPlayer.hand.Remove(card);
+            actingPlayer.party.Add(card);
+
             UpdateCardViews();
             DecrementActions();
 
             return true;
         }
 
+        public bool TryPlayCardToDefense(Player actingPlayer, Player targetPlayer, Card card) {
+             if (!CanPlayCard(actingPlayer, card, targetPlayer)) return false;
+             
+             if (targetPlayer.defense.Count >= MAX_DEFENSE_SIZE) return false;
+
+             actingPlayer.PayHistoryCost(card.HistoryCost, card);
+             actingPlayer.hand.Remove(card);
+             
+             targetPlayer.defense.Add(card); 
+
+             UpdateCardViews();
+             DecrementActions();
+
+             return true;
+        }
+
         // Pick Up (Drag)
         private bool OnCardDroppedInHand(CardView cardView) {
-             return TryPickUp(cardView.Card);
+             return TryPickUp(player, cardView.Card);
         }
 
         // Pick Up (Right Click)
         private void OnCardPickUpRequest(CardView cardView) {
-            TryPickUp(cardView.Card);
+            TryPickUp(player, cardView.Card);
         }
 
-        private bool TryPickUp(Card card) {
+        public bool TryPickUp(Player actingPlayer, Card card) {
             if (currentTurnActions <= 0) return false;
-            if (!isPlayerTurn) return false;
 
-            // Can only pick up from Party (Rules: "in your party or defending against another player’s party")
-            if (player.party.Contains(card)) {
+            // Can only pick up from Party
+            if (actingPlayer.party.Contains(card)) {
                 
-                player.party.Remove(card);
-                player.hand.Add(card);
+                actingPlayer.party.Remove(card);
+                actingPlayer.hand.Add(card);
 
                 UpdateCardViews();
                 DecrementActions();
@@ -180,17 +281,32 @@ namespace Ashworld {
         }
 
         // Attack
-        private bool CanCardAttack(CardView attackerMember, CardView targetMember) {
+        public bool CanCardAttack(Player actingPlayer, Player targetPlayer, Card attacker, Card defender) {
             if (currentTurnActions <= 0) return false;
-            if (!isPlayerTurn) return false;
 
-            Card attacker = attackerMember.Card;
-            Card defender = targetMember.Card;
+            // Context: Attack happens on targetPlayer's board
+            bool attackerInParty = targetPlayer.party.Contains(attacker);
+            bool attackerInDefense = targetPlayer.defense.Contains(attacker);
+            
+            bool defenderInParty = targetPlayer.party.Contains(defender);
+            bool defenderInDefense = targetPlayer.defense.Contains(defender);
 
-            // Validate Context
-            if (!player.party.Contains(attacker)) return false; // Must attack with party card
-            if (!player.defense.Contains(defender)) return false; // Must attack defense card (for now)
+            if (!attackerInParty && !attackerInDefense) return false;
+            if (!defenderInParty && !defenderInDefense) return false;
 
+            // Control Check
+            if (actingPlayer == targetPlayer) {
+                // Attacking on own board.
+                // Must act with Party cards against Defense cards.
+                if (!attackerInParty) return false;
+                if (!defenderInDefense) return false;
+            } else {
+                // Attacking on opponent's board.
+                // Must act with Defense cards against Party cards.
+                if (!attackerInDefense) return false;
+                if (!defenderInParty) return false;
+            }
+            
             // Validate State
             if (attacker.IsExhausted) {
                 Debug.Log("Attacker is exhausted!");
@@ -198,8 +314,8 @@ namespace Ashworld {
             }
 
             // Compare Ranks
-            int attackRank = GetEffectiveRank(attacker, player.party);
-            int defenseRank = GetEffectiveRank(defender, player.defense); // Defenders might have boons too?
+            int attackRank = GetEffectiveRank(attacker, attackerInParty ? targetPlayer.party : targetPlayer.defense);
+            int defenseRank = GetEffectiveRank(defender, defenderInParty ? targetPlayer.party : targetPlayer.defense); 
 
             Debug.Log($"Attack: {attacker.CardName}({attackRank}) vs {defender.CardName}({defenseRank})");
 
@@ -207,21 +323,27 @@ namespace Ashworld {
         }
 
         private bool OnCardAttack(CardView attackerMember, CardView targetMember) {
-            if (CanCardAttack(attackerMember, targetMember)) {
-                // Success
-                player.defense.Remove(targetMember.Card);
-                
-                // Where does defender go?
-                // "sent to its owner’s ash (if its part of that player’s quest and is still defending against their party) or their history otherwise."
-                // Since it's from the Quest (defending against player), it goes to Ash.
-                // Note: The player object holds the Ash/History.
-                // The logical owner of the Quest cards is the "Quest", but functionally in single player, they go to the player's piles upon defeat? 
-                // "By default, cards from your quest will be discarded into your ashes". Yes.
-                player.MoveToAsh(targetMember.Card);
+             Player target = allPlayers.Find(p => p.party.Contains(targetMember.Card) || p.defense.Contains(targetMember.Card));
+             if (target == null) return false;
+             return TryAttack(player, target, attackerMember.Card, targetMember.Card);
+        }
 
-                attackerMember.Card.Exhaust();
+        public bool TryAttack(Player actingPlayer, Player targetPlayer, Card attacker, Card defender) {
+            
+            if (CanCardAttack(actingPlayer, targetPlayer, attacker, defender)) {
+                
+                if (targetPlayer.defense.Contains(defender)) {
+                    targetPlayer.defense.Remove(defender);
+                    targetPlayer.MoveToAsh(defender);
+                } else if (targetPlayer.party.Contains(defender)) {
+                    targetPlayer.party.Remove(defender);
+                    targetPlayer.MoveToHistory(defender);
+                }
+
+                attacker.Exhaust();
                 
                 UpdateCardViews();
+                
                 DecrementActions();
                 return true;
             } else {

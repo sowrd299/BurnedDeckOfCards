@@ -22,6 +22,10 @@ namespace Ashworld
         [SerializeField] private string lockPrefix = "Lock: ";
         [SerializeField] private string holdPrefix = "Hold: ";
 
+        [Header("State UI")]
+        [SerializeField] private GameObject faceDownRoot;
+        [SerializeField] private GameObject faceUpRoot; // Optional wrapper for content
+
         private Card currentCard;
         public Card Card => currentCard;
 
@@ -143,6 +147,11 @@ namespace Ashworld
                     suitIcons[i].enabled = true;
                 }
             }
+        }
+
+        public void SetFaceDown(bool isFaceDown) {
+            if (faceDownRoot != null) faceDownRoot.SetActive(isFaceDown);
+            if (faceUpRoot != null) faceUpRoot.SetActive(!isFaceDown);
         }
     }
 }

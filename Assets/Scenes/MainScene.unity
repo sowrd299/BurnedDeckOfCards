@@ -797,6 +797,236 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &653130541
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1666128931}
+    m_Modifications:
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205557205669593549, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_Name
+      value: Opponent Defense Area
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+--- !u!4 &653130542 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+  m_PrefabInstance: {fileID: 653130541}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &653130543 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1417188536159525350, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+  m_PrefabInstance: {fileID: 653130541}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de772db16b869eec89d0dd1675df6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardZoneView
+--- !u!1001 &656778494
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1666128931}
+    m_Modifications:
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205557205669593549, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_Name
+      value: Opponent Party Area
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+--- !u!4 &656778495 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+  m_PrefabInstance: {fileID: 656778494}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &656778496 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1417188536159525350, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+  m_PrefabInstance: {fileID: 656778494}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de772db16b869eec89d0dd1675df6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardZoneView
+--- !u!1001 &715763591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1666128931}
+    m_Modifications:
+    - target: {fileID: 383761550537676861, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1522297660535453864, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245908098927139718, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4750974664287712249, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757516259234059087, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7205557205669593549, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_Name
+      value: Opponent Hand Area
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508086936108064509, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 994014699}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
 --- !u!1 &863074029
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,6 +1163,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863074029}
   m_CullTransparentMesh: 1
+--- !u!1 &994014698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994014699}
+  m_Layer: 0
+  m_Name: Card Pos (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &994014699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994014698}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.25, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1166195985}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1035606372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,6 +1455,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154564273}
   m_CullTransparentMesh: 1
+--- !u!4 &1166195985 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3490859582673972148, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+  m_PrefabInstance: {fileID: 715763591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1166195987 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1417188536159525350, guid: fe7352f28606ab6b6899b29119b6a71b, type: 3}
+  m_PrefabInstance: {fileID: 715763591}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de772db16b869eec89d0dd1675df6f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardZoneView
 --- !u!1 &1259126826
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,8 +1807,15 @@ MonoBehaviour:
   playerHandView: {fileID: 373394863}
   playerPartyView: {fileID: 1489383030}
   playerDefenseView: {fileID: 1854271987}
+  opponentUIView: {fileID: 0}
+  opponentHandView: {fileID: 1166195987}
+  opponentPartyView: {fileID: 656778496}
+  opponentDefenseView: {fileID: 653130543}
   advanceButtonRoot: {fileID: 1259126826}
   advanceButton: {fileID: 1259126828}
+  endTurnButton: {fileID: 0}
+  opponentDeckDefinition: {fileID: 0}
+  opponentQuestDefinition: {fileID: 0}
 --- !u!114 &1507613714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,6 +1959,9 @@ Transform:
   - {fileID: 373394862}
   - {fileID: 1348707231}
   - {fileID: 213236029}
+  - {fileID: 1166195985}
+  - {fileID: 653130542}
+  - {fileID: 656778495}
   - {fileID: 2114320196}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -13,10 +13,7 @@ namespace Ashworld
         private readonly Dictionary<Card, CardView> activeCardViews = new Dictionary<Card, CardView>();
         private readonly Dictionary<Card, Transform> activeCardPositions = new Dictionary<Card, Transform>();
 
-        /// <summary>
-        /// Synchronizes the zone to display the given cards, reusing views from the cache where possible.
-        /// </summary>
-        public void SyncCards(List<Card> cards, Dictionary<Card, CardView> globalCache)
+        public void SyncCards(List<Card> cards, Dictionary<Card, CardView> globalCache, bool faceDown = false)
         {
             if (cards == null) return;
 
@@ -37,6 +34,8 @@ namespace Ashworld
                     view.SetUpForCard(card);
                     globalCache[card] = view;
                 }
+                
+                view.SetFaceDown(faceDown);
 
                 // 2. Ensure it's in this zone
                 if (view.transform.parent != cardsRoot)
