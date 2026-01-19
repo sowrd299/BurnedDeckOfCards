@@ -84,7 +84,7 @@ namespace Ashworld
 
         public bool HasAbility(SpecialAbility ability) => abilities.Contains(ability);
 
-        public static bool MeetsRequirement(Requirement requirement, List<CardDefinition> party, List<CardDefinition> opposingParty = null)
+        public static bool MeetsRequirement(Requirement requirement, List<CardDefinition> party, List<CardDefinition> opposingParty = null, bool heroismAvailable = true)
         {
             switch (requirement)
             {
@@ -122,8 +122,7 @@ namespace Ashworld
                     return commonSuits.Count > 0;
 
                 case Requirement.Heroism:
-                    // always allowed to pass one Heroism for free
-                    return true;
+                    return heroismAvailable;
 
                 default:
                     return true;

@@ -18,6 +18,11 @@ namespace Ashworld {
         public List<Card> historyCards { get; private set; }
 
         public int chapterInd { get; private set; } = 0;
+        public bool HeroismAvailable { get; set; } = true;
+
+        public void ResetHeroism() {
+            HeroismAvailable = true;
+        }
 
         public Player (string id, DeckDefinition deckDefinition, QuestDefinition questDefintion) {
             this.id = id;
@@ -137,23 +142,44 @@ namespace Ashworld {
             // "Return all cards you own from your party... that you meet the hold requirements of, to your hand."
             // "Discard all ... other cards ... to their owner’s histories."
             
-            // Usage of .ToList() to iterate safely while modifying collections
-            List<Card> currentParty = new List<Card>(party);
             List<CardDefinition> partyDefs = party.ConvertAll(c => c.Definition);
             List<CardDefinition> defenseDefs = defense.ConvertAll(c => c.Definition);
+
+            // Did we need heroism to pass the locks?
+            foreach (var defCard in defense) {
+                foreach (var lockReq in defCard.LockRequirements) {
+                     if (lockReq == Requirement.Heroism) {
+                         HeroismAvailable = false;
+                         break;
+                     }
+                }
+            }
+
+            // Usage of .ToList() to iterate safely while modifying collections
+            List<Card> currentParty = new List<Card>(party);
+            // Sort so Hero card comes first (to prioritize for heroism consumption)
+            Card heroCard = GetHeroCard();
+            currentParty.Sort((a, b) => {
+                if (a.IsSameCard(heroCard)) return -1;
+                if (b.IsSameCard(heroCard)) return 1;
+                return 0;
+            });
 
             this.party.Clear(); // We will re-distribute them
 
             foreach (var card in currentParty) {
                  bool meetsHold = true;
+                 bool usedHeroism = false;
                  foreach(var req in card.HoldRequirements) {
-                     if (!CardDefinition.MeetsRequirement(req, partyDefs, defenseDefs)) {
+                     if (!CardDefinition.MeetsRequirement(req, partyDefs, defenseDefs, HeroismAvailable)) {
                          meetsHold = false;
                          break;
                      }
+                     if (req == Requirement.Heroism) usedHeroism = true;
                  }
 
                  if (card.HoldRequirements.Count > 0 && meetsHold) {
+                     if (usedHeroism) HeroismAvailable = false;
                      this.AddToHand(card);
                  } else {
                      this.historyCards.Add(card);
@@ -184,11 +210,13 @@ namespace Ashworld {
             List<CardDefinition> partyDefs = party.ConvertAll(c => c.Definition);
             List<CardDefinition> defenseDefs = defense.ConvertAll(c => c.Definition);
 
+            bool currentHeroism = HeroismAvailable;
             foreach (var defCard in defense) {
                 foreach (var lockReq in defCard.LockRequirements) {
-                     if (!CardDefinition.MeetsRequirement(lockReq, partyDefs, defenseDefs)) {
-                         return false;
-                     }
+                    if (!CardDefinition.MeetsRequirement(lockReq, partyDefs, defenseDefs, currentHeroism)) {
+                        return false;
+                    }
+                    if (lockReq == Requirement.Heroism) currentHeroism = false;
                 }
             }
 

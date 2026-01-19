@@ -42,5 +42,9 @@ namespace Ashworld
         {
             return $"{definition.CardName} (Rank {definition.Rank}, Suits: {string.Join(", ", definition.Suits)})";
         }
+        
+        public bool IsSameCard(Card other) {
+            return this.definition == other.definition;
+        }
     }
 }

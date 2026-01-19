@@ -123,6 +123,7 @@ namespace Ashworld {
 
         private void StartTurn(Player actingPlayer) {
             currentTurnPlayer = actingPlayer;
+            actingPlayer.ResetHeroism();
             actingPlayer.Draw();
             currentTurnActions = 3;
             UpdateUI();
