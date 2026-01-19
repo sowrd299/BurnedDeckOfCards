@@ -411,6 +411,7 @@ namespace Ashworld {
         private void UpdateUI() {
             playerUIView.SetTurnInfo(currentTurnActions, isPlayerTurn);
             advanceButtonRoot.SetActive(isPlayerTurn && player.CanAdvance());
+            if (endTurnButton != null) endTurnButton.gameObject.SetActive(isPlayerTurn);
         }
 
         // Update is called once per frame
