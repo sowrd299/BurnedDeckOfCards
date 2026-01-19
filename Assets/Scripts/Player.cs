@@ -6,6 +6,7 @@ namespace Ashworld {
     public class Player {
 
         private string id;
+        public string Id => id;
         private DeckDefinition deckDefinition;
         private QuestDefinition questDefintion;
 

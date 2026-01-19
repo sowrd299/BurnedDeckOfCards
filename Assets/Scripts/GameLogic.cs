@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace Ashworld {
 
-    public class GameLogic : MonoBehaviour
+    public partial class GameLogic : MonoBehaviour
     {
         private const int MAX_PARTY_SIZE = 5;
         private const int MAX_DEFENSE_SIZE = 5;
@@ -141,7 +141,7 @@ namespace Ashworld {
             while (currentTurnActions > 0) {
                 yield return new WaitForSeconds(1.5f); // Simulated thinking
 
-                OpponentAction action = OpponentLogic.GetBestAction(opponent, player);
+                OpponentAction action = GetBestAction(opponent, player);
 
                 if (action == null) {
                     Debug.Log("AI has no moves. Ending turn.");
@@ -283,6 +283,9 @@ namespace Ashworld {
         // Attack
         public bool CanCardAttack(Player actingPlayer, Player targetPlayer, Card attacker, Card defender) {
             if (currentTurnActions <= 0) return false;
+
+            // Validate Ownership: You can only attack with cards you own.
+            if (attacker.OwnerId != actingPlayer.Id) return false;
 
             // Context: Attack happens on targetPlayer's board
             bool attackerInParty = targetPlayer.party.Contains(attacker);
