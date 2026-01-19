@@ -447,6 +447,7 @@ namespace Ashworld {
 
         private void UpdateUI() {
             playerUIView.SetTurnInfo(currentTurnActions, isPlayerTurn);
+            if (opponentUIView != null) opponentUIView.SetTurnInfo(currentTurnActions, !isPlayerTurn);
             advanceButtonRoot.SetActive(isPlayerTurn && player.CanAdvance());
             if (endTurnButton != null) endTurnButton.gameObject.SetActive(isPlayerTurn);
         }
