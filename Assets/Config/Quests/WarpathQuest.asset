@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7a4975aacf1570b866ba5c2b14a408, type: 3}
+  m_Name: WarpathQuest
+  m_EditorClassIdentifier: Assembly-CSharp::Ashworld.QuestDefinitionAsset
+  questDefinition:
+    chapters:
+    - cards:
+      - {fileID: 11400000, guid: 62f6cc0e06ed701a58c8ad61ecbe2e0b, type: 2}
+    - cards:
+      - {fileID: 11400000, guid: f26d08b4ce3c8445b9e618f0d4725fd7, type: 2}
+    - cards:
+      - {fileID: 11400000, guid: 277b9803c254cc2289609362d128222f, type: 2}
+    - cards:
+      - {fileID: 11400000, guid: c098d6f88e858cfcf8889212d54ddf7c, type: 2}

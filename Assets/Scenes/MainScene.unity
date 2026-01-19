@@ -2073,7 +2073,7 @@ MonoBehaviour:
   advanceButton: {fileID: 1259126828}
   endTurnButton: {fileID: 733618846}
   opponentDeckDefinition: {fileID: 0}
-  opponentQuestDefinition: {fileID: 0}
+  opponentQuestDefinition: {fileID: 11400000, guid: e74e25d802b4c2a339c1bc138d1cc47c, type: 2}
 --- !u!114 &1507613714
 MonoBehaviour:
   m_ObjectHideFlags: 0

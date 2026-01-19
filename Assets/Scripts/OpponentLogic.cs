@@ -5,7 +5,7 @@ namespace Ashworld {
 
     // Simple data structure for an AI action
     public class OpponentAction {
-        public enum ActionType { Play, Attack }
+        public enum ActionType { Play, Attack, Advance }
         
         public ActionType Type;
         public Card CardToPlay;      // For Play
@@ -30,18 +30,25 @@ namespace Ashworld {
             OpponentAction strategicDefend = GetStrategicDefend(opponentPlayer, humanPlayer);
             if (strategicDefend != null) return strategicDefend;
 
-            // PRIORITY 3: Advance Own Quest (Strategic)
+            // PRIORITY 3: Advance Own Quest (Button)
+            // If we have enough dominance to advance, do it. 
+            // This is "Advancing Quest" in the literal sense.
+            if (opponentPlayer.CanAdvance()) {
+                return new OpponentAction { Type = OpponentAction.ActionType.Advance };
+            }
+
+            // PRIORITY 4: Advance Own Quest (Strategic Play)
             // Play into AI.Party
             // Heuristic: Hold Requirement Met > Hold Requirement Unmet
             OpponentAction strategicAdvance = GetStrategicPlayToParty(opponentPlayer);
             if (strategicAdvance != null) return strategicAdvance;
 
-            // PRIORITY 4: Defend against Player (Fallback)
+            // PRIORITY 5: Defend against Player (Fallback)
             // Play *any* valid card into Human.Defense. Tie-break: High Rank.
             OpponentAction fallbackDefend = GetFallbackDefend(opponentPlayer, humanPlayer);
             if (fallbackDefend != null) return fallbackDefend;
 
-            // PRIORITY 5: Advance Own Quest (Fallback)
+            // PRIORITY 6: Advance Own Quest (Fallback)
             // Play *any* valid card into AI.Party. Tie-break: High Rank.
             OpponentAction fallbackAdvance = GetFallbackPlayToParty(opponentPlayer);
             if (fallbackAdvance != null) return fallbackAdvance;

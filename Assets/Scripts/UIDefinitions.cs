@@ -19,6 +19,7 @@ namespace Ashworld
         {
             public SpecialAbility ability;
             [TextArea] public string displayText;
+            public Sprite sprite;
         }
 
         [Serializable]
@@ -26,6 +27,7 @@ namespace Ashworld
         {
             public Requirement requirement;
             [TextArea] public string displayText;
+            public Sprite sprite;
         }
 
         [Header("Suit Sprites")]
@@ -49,11 +51,23 @@ namespace Ashworld
             var mapping = abilityStrings.Find(m => m.ability == ability);
             return mapping != null ? mapping.displayText : ability.ToString();
         }
+        
+        public Sprite GetSpriteForAbility(SpecialAbility ability)
+        {
+            var mapping = abilityStrings.Find(m => m.ability == ability);
+            return mapping != null ? mapping.sprite : null;
+        }
 
         public string GetStringForRequirement(Requirement requirement)
         {
             var mapping = requirementStrings.Find(m => m.requirement == requirement);
             return mapping != null ? mapping.displayText : requirement.ToString();
+        }
+        
+        public Sprite GetSpriteForRequirement(Requirement requirement)
+        {
+            var mapping = requirementStrings.Find(m => m.requirement == requirement);
+            return mapping != null ? mapping.sprite : null;
         }
     }
 }

@@ -165,6 +165,12 @@ namespace Ashworld {
                              success = TryPlayCardToParty(opponent, action.CardToPlay);
                         }
                         break;
+                    case OpponentAction.ActionType.Advance:
+                        // Perform Advance
+                        opponent.StartNextQuestChapter();
+                        DecrementActions();
+                        success = true;
+                        break;
                 }
 
                 if (!success) {

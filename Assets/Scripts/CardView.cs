@@ -21,6 +21,11 @@ namespace Ashworld
         [SerializeField] private TextMeshPro holdRequirementsText;
         [SerializeField] private string lockPrefix = "Lock: ";
         [SerializeField] private string holdPrefix = "Hold: ";
+        [SerializeField] private GameObject lockIconRoot; // Header icon ("Lock")
+        [SerializeField] private GameObject holdIconRoot; // Header icon ("Hold")
+        [SerializeField] private List<SpriteRenderer> lockRequirementIcons;
+        [SerializeField] private List<SpriteRenderer> holdRequirementIcons;
+        [SerializeField] private List<SpriteRenderer> abilityIcons;
 
         [Header("State UI")]
         [SerializeField] private GameObject faceDownRoot;
@@ -67,6 +72,9 @@ namespace Ashworld
                 }
             }
 
+            // Ability Icons
+            UpdateIcons(abilityIcons, card.Abilities, (a) => uiDefinitions.GetSpriteForAbility(a));
+
             // Lock requirements
             if (lockRequirementsText != null)
             {
@@ -81,6 +89,10 @@ namespace Ashworld
                 }
             }
 
+            // Lock Icons
+            if (lockIconRoot != null) lockIconRoot.SetActive(card.LockRequirements.Count > 0);
+            UpdateIcons(lockRequirementIcons, card.LockRequirements, (r) => uiDefinitions.GetSpriteForRequirement(r));
+
             // Hold requirements
             if (holdRequirementsText != null)
             {
@@ -94,6 +106,10 @@ namespace Ashworld
                     holdRequirementsText.text = string.Empty;
                 }
             }
+
+            // Hold Icons
+            if (holdIconRoot != null) holdIconRoot.SetActive(card.HoldRequirements.Count > 0);
+            UpdateIcons(holdRequirementIcons, card.HoldRequirements, (r) => uiDefinitions.GetSpriteForRequirement(r));
 
             // Illustration
             if (illustration != null) {
@@ -152,6 +168,30 @@ namespace Ashworld
         public void SetFaceDown(bool isFaceDown) {
             if (faceDownRoot != null) faceDownRoot.SetActive(isFaceDown);
             if (faceUpRoot != null) faceUpRoot.SetActive(!isFaceDown);
+        }
+
+        private void UpdateIcons<T>(List<SpriteRenderer> icons, List<T> data, System.Func<T, Sprite> spriteSelector)
+        {
+            if (icons == null || uiDefinitions == null) return;
+
+            // Clear
+            foreach(var icon in icons) {
+                if (icon != null) {
+                    icon.sprite = null;
+                    icon.enabled = false;
+                }
+            }
+
+            // Assign
+            if (data == null) return;
+
+            for (int i = 0; i < data.Count && i < icons.Count; i++) {
+                var sprite = spriteSelector(data[i]);
+                if (sprite != null && icons[i] != null) {
+                    icons[i].sprite = sprite;
+                    icons[i].enabled = true;
+                }
+            }
         }
     }
 }

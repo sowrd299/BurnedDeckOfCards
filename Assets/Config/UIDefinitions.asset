@@ -34,18 +34,26 @@ MonoBehaviour:
   abilityStrings:
   - ability: 1
     displayText: Location
+    sprite: {fileID: 7374845061861626600, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - ability: 2
     displayText: Unique
+    sprite: {fileID: -6931339683150358059, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - ability: 3
     displayText: Boon
+    sprite: {fileID: 3220665290143086019, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   requirementStrings:
   - requirement: 1
     displayText: Harmony
+    sprite: {fileID: 184950751378207249, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - requirement: 2
     displayText: Hierarchy
+    sprite: {fileID: 1202984965197363600, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - requirement: 3
     displayText: Might
+    sprite: {fileID: 5543941588292853863, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - requirement: 4
     displayText: Fealty
+    sprite: {fileID: -1863859237976802683, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - requirement: 5
     displayText: Heroism
+    sprite: {fileID: 7576617242518483205, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
