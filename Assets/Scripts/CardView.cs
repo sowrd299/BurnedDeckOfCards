@@ -33,6 +33,13 @@ namespace Ashworld
         [SerializeField] private SpriteRenderer background; // Reference to background sprite
         [SerializeField] private GameObject exhaustedRoot; // Object to enable when exhausted
 
+        [Header("Animations")]
+        [SerializeField] private AttackAnimationView attackAnim;
+        [SerializeField] private FireEffectView fireEffect;
+
+        public AttackAnimationView AttackAnim => attackAnim;
+        public FireEffectView FireEffect => fireEffect;
+
         private Card currentCard;
         public Card Card => currentCard;
 

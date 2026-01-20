@@ -166,7 +166,8 @@ namespace Ashworld {
                         if (player.party.Contains(action.Defender)) {
                             target = player;
                         }
-                        success = TryAttack(opponent, target, action.Attacker, action.Defender);
+                        yield return StartCoroutine(AttackCoroutine(opponent, target, action.Attacker, action.Defender));
+                        success = true; // AttackCoroutine internally decrements actions and returns
                         break;
                     case OpponentAction.ActionType.Play:
                         if (action.PlayToDefense) {
@@ -349,24 +350,78 @@ namespace Ashworld {
         public bool TryAttack(Player actingPlayer, Player targetPlayer, Card attacker, Card defender) {
             
             if (CanCardAttack(actingPlayer, targetPlayer, attacker, defender)) {
-                
-                if (targetPlayer.defense.Contains(defender)) {
-                    targetPlayer.defense.Remove(defender);
-                    targetPlayer.MoveToAsh(defender);
-                } else if (targetPlayer.party.Contains(defender)) {
-                    targetPlayer.party.Remove(defender);
-                    targetPlayer.MoveToHistory(defender);
-                }
-
-                attacker.Exhaust();
-                
-                UpdateCardViews();
-                
-                DecrementActions();
+                StartCoroutine(AttackCoroutine(actingPlayer, targetPlayer, attacker, defender));
                 return true;
             } else {
-                Debug.Log("Attack failed: Rank too low.");
                 return false;
+            }
+        }
+
+        private System.Collections.IEnumerator AttackCoroutine(Player actingPlayer, Player targetPlayer, Card attacker, Card defender) {
+            
+            // 1. Gather Views
+            cardViewCache.TryGetValue(attacker, out CardView attackerView);
+            cardViewCache.TryGetValue(defender, out CardView defenderView);
+
+            // 2. Immediate Model Update (Apply logic changes)
+            if (targetPlayer.defense.Contains(defender)) {
+                targetPlayer.defense.Remove(defender);
+
+                // This is bit of a heuristic; we should be checking if started in the acting player's quest, not just if its theirs.
+                if (defender.OwnerId == actingPlayer.Id) {
+                    actingPlayer.MoveToAsh(defender);
+                } else {
+                    foreach (Player player in allPlayers) {
+                        if (player.Id == defender.OwnerId) {
+                            player.MoveToHistory(defender);
+                        }
+                    }
+                }
+            } else if (targetPlayer.party.Contains(defender)) {
+                targetPlayer.party.Remove(defender);
+                targetPlayer.MoveToHistory(defender);
+            }
+
+            attacker.Exhaust();
+            DecrementActions();
+
+            // 3. Play Visuals
+            if (attackerView != null && defenderView != null && attackerView.AttackAnim != null) {
+                
+                // Snap attacker to its proper slot first (in case it was being dragged)
+                CardZoneView zone = GetZoneForCard(attacker);
+                if (zone != null && input != null) {
+                    input.CancelAnimationAndSnap(attackerView, zone.GetDropPosition(attacker));
+                }
+
+                bool effectDone = false;
+                yield return attackerView.AttackAnim.PlayAttackerAnim(
+                    defenderView.transform,
+                    () => {
+                        // On Hit
+                        if (defenderView.FireEffect != null) {
+                            StartCoroutine(defenderView.FireEffect.PlayFire(() => {
+                                // On Fire Complete
+                                effectDone = true;
+                                UpdateCardViews();
+                            }));
+                        } else {
+                            effectDone = true;
+                            UpdateCardViews();
+                        }
+                    },
+                    () => {
+                        // On Attacker Anim Complete
+                    }
+                );
+
+                // Wait for fire effect to complete if it's still running
+                while (!effectDone) {
+                    yield return null;
+                }
+            } else {
+                // Fallback
+                UpdateCardViews();
             }
         }
 
@@ -451,6 +506,17 @@ namespace Ashworld {
             if (opponentUIView != null) opponentUIView.SetTurnInfo(currentTurnActions, !isPlayerTurn);
             advanceButtonRoot.SetActive(isPlayerTurn && player.CanAdvance());
             if (endTurnButton != null) endTurnButton.gameObject.SetActive(isPlayerTurn);
+        }
+
+        private CardZoneView GetZoneForCard(Card c) {
+            if (player.hand.Contains(c)) return playerHandView;
+            if (opponent.hand.Contains(c)) return opponentHandView;
+            if (player.party.Contains(c)) return playerPartyView;
+            if (opponent.party.Contains(c)) return opponentPartyView;
+            if (player.defense.Contains(c)) return playerDefenseView;
+            if (opponent.defense.Contains(c)) return opponentDefenseView;
+            
+            return null;
         }
 
         // Update is called once per frame

@@ -18,6 +18,8 @@ namespace Ashworld
         private Vector3 originalPosition;
         private bool isDragging;
 
+        private Dictionary<Transform, Coroutine> activeLerps = new Dictionary<Transform, Coroutine>();
+
         public delegate bool OnCardViewDroppedCallback(CardView view);
 
         // Registered callbacks per zone
@@ -147,21 +149,44 @@ namespace Ashworld
             draggingCard = null;
         }
 
+        public void CancelAnimationAndSnap(CardView card, Vector3 worldPosition)
+        {
+            if (card == null) return;
+            Transform t = card.transform;
+
+            if (activeLerps.TryGetValue(t, out Coroutine existing))
+            {
+                if (existing != null) StopCoroutine(existing);
+                activeLerps.Remove(t);
+            }
+
+            t.position = worldPosition;
+        }
+
         private void SnapCardToZone(CardView card, CardZoneView zone)
         {
             if (card == null) return;
 
-            StartCoroutine(LerpToPosition(card.transform, zone.GetDropPosition(card.Card), snapSpeed));
+            StartLerpToPositionCoroutine(card.transform, zone.GetDropPosition(card.Card), snapSpeed);
         }
 
         private void ReturnCardToOrigin(CardView card)
         {
             if (card == null) return;
 
-            StartCoroutine(LerpToPosition(card.transform, originalPosition, snapSpeed));
+            StartLerpToPositionCoroutine(card.transform, originalPosition, snapSpeed);
         }
 
-        private System.Collections.IEnumerator LerpToPosition(Transform obj, Vector3 target, float speed)
+        private void StartLerpToPositionCoroutine(Transform obj, Vector3 target, float speed)
+        {
+            if (activeLerps.TryGetValue(obj, out Coroutine existing))
+            {
+                if (existing != null) StopCoroutine(existing);
+            }
+            activeLerps[obj] = StartCoroutine(LerpToPositionInternal(obj, target, speed));
+        }
+
+        private System.Collections.IEnumerator LerpToPositionInternal(Transform obj, Vector3 target, float speed)
         {
             while (Vector3.Distance(obj.position, target) > 0.01f)
             {
@@ -169,6 +194,7 @@ namespace Ashworld
                 yield return null;
             }
             obj.position = target;
+            activeLerps.Remove(obj);
         }
 
         /// <summary>
