@@ -386,6 +386,7 @@ namespace Ashworld {
                     bool receivesBoon = true;
 
                     foreach(var s in other.Suits) {
+                        if (s == Suit.None) continue;
                         if (!card.Suits.Contains(s)) {
                             receivesBoon = false;
                             break;

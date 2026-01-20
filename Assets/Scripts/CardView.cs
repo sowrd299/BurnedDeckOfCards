@@ -75,7 +75,7 @@ namespace Ashworld
             }
 
             // Ability Icons
-            UpdateIcons(abilityIcons, card.Abilities, (a) => uiDefinitions.GetSpriteForAbility(a));
+            UpdateAbilityIcons(card);
 
             // Lock requirements
             if (lockRequirementsText != null)
@@ -179,6 +179,44 @@ namespace Ashworld
         public void SetFaceDown(bool isFaceDown) {
             if (faceDownRoot != null) faceDownRoot.SetActive(isFaceDown);
             if (faceUpRoot != null) faceUpRoot.SetActive(!isFaceDown);
+        }
+
+        private void UpdateAbilityIcons(Card card)
+        {
+            if (abilityIcons == null || uiDefinitions == null) return;
+
+            // Clear
+            foreach(var icon in abilityIcons) {
+                if (icon != null) {
+                    icon.sprite = null;
+                    icon.enabled = false;
+                }
+            }
+
+            int iconIndex = 0;
+
+            // 1. History Icons
+            for (int i = 0; i < card.HistoryCost && iconIndex < abilityIcons.Count; i++)
+            {
+                if (abilityIcons[iconIndex] != null)
+                {
+                    abilityIcons[iconIndex].sprite = uiDefinitions.historySprite;
+                    abilityIcons[iconIndex].enabled = true;
+                }
+                iconIndex++;
+            }
+
+            // 2. Ability Icons
+            for (int i = 0; i < card.Abilities.Count && iconIndex < abilityIcons.Count; i++)
+            {
+                var sprite = uiDefinitions.GetSpriteForAbility(card.Abilities[i]);
+                if (sprite != null && abilityIcons[iconIndex] != null)
+                {
+                    abilityIcons[iconIndex].sprite = sprite;
+                    abilityIcons[iconIndex].enabled = true;
+                }
+                iconIndex++;
+            }
         }
 
         private void UpdateIcons<T>(List<SpriteRenderer> icons, List<T> data, System.Func<T, Sprite> spriteSelector)

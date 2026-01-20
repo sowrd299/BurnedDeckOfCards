@@ -57,6 +57,7 @@ namespace Ashworld
 
         // Properties
         public string CardName => cardName;
+        public string Subtitle => subtitle;
         public int Rank => rank;
         public List<Suit> Suits => suits;
         public int HistoryCost => historyCost;

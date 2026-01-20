@@ -35,6 +35,7 @@ namespace Ashworld
 
         [Header("Ability Strings")]
         [SerializeField] private List<AbilityStringMapping> abilityStrings;
+        [SerializeField] public Sprite historySprite;
 
         [Header("Requirement Strings")]
         [SerializeField] private List<RequirementStringMapping> requirementStrings;
