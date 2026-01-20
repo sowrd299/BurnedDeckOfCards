@@ -16,7 +16,7 @@ MonoBehaviour:
     cardName: Xinlar's Lair
     subtitle: 
     rank: 3
-    suits: 
+    suits: 02000000
     historyCost: 0
     abilities: 01000000
     lockRequirements: 03000000

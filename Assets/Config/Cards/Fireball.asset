@@ -16,7 +16,7 @@ MonoBehaviour:
     cardName: Fireball
     subtitle: Of Phoenix Flame
     rank: 4
-    suits: 09000000
+    suits: 0000000009000000
     historyCost: 0
     abilities: 03000000
     lockRequirements: 

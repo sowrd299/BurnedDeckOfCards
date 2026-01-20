@@ -17,10 +17,10 @@ MonoBehaviour:
     subtitle: 
     rank: 5
     suits: 
-    historyCost: 0
+    historyCost: 1
     abilities: 
     lockRequirements: 
-    holdRequirements: 
+    holdRequirements: 03000000
     subtypes:
     - Beast
     flavorText: 

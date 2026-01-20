@@ -15,9 +15,11 @@ MonoBehaviour:
   deckDefinition:
     heroCard: {fileID: 11400000, guid: 9597e825b0f8cba978a9618d1a37b3ce, type: 2}
     entries:
-    - cardDefinitionAsset: {fileID: 11400000, guid: e719e6c2b3c68554983c5050082f0735, type: 2}
-      count: 10
     - cardDefinitionAsset: {fileID: 11400000, guid: 14d253e2d7bf3146dbe44fa091bf9777, type: 2}
       count: 10
+    - cardDefinitionAsset: {fileID: 11400000, guid: e719e6c2b3c68554983c5050082f0735, type: 2}
+      count: 10
     - cardDefinitionAsset: {fileID: 11400000, guid: 41dcacecd9ce70420b5d43553f769d78, type: 2}
+      count: 10
+    - cardDefinitionAsset: {fileID: 11400000, guid: 7df763c9237700b05a8a18ea58ec2f7b, type: 2}
       count: 10

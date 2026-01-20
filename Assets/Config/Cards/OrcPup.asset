@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7036eda132653dc99a2fefcdfe479d, type: 3}
-  m_Name: OrcTroglodyte
+  m_Name: OrcPup
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
-    cardName: Orc Troglodyte
+    cardName: Orc Pup
     subtitle: 
-    rank: 4
-    suits: 0000000006000000
+    rank: 2
+    suits: 
     historyCost: 0
     abilities: 
-    lockRequirements: 03000000
-    holdRequirements: 
+    lockRequirements: 
+    holdRequirements: 02000000
     subtypes:
     - Orc
     flavorText: 
