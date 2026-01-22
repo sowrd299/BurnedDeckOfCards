@@ -115,11 +115,11 @@ namespace Ashworld {
             foreach(var c in toRemove) cardViewCache.Remove(c);
 
             // 3. Sync Zones
-            playerHandView.SyncCards(player.hand, cardViewCache);
+            playerHandView.SyncCards(player.hand, cardViewCache, false, false);
             playerPartyView.SyncCards(player.party, cardViewCache);
             playerDefenseView.SyncCards(player.defense, cardViewCache);
 
-            if (opponentHandView != null) opponentHandView.SyncCards(opponent.hand, cardViewCache, true);
+            if (opponentHandView != null) opponentHandView.SyncCards(opponent.hand, cardViewCache, true, false);
             if (opponentPartyView != null) opponentPartyView.SyncCards(opponent.party, cardViewCache);
             if (opponentDefenseView != null) opponentDefenseView.SyncCards(opponent.defense, cardViewCache);
 
