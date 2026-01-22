@@ -54,6 +54,7 @@ namespace Ashworld {
         }
 
         private void SetUpInput() {
+            input.CanStartDrag = (view) => isPlayerTurn && CanUse(view.Card, player);
             input.RegisterZoneCallback(playerPartyView, OnCardDroppedInParty);
             input.RegisterZoneCallback(playerHandView, OnCardDroppedInHand); // Pick Card Up (Drag)
             if (opponentDefenseView != null) input.RegisterZoneCallback(opponentDefenseView, OnCardDroppedInOpponentDefense);
@@ -280,20 +281,85 @@ namespace Ashworld {
             TryPickUp(player, cardView.Card);
         }
 
-        public bool TryPickUp(Player actingPlayer, Card card) {
+        public bool CanPickUp(Player actingPlayer, Card card) {
             if (currentTurnActions <= 0) return false;
 
             // Can only pick up from Party
-            if (actingPlayer.party.Contains(card)) {
-                
-                actingPlayer.party.Remove(card);
-                actingPlayer.AddToHand(card);
+            if (actingPlayer.party.Contains(card)) return true;
 
-                UpdateCardViews();
-                DecrementActions();
-                return true;
+            // Or from another player's defense if you own it (e.g. played it there)
+            foreach (var p in allPlayers) {
+                if (p != actingPlayer && p.defense.Contains(card) && card.OwnerId == actingPlayer.Id) {
+                    return true;
+                }
             }
+
             return false;
+        }
+
+        public bool TryPickUp(Player actingPlayer, Card card) {
+            if (!CanPickUp(actingPlayer, card)) return false;
+
+            // Remove from wherever it is
+            if (actingPlayer.party.Contains(card)) {
+                actingPlayer.party.Remove(card);
+            } else {
+                foreach (var p in allPlayers) {
+                    if (p.defense.Contains(card)) {
+                        p.defense.Remove(card);
+                        break;
+                    }
+                }
+            }
+
+            actingPlayer.AddToHand(card);
+
+            UpdateCardViews();
+            DecrementActions();
+            return true;
+        }
+
+        public bool CanUse(Card card, Player actingPlayer) {
+            if (currentTurnActions <= 0) return false;
+            if (currentTurnPlayer == null || card == null) return false;
+
+            // 1. Can Pick Up?
+            if (CanPickUp(actingPlayer, card)) return true;
+
+            // 2. Can Play? (From Hand)
+            if (actingPlayer.hand.Contains(card)) {
+                foreach (var p in allPlayers) {
+                    if (CanPlayCard(actingPlayer, card, p)) return true;
+                }
+            }
+
+            // 3. Can Attack? (From Party or Defense)
+            // If card is in a zone, see if it can attack anything
+            // Optimization: Only check if it's the acting player's turn (handled above)
+            
+            // Collect all possible targets
+            List<Card> allPotentialTargets = new List<Card>();
+            foreach (var p in allPlayers) {
+                allPotentialTargets.AddRange(p.party);
+                allPotentialTargets.AddRange(p.defense);
+            }
+
+            foreach (var target in allPotentialTargets) {
+                if (target == card) continue;
+                Player targetPlayer = GetOwnerOfZoneForCard(target);
+                if (targetPlayer == null) continue;
+
+                if (CanCardAttack(actingPlayer, targetPlayer, card, target)) return true;
+            }
+
+            return false;
+        }
+
+        private Player GetOwnerOfZoneForCard(Card card) {
+            foreach (var p in allPlayers) {
+                if (p.party.Contains(card) || p.defense.Contains(card)) return p;
+            }
+            return null;
         }
 
         // Attack

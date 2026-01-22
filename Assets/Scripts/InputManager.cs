@@ -38,6 +38,7 @@ namespace Ashworld
 
         public event Action<CardView> OnCardRightClicked;
         public event Func<CardView, CardView, bool> OnCardDroppedOnCard;
+        public Func<CardView, bool> CanStartDrag;
 
         private void HandleMouseInput()
         {
@@ -54,7 +55,10 @@ namespace Ashworld
             {
                 if (cardView != null)
                 {
-                    StartDragging(cardView, mouseWorld);
+                    if (CanStartDrag == null || CanStartDrag.Invoke(cardView))
+                    {
+                        StartDragging(cardView, mouseWorld);
+                    }
                 }
             }
 
