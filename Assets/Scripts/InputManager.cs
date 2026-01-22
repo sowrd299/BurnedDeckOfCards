@@ -38,6 +38,8 @@ namespace Ashworld
 
         public event Action<CardView> OnCardRightClicked;
         public event Func<CardView, CardView, bool> OnCardDroppedOnCard;
+        public event Action<CardView> OnCardDragBegan;
+        public event Action<CardView> OnCardDragEnded;
         public Func<CardView, bool> CanStartDrag;
 
         private void HandleMouseInput()
@@ -83,6 +85,7 @@ namespace Ashworld
             originalPosition = card.transform.position;
             dragOffset = card.transform.position - (Vector3)mouseWorld;
             isDragging = true;
+            OnCardDragBegan?.Invoke(card);
         }
 
         private void UpdateDragging()
@@ -104,6 +107,7 @@ namespace Ashworld
         private void EndDragging()
         {
             isDragging = false;
+            OnCardDragEnded?.Invoke(draggingCard);
 
             // Check what zone we’re over
             Vector2 mouseWorld = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());

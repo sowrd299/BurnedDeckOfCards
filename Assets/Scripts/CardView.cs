@@ -32,6 +32,16 @@ namespace Ashworld
         [SerializeField] private GameObject faceUpRoot; // Optional wrapper for content
         [SerializeField] private SpriteRenderer background; // Reference to background sprite
         [SerializeField] private GameObject exhaustedRoot; // Object to enable when exhausted
+        [SerializeField] private SpriteRenderer vignette;
+        [SerializeField] private Color exhaustedBackgroundColor = new Color(0.85f, 0.85f, 0.85f, 1f);
+
+        [Header("Vignette Colors")]
+        [SerializeField] private Color canUseColor = new Color(1f, 1f, 0.8f, 0.3f);
+        [SerializeField] private Color canBeAttackedColor = new Color(0.8f, 0.1f, 0.1f, 0.6f);
+        [SerializeField] private Color exhaustedColor = new Color(0.2f, 0.2f, 0.2f, 0.5f);
+        [SerializeField] private Color canUseExhaustedColor = new Color(0.5f, 0.5f, 0.3f, 0.4f);
+        [SerializeField] private Color defaultColor = new Color(1f, 1f, 1f, 0f);
+        [SerializeField] private float vignetteLerpSpeed = 15f;
 
         [Header("Animations")]
         [SerializeField] private AttackAnimationView attackAnim;
@@ -42,6 +52,10 @@ namespace Ashworld
 
         private Card currentCard;
         public Card Card => currentCard;
+
+        private bool canUse;
+        private bool canBeAttacked;
+        private Color targetVignetteColor;
 
         /// <summary>
         /// Populates the view with data from the given card.
@@ -55,6 +69,11 @@ namespace Ashworld
                 ClearView();
                 return;
             }
+
+            canUse = false;
+            canBeAttacked = false;
+            targetVignetteColor = defaultColor;
+            if (vignette != null) vignette.color = defaultColor;
 
             // Name
             if (nameText != null)
@@ -131,8 +150,41 @@ namespace Ashworld
 
         public void UpdateExhaustedStatus() {
             if (currentCard == null) return;
-            if (background != null) background.color = currentCard.IsExhausted ? Color.gray : Color.white;
+            if (background != null) background.color = currentCard.IsExhausted ? exhaustedBackgroundColor : Color.white;
             if (exhaustedRoot != null) exhaustedRoot.SetActive(currentCard.IsExhausted);
+            RefreshVignette();
+        }
+
+        public void SetCanUse(bool canUse) {
+            this.canUse = canUse;
+            RefreshVignette();
+        }
+
+        public void SetCanBeAttacked(bool canBeAttacked) {
+            this.canBeAttacked = canBeAttacked;
+            RefreshVignette();
+        }
+
+        private void RefreshVignette() {
+            if (vignette == null) return;
+
+            if (canBeAttacked) {
+                targetVignetteColor = canBeAttackedColor;
+            } else if (canUse && currentCard != null && currentCard.IsExhausted) {
+                targetVignetteColor = canUseExhaustedColor;
+            } else if (canUse) {
+                targetVignetteColor = canUseColor;
+            } else if (currentCard != null && currentCard.IsExhausted) {
+                targetVignetteColor = exhaustedColor;
+            } else {
+                targetVignetteColor = defaultColor;
+            }
+        }
+
+        private void Update() {
+            if (vignette != null) {
+                vignette.color = Color.Lerp(vignette.color, targetVignetteColor, Time.deltaTime * vignetteLerpSpeed);
+            }
         }
 
         private void ClearView()

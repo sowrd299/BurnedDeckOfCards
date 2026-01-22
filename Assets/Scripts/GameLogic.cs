@@ -51,6 +51,7 @@ namespace Ashworld {
             SetUpPlayer();
             SetUpInput();
             StartTurn(player);
+            UpdateCardViews();
         }
 
         private void SetUpInput() {
@@ -61,6 +62,8 @@ namespace Ashworld {
             
             input.OnCardDroppedOnCard += OnCardAttack;
             input.OnCardRightClicked += OnCardPickUpRequest;
+            input.OnCardDragBegan += HandleCardDragBegan;
+            input.OnCardDragEnded += HandleCardDragEnded;
 
             advanceButton.onClick.AddListener(OnAdvanceButtonPressed);
             if (endTurnButton != null) endTurnButton.onClick.AddListener(OnEndTurnPressed);
@@ -120,9 +123,12 @@ namespace Ashworld {
             if (opponentPartyView != null) opponentPartyView.SyncCards(opponent.party, cardViewCache);
             if (opponentDefenseView != null) opponentDefenseView.SyncCards(opponent.defense, cardViewCache);
 
-            // 4. Update Exhausted Status
+            // 4. Update Statuses (Exhausted & CanUse)
             foreach(var kvp in cardViewCache) {
-                 if (kvp.Value != null) kvp.Value.UpdateExhaustedStatus();
+                 if (kvp.Value != null) {
+                    kvp.Value.UpdateExhaustedStatus();
+                    kvp.Value.SetCanUse(isPlayerTurn && CanUse(kvp.Key, player));
+                 }
             }
         }
 
@@ -362,6 +368,30 @@ namespace Ashworld {
             return null;
         }
 
+        private void HandleCardDragBegan(CardView draggedView) {
+            if (draggedView == null || draggedView.Card == null) return;
+            
+            foreach (var kvp in cardViewCache) {
+                Card targetCard = kvp.Key;
+                CardView targetView = kvp.Value;
+                if (targetView == null || targetCard == draggedView.Card) continue;
+
+                Player targetPlayer = GetOwnerOfZoneForCard(targetCard);
+                if (targetPlayer != null) {
+                    bool canBeAttacked = CanCardAttack(player, targetPlayer, draggedView.Card, targetCard);
+                    targetView.SetCanBeAttacked(canBeAttacked);
+                }
+            }
+        }
+
+        private void HandleCardDragEnded(CardView draggedView) {
+            foreach (var kvp in cardViewCache) {
+                if (kvp.Value != null) {
+                    kvp.Value.SetCanBeAttacked(false);
+                }
+            }
+        }
+
         // Attack
         public bool CanCardAttack(Player actingPlayer, Player targetPlayer, Card attacker, Card defender) {
             if (currentTurnActions <= 0) return false;
@@ -428,6 +458,8 @@ namespace Ashworld {
             // 1. Gather Views
             cardViewCache.TryGetValue(attacker, out CardView attackerView);
             cardViewCache.TryGetValue(defender, out CardView defenderView);
+
+            if (defenderView != null) defenderView.SetCanBeAttacked(true);
 
             // 2. Immediate Model Update (Apply logic changes)
             if (targetPlayer.defense.Contains(defender)) {
