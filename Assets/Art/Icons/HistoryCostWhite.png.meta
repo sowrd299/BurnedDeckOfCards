@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 927ebebdc9d84807980d03f62e0f524c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5392517394751450690
+    second: HistoryCostWhite_0
+  - first:
+      213: 904127919743463671
+    second: HistoryCostWhite_1
+  - first:
+      213: 4056322607750735786
+    second: HistoryCostWhite_2
+  - first:
+      213: 3648178051672953660
+    second: HistoryCostWhite_3
+  - first:
+      213: -7548374339244984576
+    second: HistoryCostWhite_4
+  - first:
+      213: -1485712951783461309
+    second: HistoryCostWhite_5
+  - first:
+      213: -5551728617484681981
+    second: HistoryCostWhite_6
+  - first:
+      213: -4701574831072462365
+    second: HistoryCostWhite_7
+  - first:
+      213: -4168314472424407284
+    second: HistoryCostWhite_8
+  - first:
+      213: -2864785222798241646
+    second: HistoryCostWhite_9
+  - first:
+      213: -4753187249703746285
+    second: HistoryCostWhite_10
+  - first:
+      213: -8858714919141352190
+    second: HistoryCostWhite_11
+  - first:
+      213: 8921864599418486690
+    second: HistoryCostWhite_12
+  - first:
+      213: 7668599942448010656
+    second: HistoryCostWhite_13
+  - first:
+      213: 7928141333599813731
+    second: HistoryCostWhite_14
+  - first:
+      213: -5796095001224788679
+    second: HistoryCostWhite_15
+  - first:
+      213: -4338991750737738519
+    second: HistoryCostWhite_16
+  - first:
+      213: 728392536862103951
+    second: HistoryCostWhite_17
+  - first:
+      213: -1890633097898495380
+    second: HistoryCostWhite_18
+  - first:
+      213: -392648803593894567
+    second: HistoryCostWhite_19
+  - first:
+      213: -3508093266817773694
+    second: HistoryCostWhite_20
+  - first:
+      213: -9034778502048085081
+    second: HistoryCostWhite_21
+  - first:
+      213: 1914110679857483439
+    second: HistoryCostWhite_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 827
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HistoryCostWhite_0
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 758
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e664feff116da40800000000000000
+      internalID: 5392517394751450690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 52
+        width: 571
+        height: 701
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f072df7d8b1c8c00800000000000000
+      internalID: 904127919743463671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_2
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 744
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa76e51abe3fa4830800000000000000
+      internalID: 4056322607750735786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_3
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 659
+        width: 75
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33d75feb9ee0a230800000000000000
+      internalID: 3648178051672953660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_4
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 580
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 007f0ad0889ce3790800000000000000
+      internalID: -7548374339244984576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_5
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 598
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34eefb621ffa16be0800000000000000
+      internalID: -1485712951783461309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_6
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 404
+        width: 136
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d74799c3c44f2b0800000000000000
+      internalID: -5551728617484681981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_7
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 452
+        width: 85
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e93205e996a0ceb0800000000000000
+      internalID: -4701574831072462365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_8
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 492
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ff50f621c2726c0800000000000000
+      internalID: -4168314472424407284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_9
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 476
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2909255a40d3e38d0800000000000000
+      internalID: -2864785222798241646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_10
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 381
+        width: 82
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3150e7e3169490eb0800000000000000
+      internalID: -4753187249703746285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_11
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 403
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d502e67b58f0580800000000000000
+      internalID: -8858714919141352190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_12
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 397
+        width: 49
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2afb8764594d0db70800000000000000
+      internalID: 8921864599418486690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_13
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 263
+        width: 139
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a5d13684075c6a60800000000000000
+      internalID: 7668599942448010656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_14
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 331
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3600f4ea98a660e60800000000000000
+      internalID: 7928141333599813731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_15
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 302
+        width: 40
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935449f2e42209fa0800000000000000
+      internalID: -5796095001224788679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_16
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 239
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e44dedddfdc8c3c0800000000000000
+      internalID: -4338991750737738519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_17
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 155
+        width: 119
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8916b03725cb1a00800000000000000
+      internalID: 728392536862103951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_18
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 249
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c62f927e63f13c5e0800000000000000
+      internalID: -1890633097898495380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_19
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 154
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 955cd445ef70d8af0800000000000000
+      internalID: -392648803593894567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_20
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 127
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f0360b2cfb05fc0800000000000000
+      internalID: -3508093266817773694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_21
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 118
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab861912d40e9280800000000000000
+      internalID: -9034778502048085081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HistoryCostWhite_22
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 126
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faecfad9589409a10800000000000000
+      internalID: 1914110679857483439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      HistoryCostWhite_0: 5392517394751450690
+      HistoryCostWhite_1: 904127919743463671
+      HistoryCostWhite_10: -4753187249703746285
+      HistoryCostWhite_11: -8858714919141352190
+      HistoryCostWhite_12: 8921864599418486690
+      HistoryCostWhite_13: 7668599942448010656
+      HistoryCostWhite_14: 7928141333599813731
+      HistoryCostWhite_15: -5796095001224788679
+      HistoryCostWhite_16: -4338991750737738519
+      HistoryCostWhite_17: 728392536862103951
+      HistoryCostWhite_18: -1890633097898495380
+      HistoryCostWhite_19: -392648803593894567
+      HistoryCostWhite_2: 4056322607750735786
+      HistoryCostWhite_20: -3508093266817773694
+      HistoryCostWhite_21: -9034778502048085081
+      HistoryCostWhite_22: 1914110679857483439
+      HistoryCostWhite_3: 3648178051672953660
+      HistoryCostWhite_4: -7548374339244984576
+      HistoryCostWhite_5: -1485712951783461309
+      HistoryCostWhite_6: -5551728617484681981
+      HistoryCostWhite_7: -4701574831072462365
+      HistoryCostWhite_8: -4168314472424407284
+      HistoryCostWhite_9: -2864785222798241646
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

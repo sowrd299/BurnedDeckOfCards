@@ -64,6 +64,7 @@ namespace Ashworld {
             input.OnCardRightClicked += OnCardPickUpRequest;
             input.OnCardDragBegan += HandleCardDragBegan;
             input.OnCardDragEnded += HandleCardDragEnded;
+            input.OnCardHoverChanged += HandleCardHoverChanged;
 
             advanceButton.onClick.AddListener(OnAdvanceButtonPressed);
             if (endTurnButton != null) endTurnButton.onClick.AddListener(OnEndTurnPressed);
@@ -129,6 +130,19 @@ namespace Ashworld {
                     kvp.Value.UpdateExhaustedStatus();
                     kvp.Value.SetCanUse(isPlayerTurn && CanUse(kvp.Key, player));
                  }
+            }
+
+            // 5. Default History Feedback
+            if (playerUIView != null) playerUIView.UpdateHistoryFeedback(null, player);
+        }
+
+        private void HandleCardHoverChanged(CardView hoveredView) {
+            if (playerUIView != null) {
+                playerUIView.UpdateHistoryFeedback(hoveredView != null ? hoveredView.Card : null, player);
+            }
+
+            foreach (CardView v in cardViewCache.Values) {
+                v.SetHovered(v == hoveredView);
             }
         }
 
@@ -250,7 +264,13 @@ namespace Ashworld {
             
             if (actingPlayer.party.Count >= MAX_PARTY_SIZE) return false;
 
-            actingPlayer.PayHistoryCost(card.HistoryCost, card);
+            List<Card> discards = actingPlayer.PayHistoryCost(card.HistoryCost, card);
+            foreach(var d in discards) {
+                if(cardViewCache.TryGetValue(d, out CardView dv)) {
+                    cardViewCache.Remove(d);
+                    StartCoroutine(PlayDiscardAnimationThenDestroy(dv));
+                }
+            }
 
             actingPlayer.hand.Remove(card);
             actingPlayer.party.Add(card);
@@ -261,12 +281,31 @@ namespace Ashworld {
             return true;
         }
 
+        private System.Collections.IEnumerator PlayDiscardAnimationThenDestroy(CardView view) {
+            if (view == null) yield break;
+            
+            if (view.FireEffect != null) {
+                yield return view.FireEffect.PlayFire(null);
+            } else {
+                yield return new WaitForSeconds(0.5f);
+            }
+            
+            if (view != null) Destroy(view.gameObject);
+        }
+
         public bool TryPlayCardToDefense(Player actingPlayer, Player targetPlayer, Card card) {
              if (!CanPlayCard(actingPlayer, card, targetPlayer)) return false;
              
              if (targetPlayer.defense.Count >= MAX_DEFENSE_SIZE) return false;
 
-             actingPlayer.PayHistoryCost(card.HistoryCost, card);
+             List<Card> discards = actingPlayer.PayHistoryCost(card.HistoryCost, card);
+             foreach(var d in discards) {
+                 if(cardViewCache.TryGetValue(d, out CardView dv)) {
+                     cardViewCache.Remove(d);
+                     StartCoroutine(PlayDiscardAnimationThenDestroy(dv));
+                 }
+             }
+
              actingPlayer.hand.Remove(card);
              
              targetPlayer.defense.Add(card); 

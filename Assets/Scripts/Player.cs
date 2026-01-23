@@ -115,7 +115,8 @@ namespace Ashworld {
             return (matchesInHistory + cardsInHandAvailable) >= cost;
         }
 
-        public void PayHistoryCost(int cost, Card cardToPlay) {
+        public List<Card> PayHistoryCost(int cost, Card cardToPlay) {
+            List<Card> discards = new List<Card>();
             int remainingCost = cost;
 
             // 1. Swap from History (Priority)
@@ -132,9 +133,11 @@ namespace Ashworld {
                         Card discard = candidates[Random.Range(0, candidates.Count)];
                         hand.Remove(discard);
                         historyCards.Add(discard);
+                        discards.Add(discard);
                     }
                 }
             }
+            return discards;
         }
 
         public void StartNextQuestChapter() {

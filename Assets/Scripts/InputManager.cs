@@ -41,6 +41,7 @@ namespace Ashworld
         public event Func<CardView, CardView, bool> OnCardDroppedOnCard;
         public event Action<CardView> OnCardDragBegan;
         public event Action<CardView> OnCardDragEnded;
+        public event Action<CardView> OnCardHoverChanged;
         public Func<CardView, bool> CanStartDrag;
 
         private void HandleMouseInput()
@@ -57,9 +58,8 @@ namespace Ashworld
             // Update Hover State
             if (cardView != hoveredCard)
             {
-                if (hoveredCard != null) hoveredCard.SetHovered(false);
                 hoveredCard = cardView;
-                if (hoveredCard != null) hoveredCard.SetHovered(true);
+                OnCardHoverChanged?.Invoke(hoveredCard);
             }
             // Left Click - Dragging
             if (Mouse.current.leftButton.wasPressedThisFrame)
