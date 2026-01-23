@@ -39,6 +39,8 @@ namespace Ashworld
 
         [Header("Requirement Strings")]
         [SerializeField] private List<RequirementStringMapping> requirementStrings;
+        public Sprite holdTypeSprite;
+        public Sprite lockTypeSprite;
 
         // --- Public Lookup Methods ---
         public Sprite GetSpriteForSuit(Suit suit)

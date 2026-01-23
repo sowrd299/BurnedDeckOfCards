@@ -6,6 +6,12 @@ namespace Ashworld
 {
     public class CardView : MonoBehaviour
     {
+        [System.Serializable]
+        public struct IconSlot {
+            public SpriteRenderer mainIcon;
+            public SpriteRenderer typeIcon;
+        }
+        
         [Header("Definitions")]
         [SerializeField] private UIDefinitions uiDefinitions;
 
@@ -21,11 +27,9 @@ namespace Ashworld
         [SerializeField] private TextMeshPro holdRequirementsText;
         [SerializeField] private string lockPrefix = "Lock: ";
         [SerializeField] private string holdPrefix = "Hold: ";
-        [SerializeField] private GameObject lockIconRoot; // Header icon ("Lock")
-        [SerializeField] private GameObject holdIconRoot; // Header icon ("Hold")
-        [SerializeField] private List<SpriteRenderer> lockRequirementIcons;
-        [SerializeField] private List<SpriteRenderer> holdRequirementIcons;
-        [SerializeField] private List<SpriteRenderer> abilityIcons;
+
+        [Header("Icon Pool")]
+        [SerializeField] private List<IconSlot> iconSlots;
 
         [Header("State UI")]
         [SerializeField] private GameObject faceDownRoot;
@@ -100,9 +104,6 @@ namespace Ashworld
                 }
             }
 
-            // Ability Icons
-            UpdateAbilityIcons(card);
-
             // Lock requirements
             if (lockRequirementsText != null)
             {
@@ -116,10 +117,6 @@ namespace Ashworld
                     lockRequirementsText.text = string.Empty;
                 }
             }
-
-            // Lock Icons
-            if (lockIconRoot != null) lockIconRoot.SetActive(card.LockRequirements.Count > 0);
-            UpdateIcons(lockRequirementIcons, card.LockRequirements, (r) => uiDefinitions.GetSpriteForRequirement(r));
 
             // Hold requirements
             if (holdRequirementsText != null)
@@ -135,9 +132,8 @@ namespace Ashworld
                 }
             }
 
-            // Hold Icons
-            if (holdIconRoot != null) holdIconRoot.SetActive(card.HoldRequirements.Count > 0);
-            UpdateIcons(holdRequirementIcons, card.HoldRequirements, (r) => uiDefinitions.GetSpriteForRequirement(r));
+            // Icon Pool Update (Prioritized: Hold > Lock > Ability > Cost)
+            UpdateIconSlots(card);
 
             // Illustration
             if (illustration != null) {
@@ -195,6 +191,15 @@ namespace Ashworld
             if (lockRequirementsText != null) lockRequirementsText.text = string.Empty;
             if (holdRequirementsText != null) holdRequirementsText.text = string.Empty;
 
+            if (iconSlots != null)
+            {
+                foreach (var slot in iconSlots)
+                {
+                    if (slot.mainIcon != null) { slot.mainIcon.sprite = null; slot.mainIcon.enabled = false; }
+                    if (slot.typeIcon != null) { slot.typeIcon.sprite = null; slot.typeIcon.enabled = false; }
+                }
+            }
+
             if (suitIcons != null)
             {
                 foreach (var icon in suitIcons)
@@ -240,64 +245,76 @@ namespace Ashworld
             if (faceUpRoot != null) faceUpRoot.SetActive(!isFaceDown);
         }
 
-        private void UpdateAbilityIcons(Card card)
+        private void UpdateIconSlots(Card card)
         {
-            if (abilityIcons == null || uiDefinitions == null) return;
+            if (iconSlots == null || uiDefinitions == null) return;
 
-            // Clear
-            foreach(var icon in abilityIcons) {
-                if (icon != null) {
-                    icon.sprite = null;
-                    icon.enabled = false;
-                }
+            // 1. Reset all slots
+            foreach (var slot in iconSlots)
+            {
+                if (slot.mainIcon != null) { slot.mainIcon.sprite = null; slot.mainIcon.enabled = false; }
+                if (slot.typeIcon != null) { slot.typeIcon.sprite = null; slot.typeIcon.enabled = false; }
             }
 
-            int iconIndex = 0;
+            int currentSlot = 0;
 
-            // 1. History Icons
-            for (int i = 0; i < card.HistoryCost && iconIndex < abilityIcons.Count; i++)
+            // 2. Priority 1: Hold Requirements
+            foreach (var req in card.HoldRequirements)
             {
-                if (abilityIcons[iconIndex] != null)
-                {
-                    abilityIcons[iconIndex].sprite = uiDefinitions.historySprite;
-                    abilityIcons[iconIndex].enabled = true;
-                }
-                iconIndex++;
+                if (currentSlot >= iconSlots.Count) break;
+                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForRequirement(req), uiDefinitions.holdTypeSprite);
+                currentSlot++;
             }
 
-            // 2. Ability Icons
-            for (int i = 0; i < card.Abilities.Count && iconIndex < abilityIcons.Count; i++)
+            // 3. Priority 2: Lock Requirements
+            foreach (var req in card.LockRequirements)
             {
-                var sprite = uiDefinitions.GetSpriteForAbility(card.Abilities[i]);
-                if (sprite != null && abilityIcons[iconIndex] != null)
+                if (currentSlot >= iconSlots.Count) break;
+                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForRequirement(req), uiDefinitions.lockTypeSprite);
+                currentSlot++;
+            }
+
+            // 4. Priority 3: Abilities
+            foreach (var ability in card.Abilities)
+            {
+                if (currentSlot >= iconSlots.Count) break;
+                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForAbility(ability), null);
+                currentSlot++;
+            }
+
+            // 5. Priority 4: History Cost
+            if (card.HistoryCost > 0)
+            {
+                if (currentSlot < iconSlots.Count)
                 {
-                    abilityIcons[iconIndex].sprite = sprite;
-                    abilityIcons[iconIndex].enabled = true;
+                    Sprite typeSprite = (card.HistoryCost > 1) ? uiDefinitions.historySprite : null;
+                    AssignIconSlot(currentSlot, uiDefinitions.historySprite, typeSprite);
+                    currentSlot++;
                 }
-                iconIndex++;
             }
         }
 
-        private void UpdateIcons<T>(List<SpriteRenderer> icons, List<T> data, System.Func<T, Sprite> spriteSelector)
+        private void AssignIconSlot(int index, Sprite main, Sprite type)
         {
-            if (icons == null || uiDefinitions == null) return;
-
-            // Clear
-            foreach(var icon in icons) {
-                if (icon != null) {
-                    icon.sprite = null;
-                    icon.enabled = false;
-                }
+            if (index < 0 || index >= iconSlots.Count) return;
+            var slot = iconSlots[index];
+            
+            if (slot.mainIcon != null && main != null)
+            {
+                slot.mainIcon.sprite = main;
+                slot.mainIcon.enabled = true;
             }
 
-            // Assign
-            if (data == null) return;
-
-            for (int i = 0; i < data.Count && i < icons.Count; i++) {
-                var sprite = spriteSelector(data[i]);
-                if (sprite != null && icons[i] != null) {
-                    icons[i].sprite = sprite;
-                    icons[i].enabled = true;
+            if (slot.typeIcon != null)
+            {
+                if (type != null)
+                {
+                    slot.typeIcon.sprite = type;
+                    slot.typeIcon.enabled = true;
+                }
+                else
+                {
+                    slot.typeIcon.enabled = false;
                 }
             }
         }

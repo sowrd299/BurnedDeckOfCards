@@ -58,3 +58,5 @@ MonoBehaviour:
   - requirement: 5
     displayText: Heroism
     sprite: {fileID: 7576617242518483205, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
+  holdTypeSprite: {fileID: 21300000, guid: 3581013dbb98e0b2aa92a77d20ccccf8, type: 3}
+  lockTypeSprite: {fileID: 1161201145128540330, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
