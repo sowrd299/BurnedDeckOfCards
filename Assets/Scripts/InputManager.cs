@@ -14,6 +14,7 @@ namespace Ashworld
 
         private Camera mainCam;
         private CardView draggingCard;
+        private CardView hoveredCard; // Tracking hovered card
         private Vector3 dragOffset;
         private Vector3 originalPosition;
         private bool isDragging;
@@ -51,6 +52,14 @@ namespace Ashworld
             if (hit.collider != null)
             {
                 cardView = hit.collider.GetComponent<CardView>();
+            }
+
+            // Update Hover State
+            if (cardView != hoveredCard)
+            {
+                if (hoveredCard != null) hoveredCard.SetHovered(false);
+                hoveredCard = cardView;
+                if (hoveredCard != null) hoveredCard.SetHovered(true);
             }
             // Left Click - Dragging
             if (Mouse.current.leftButton.wasPressedThisFrame)

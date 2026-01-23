@@ -45,6 +45,12 @@ namespace Ashworld
         [SerializeField] private Color exhaustedColor = new Color(0.2f, 0.2f, 0.2f, 0.5f);
         [SerializeField] private Color canUseExhaustedColor = new Color(0.5f, 0.5f, 0.3f, 0.4f);
         [SerializeField] private Color defaultColor = new Color(1f, 1f, 1f, 0f);
+
+        [Header("Hover Colors")]
+        [SerializeField] private Color canUseHoverColor = new Color(1f, 1f, 1f, 0.4f);
+        [SerializeField] private Color canUseExhaustedHoverColor = new Color(0.7f, 0.7f, 0.5f, 0.5f);
+        [SerializeField] private Color canBeAttackedHoverColor = new Color(1f, 0.3f, 0.3f, 0.7f);
+
         [SerializeField] private float vignetteLerpSpeed = 15f;
 
         [Header("Animations")]
@@ -59,6 +65,7 @@ namespace Ashworld
 
         private bool canUse;
         private bool canBeAttacked;
+        private bool isHovered;
         private Color targetVignetteColor;
 
         /// <summary>
@@ -76,6 +83,7 @@ namespace Ashworld
 
             canUse = false;
             canBeAttacked = false;
+            isHovered = false;
             targetVignetteColor = defaultColor;
             if (vignette != null) vignette.color = defaultColor;
 
@@ -161,15 +169,20 @@ namespace Ashworld
             RefreshVignette();
         }
 
+        public void SetHovered(bool hovered) {
+            this.isHovered = hovered;
+            RefreshVignette();
+        }
+
         private void RefreshVignette() {
             if (vignette == null) return;
 
             if (canBeAttacked) {
-                targetVignetteColor = canBeAttackedColor;
+                targetVignetteColor = isHovered ? canBeAttackedHoverColor : canBeAttackedColor;
             } else if (canUse && currentCard != null && currentCard.IsExhausted) {
-                targetVignetteColor = canUseExhaustedColor;
+                targetVignetteColor = isHovered ? canUseExhaustedHoverColor : canUseExhaustedColor;
             } else if (canUse) {
-                targetVignetteColor = canUseColor;
+                targetVignetteColor = isHovered ? canUseHoverColor : canUseColor;
             } else if (currentCard != null && currentCard.IsExhausted) {
                 targetVignetteColor = exhaustedColor;
             } else {

@@ -747,6 +747,9 @@ MonoBehaviour:
   exhaustedColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   canUseExhaustedColor: {r: 0.5, g: 0.5, b: 0.3, a: 1}
   defaultColor: {r: 1, g: 1, b: 1, a: 0}
+  canUseHoverColor: {r: 1, g: 1, b: 0.9019608, a: 1}
+  canUseExhaustedHoverColor: {r: 0.7, g: 0.7, b: 0.5, a: 1}
+  canBeAttackedHoverColor: {r: 0.49, g: 0.067028314, b: 0.067028314, a: 1}
   vignetteLerpSpeed: 5
   attackAnim: {fileID: 962648211411385521}
   fireEffect: {fileID: 7200955282900877267}
