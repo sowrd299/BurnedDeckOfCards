@@ -8,6 +8,7 @@ namespace Ashworld {
     {
         private const int MAX_PARTY_SIZE = 5;
         private const int MAX_DEFENSE_SIZE = 5;
+        private const int ACTIONS_PER_TURN = 3;
 
         [Header("Config")]
         [SerializeField] private DeckDefinitionAsset playerDeckDefinition;
@@ -116,11 +117,11 @@ namespace Ashworld {
             foreach(var c in toRemove) cardViewCache.Remove(c);
 
             // 3. Sync Zones
-            playerHandView.SyncCards(player.hand, cardViewCache, false, false);
+            playerHandView.SyncCards(player.hand, cardViewCache, false, currentTurnActions < ACTIONS_PER_TURN);
             playerPartyView.SyncCards(player.party, cardViewCache);
             playerDefenseView.SyncCards(player.defense, cardViewCache);
 
-            if (opponentHandView != null) opponentHandView.SyncCards(opponent.hand, cardViewCache, true, false);
+            if (opponentHandView != null) opponentHandView.SyncCards(opponent.hand, cardViewCache, true, currentTurnActions < ACTIONS_PER_TURN);
             if (opponentPartyView != null) opponentPartyView.SyncCards(opponent.party, cardViewCache);
             if (opponentDefenseView != null) opponentDefenseView.SyncCards(opponent.defense, cardViewCache);
 
@@ -195,7 +196,7 @@ namespace Ashworld {
             currentTurnPlayer = actingPlayer;
             actingPlayer.ResetHeroism();
             actingPlayer.Draw();
-            currentTurnActions = 3;
+            currentTurnActions = ACTIONS_PER_TURN;
             UpdateUI();
         }
 
@@ -320,8 +321,8 @@ namespace Ashworld {
             actingPlayer.hand.Remove(card);
             actingPlayer.party.Add(card);
 
-            UpdateCardViews();
             DecrementActions();
+            UpdateCardViews();
 
             return true;
         }
@@ -355,8 +356,8 @@ namespace Ashworld {
              
              targetPlayer.defense.Add(card); 
 
-             UpdateCardViews();
              DecrementActions();
+             UpdateCardViews();
 
              return true;
         }
