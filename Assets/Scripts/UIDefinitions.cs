@@ -12,6 +12,7 @@ namespace Ashworld
         {
             public Suit suit;
             public Sprite sprite;
+            public Color color = Color.white;
         }
 
         [Serializable]
@@ -47,6 +48,12 @@ namespace Ashworld
         {
             var mapping = suitSprites.Find(m => m.suit == suit);
             return mapping != null ? mapping.sprite : null;
+        }
+
+        public Color GetColorForSuit(Suit suit)
+        {
+            var mapping = suitSprites.Find(m => m.suit == suit);
+            return mapping != null ? mapping.color : Color.clear;
         }
 
         public string GetStringForAbility(SpecialAbility ability)

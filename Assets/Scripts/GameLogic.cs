@@ -141,9 +141,54 @@ namespace Ashworld {
                 playerUIView.UpdateHistoryFeedback(hoveredView != null ? hoveredView.Card : null, player);
             }
 
+            // Clear previous hover/highlights
             foreach (CardView v in cardViewCache.Values) {
                 v.SetHovered(v == hoveredView);
+                v.SetHighlightedSuit(Suit.None);
             }
+
+            if (hoveredView != null) {
+                Card card = hoveredView.Card;
+                List<Card> zone = GetZoneForCard(card);
+                
+                // Only highlight boons for cards in Play (Party/Defense)
+                if (zone != null && zone != player.hand && zone != opponent.hand) {
+                    List<Card> boons = GetApplyingBoons(card, zone);
+                    foreach (Card boon in boons) {
+                        if (cardViewCache.TryGetValue(boon, out CardView boonView)) {
+                            // Find first matching suit between boon and card
+                            Suit match = Suit.None;
+                            foreach (Suit s in boon.Suits) {
+                                if (s != Suit.None && card.Suits.Contains(s)) {
+                                    match = s;
+                                    break;
+                                }
+                            }
+                            boonView.SetHighlightedSuit(match);
+                        }
+                    }
+                }
+            }
+        }
+
+        private List<Card> GetApplyingBoons(Card card, List<Card> contextParty) {
+            List<Card> applyingBoons = new List<Card>();
+            if (card.HasAbility(SpecialAbility.Boon)) return applyingBoons; 
+            
+            foreach(var other in contextParty) {
+                if (other != card && other.HasAbility(SpecialAbility.Boon)) {
+                    bool receivesBoon = true;
+                    foreach(var s in other.Suits) {
+                        if (s == Suit.None) continue;
+                        if (!card.Suits.Contains(s)) {
+                            receivesBoon = false;
+                            break;
+                        }
+                    }
+                    if (receivesBoon) applyingBoons.Add(other);
+                }
+            }
+            return applyingBoons;
         }
 
         private void StartTurn(Player actingPlayer) {
@@ -400,13 +445,6 @@ namespace Ashworld {
             return false;
         }
 
-        private Player GetOwnerOfZoneForCard(Card card) {
-            foreach (var p in allPlayers) {
-                if (p.party.Contains(card) || p.defense.Contains(card)) return p;
-            }
-            return null;
-        }
-
         private void HandleCardDragBegan(CardView draggedView) {
             if (draggedView == null || draggedView.Card == null) return;
             
@@ -526,7 +564,7 @@ namespace Ashworld {
             if (attackerView != null && defenderView != null && attackerView.AttackAnim != null) {
                 
                 // Snap attacker to its proper slot first (in case it was being dragged)
-                CardZoneView zone = GetZoneForCard(attacker);
+                CardZoneView zone = GetZoneViewForCard(attacker);
                 if (zone != null && input != null) {
                     input.CancelAnimationAndSnap(attackerView, zone.GetDropPosition(attacker));
                 }
@@ -562,34 +600,16 @@ namespace Ashworld {
             }
         }
 
-        private int GetEffectiveRank(Card card, List<Card> contextParty) {
+        private int GetEffectiveRank(Card card, List<Card> containingZone) {
             if (card.HasAbility(SpecialAbility.Boon)) return 0; // Boons don't have rank (conceptually)
             
             int rank = card.Rank;
 
             // Add Boons from same party
-            foreach(var other in contextParty) {
-                if (other != card && other.HasAbility(SpecialAbility.Boon)) {
-                    // "add their rank to any other card... that has all the suits the boon has"
-                    // Does 'card' have all suits of 'Boon'?
-                    // card.Suits must be superset of boon.Suits?
-                    // "has all the suits the boon has" -> Boon {A, B}, Card {A, B, C} -> Yes.
-                    
-                    bool receivesBoon = true;
-
-                    foreach(var s in other.Suits) {
-                        if (s == Suit.None) continue;
-                        if (!card.Suits.Contains(s)) {
-                            receivesBoon = false;
-                            break;
-                        }
-                    }
-
-                    if (receivesBoon) {
-                         rank += other.Rank;
-                    }
-                }
+            foreach(var other in GetApplyingBoons(card, containingZone)) {
+                rank += other.Rank;
             }
+
             return rank;
         }
 
@@ -645,7 +665,7 @@ namespace Ashworld {
             if (endTurnButton != null) endTurnButton.gameObject.SetActive(isPlayerTurn);
         }
 
-        private CardZoneView GetZoneForCard(Card c) {
+        private CardZoneView GetZoneViewForCard(Card c) {
             if (player.hand.Contains(c)) return playerHandView;
             if (opponent.hand.Contains(c)) return opponentHandView;
             if (player.party.Contains(c)) return playerPartyView;
@@ -653,6 +673,22 @@ namespace Ashworld {
             if (player.defense.Contains(c)) return playerDefenseView;
             if (opponent.defense.Contains(c)) return opponentDefenseView;
             
+            return null;
+        }
+
+        private List<Card> GetZoneForCard(Card card) {
+            foreach (var p in allPlayers) {
+                if (p.hand.Contains(card)) return p.hand;
+                if (p.party.Contains(card)) return p.party;
+                if (p.defense.Contains(card)) return p.defense;
+            }
+            return null;
+        }
+
+        private Player GetOwnerOfZoneForCard(Card card) {
+            foreach (var p in allPlayers) {
+                if (p.party.Contains(card) || p.defense.Contains(card)) return p;
+            }
             return null;
         }
 

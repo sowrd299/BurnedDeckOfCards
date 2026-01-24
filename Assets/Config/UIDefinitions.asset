@@ -15,22 +15,31 @@ MonoBehaviour:
   suitSprites:
   - suit: 1
     sprite: {fileID: 21300000, guid: 79bc6c0df331791978a9f06117a6cea7, type: 3}
+    color: {r: 0.6745098, g: 0.61960787, b: 0.26666668, a: 1}
   - suit: 2
     sprite: {fileID: 21300000, guid: efc27f67cc1a30e9da67912bd75b8138, type: 3}
+    color: {r: 0.34509805, g: 0.015686275, b: 0, a: 1}
   - suit: 3
     sprite: {fileID: 21300000, guid: e357a4ed3770720d39a666f1635599bf, type: 3}
+    color: {r: 0.53333336, g: 0.007843138, b: 0.44705883, a: 1}
   - suit: 4
     sprite: {fileID: 21300000, guid: c39e74c49bc29cfc3b58e16b05d7be0f, type: 3}
+    color: {r: 0.043137256, g: 0.29411766, b: 0.13725491, a: 1}
   - suit: 5
     sprite: {fileID: 21300000, guid: 8cc809c9e8a77b5bd91120fdee754a6c, type: 3}
+    color: {r: 0.30588236, g: 0.4117647, b: 0.4117647, a: 1}
   - suit: 6
     sprite: {fileID: 21300000, guid: 8d122ebed8381d71ba14472cbcc541ec, type: 3}
+    color: {r: 0.33333334, g: 0.3019608, b: 0.28627452, a: 1}
   - suit: 7
     sprite: {fileID: 21300000, guid: a2d66b58297b8a9848a6eae2b8b94d21, type: 3}
+    color: {r: 0.22352941, g: 0.33333334, b: 0.06666667, a: 1}
   - suit: 8
     sprite: {fileID: 21300000, guid: 6cb7d3424fc45e8e6a7e445b60a3af30, type: 3}
+    color: {r: 0.21960784, g: 0.19607843, b: 0.26666668, a: 1}
   - suit: 9
     sprite: {fileID: 21300000, guid: 038420436d8645fae8d1d4fc8a2f3d3a, type: 3}
+    color: {r: 0.20784314, g: 0.32156864, b: 0.4117647, a: 1}
   abilityStrings:
   - ability: 1
     displayText: Location

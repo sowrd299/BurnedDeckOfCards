@@ -67,6 +67,7 @@ namespace Ashworld
         private bool canUse;
         private bool canBeAttacked;
         private bool isHovered;
+        private Suit highlightedSuit = Suit.None;
         private Color targetVignetteColor;
 
         /// <summary>
@@ -85,6 +86,7 @@ namespace Ashworld
             canUse = false;
             canBeAttacked = false;
             isHovered = false;
+            highlightedSuit = Suit.None;
             targetVignetteColor = defaultColor;
             if (vignette != null) vignette.color = defaultColor;
 
@@ -187,10 +189,17 @@ namespace Ashworld
             RefreshVignette();
         }
 
+        public void SetHighlightedSuit(Suit suit) {
+            this.highlightedSuit = suit;
+            RefreshVignette();
+        }
+
         private void RefreshVignette() {
             if (vignette == null) return;
 
-            if (canBeAttacked) {
+            if (highlightedSuit != Suit.None && uiDefinitions != null) {
+                targetVignetteColor = uiDefinitions.GetColorForSuit(highlightedSuit);
+            } else if (canBeAttacked) {
                 targetVignetteColor = isHovered ? canBeAttackedHoverColor : canBeAttackedColor;
             } else if (canUse && currentCard != null && currentCard.IsExhausted) {
                 targetVignetteColor = isHovered ? canUseExhaustedHoverColor : canUseExhaustedColor;
