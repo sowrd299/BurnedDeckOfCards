@@ -23,5 +23,7 @@ MonoBehaviour:
       count: 4
     - cardDefinitionAsset: {fileID: 11400000, guid: 5b632246641ba6611a53df4ca8d9a08f, type: 2}
       count: 4
+    - cardDefinitionAsset: {fileID: 11400000, guid: bc9c3a77a79467025b31249fded5e154, type: 2}
+      count: 3
     - cardDefinitionAsset: {fileID: 11400000, guid: c40faabd9cf7bf5e9900de9dbc7af526, type: 2}
-      count: 4
+      count: 3

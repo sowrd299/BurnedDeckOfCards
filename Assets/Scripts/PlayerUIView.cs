@@ -48,12 +48,14 @@ namespace Ashworld
                 }
 
                 historyNameText.text = hoveredCard.CardName;
+                historyNameText.color = historyHoverColor;
             }
             else
             {
                 // Show total history count
                 historyCountText.text = player.historyCards.Count.ToString();
-                historyNameText.text = string.Empty;
+                historyNameText.text = "Discarded History";
+                historyNameText.color = historyDefaultColor;
             }
         }
 

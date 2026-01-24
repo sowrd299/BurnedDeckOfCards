@@ -18,6 +18,7 @@ namespace Ashworld
         [Header("UI References")]
         [SerializeField] private TextMeshPro nameText;
         [SerializeField] private TextMeshPro rankText;
+        [SerializeField] private TextMeshPro boonRankText;
         [SerializeField] private List<SpriteRenderer> suitIcons; // slots for suits
         [SerializeField] private TextMeshPro abilitiesText;
         [SerializeField] private SpriteRenderer illustration;
@@ -93,7 +94,19 @@ namespace Ashworld
 
             // Rank
             if (rankText != null)
-                rankText.text = card.Rank > 0 ? card.Rank.ToString() : "-";
+            {
+                if (!card.HasAbility(SpecialAbility.Boon))
+                    rankText.text = card.Rank > 0 ? card.Rank.ToString() : "-";
+                else
+                    rankText.text = string.Empty;
+            }
+
+            if (boonRankText != null) {
+                if (card.HasAbility(SpecialAbility.Boon))
+                    boonRankText.text = card.Rank > 0 ? "+" + card.Rank.ToString() : "-";
+                else
+                    boonRankText.text = string.Empty;
+            }
 
             // Suits
             UpdateSuits(card);
@@ -200,6 +213,7 @@ namespace Ashworld
         {
             if (nameText != null) nameText.text = string.Empty;
             if (rankText != null) rankText.text = string.Empty;
+            if (boonRankText != null) boonRankText.text = string.Empty;
             if (abilitiesText != null) abilitiesText.text = string.Empty;
             if (lockRequirementsText != null) lockRequirementsText.text = string.Empty;
             if (holdRequirementsText != null) holdRequirementsText.text = string.Empty;
