@@ -178,15 +178,9 @@ namespace Ashworld {
             
             foreach(var other in contextParty) {
                 if (other != card && other.HasAbility(SpecialAbility.Boon)) {
-                    bool receivesBoon = true;
-                    foreach(var s in other.Suits) {
-                        if (s == Suit.None) continue;
-                        if (!card.Suits.Contains(s)) {
-                            receivesBoon = false;
-                            break;
-                        }
+                    if (card.Definition.CanBoonApply(other.Definition)) {
+                        applyingBoons.Add(other);
                     }
-                    if (receivesBoon) applyingBoons.Add(other);
                 }
             }
             return applyingBoons;
@@ -477,6 +471,9 @@ namespace Ashworld {
             // Validate Ownership: You can only attack with cards you own.
             if (attacker.OwnerId != actingPlayer.Id) return false;
 
+            // Boons cannot attack
+            if (attacker.HasAbility(SpecialAbility.Boon)) return false;
+
             // Context: Attack happens on targetPlayer's board
             bool attackerInParty = targetPlayer.party.Contains(attacker);
             bool attackerInDefense = targetPlayer.defense.Contains(attacker);
@@ -602,8 +599,6 @@ namespace Ashworld {
         }
 
         private int GetEffectiveRank(Card card, List<Card> containingZone) {
-            if (card.HasAbility(SpecialAbility.Boon)) return 0; // Boons don't have rank (conceptually)
-            
             int rank = card.Rank;
 
             // Add Boons from same party
