@@ -39,6 +39,7 @@ namespace Ashworld
         [SerializeField] private GameObject faceUpRoot; // Optional wrapper for content
         [SerializeField] private SpriteRenderer background; // Reference to background sprite
         [SerializeField] private GameObject exhaustedRoot; // Object to enable when exhausted
+        [SerializeField] private GameObject shadowRoot;
         [SerializeField] private SpriteRenderer vignette;
         [SerializeField] private Color exhaustedBackgroundColor = new Color(0.85f, 0.85f, 0.85f, 1f);
 
@@ -212,6 +213,8 @@ namespace Ashworld
             } else {
                 targetVignetteColor = defaultColor;
             }
+
+            if (shadowRoot != null) shadowRoot.SetActive(isHovered && canUse);
         }
 
         private void Update() {
