@@ -140,11 +140,7 @@ namespace Ashworld {
             return discards;
         }
 
-        public void StartNextQuestChapter() {
-            // Process Party: Check Hold Requirements
-            // "Return all cards you own from your party... that you meet the hold requirements of, to your hand."
-            // "Discard all ... other cards ... to their owner’s histories."
-            
+        public void StartNextQuestChapter(List<Player> allPlayers) {
             List<CardDefinition> partyDefs = party.ConvertAll(c => c.Definition);
             List<CardDefinition> defenseDefs = defense.ConvertAll(c => c.Definition);
 
@@ -158,47 +154,71 @@ namespace Ashworld {
                 }
             }
 
-            // Usage of .ToList() to iterate safely while modifying collections
-            List<Card> currentParty = new List<Card>(party);
+            // Create a list of cards to process with their original zone context
+            var partyCopy = new List<Card>(party);
+            var defenseCopy = new List<Card>(defense);
+            
+            this.party.Clear();
+            this.defense.Clear();
+
+            List<Card> candidates = new List<Card>(partyCopy);
+            candidates.AddRange(defenseCopy);
+
             // Sort so Hero card comes first (to prioritize for heroism consumption)
             Card heroCard = GetHeroCard();
-            currentParty.Sort((a, b) => {
+            candidates.Sort((a, b) => {
                 if (a.IsSameCard(heroCard)) return -1;
                 if (b.IsSameCard(heroCard)) return 1;
                 return 0;
             });
 
-            this.party.Clear(); // We will re-distribute them
+            foreach (var card in candidates) {
+                bool isOwnedByThisPlayer = (card.OwnerId == this.Id);
 
-            foreach (var card in currentParty) {
-                 bool meetsHold = true;
-                 bool usedHeroism = false;
-                 foreach(var req in card.HoldRequirements) {
-                     if (!CardDefinition.MeetsRequirement(req, partyDefs, defenseDefs, HeroismAvailable)) {
-                         meetsHold = false;
-                         break;
-                     }
-                     if (req == Requirement.Heroism) usedHeroism = true;
-                 }
+                if (isOwnedByThisPlayer) {
+                    bool meetsHold = true;
+                    bool usedHeroism = false;
+                    foreach(var req in card.HoldRequirements) {
+                        if (!CardDefinition.MeetsRequirement(req, partyDefs, defenseDefs, HeroismAvailable)) {
+                            meetsHold = false;
+                            break;
+                        }
+                        if (req == Requirement.Heroism) usedHeroism = true;
+                    }
 
-                 if (card.HoldRequirements.Count > 0 && meetsHold) {
-                     if (usedHeroism) HeroismAvailable = false;
-                     this.AddToHand(card);
-                 } else {
-                     this.historyCards.Add(card);
-                 }
+                    if (card.HoldRequirements.Count > 0 && meetsHold) {
+                        if (usedHeroism) HeroismAvailable = false;
+                        this.AddToHand(card);
+                    } else {
+                        // If not held: Party cards -> History, Defense cards (owned/quest) -> Ash
+                        if (partyCopy.Contains(card)) {
+                            this.historyCards.Add(card);
+                        } else {
+                            this.ashCards.Add(card);
+                        }
+                    }
+                } else {
+                    if (card.OwnerId == this.Id) {
+                        this.ashCards.Add(card);
+                    } else {
+                        // Owned by another player -> Find owner and move to their history
+                        Player owner = allPlayers.Find(p => p.Id == card.OwnerId);
+                        if (owner != null) {
+                            owner.MoveToHistory(card);
+                        } else {
+                            // Fallback
+                            this.ashCards.Add(card);
+                        }
+                    }
+                }
             }
 
-            // Process Defense: Ash
-            this.ClearDefenseToAsh();
-
             chapterInd++;
-
             AddCardForQuestChapterToDefense();
         }
 
         public void AddCardForQuestChapterToDefense() {
-            foreach (Card card in questDefinition.GetCardsForChapter(chapterInd)) {
+            foreach (Card card in questDefinition.GetCardsForChapter(chapterInd, Id)) {
                 AddToDefense(card);
             }
         }

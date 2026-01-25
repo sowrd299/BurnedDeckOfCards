@@ -133,7 +133,7 @@ namespace Ashworld {
 
                     Player zoneOwner = GetOwnerOfZoneForCard(kvp.Key);
                     if (zoneOwner != null) {
-                        kvp.Value.UpdateRequirements(zoneOwner.party, zoneOwner.defense, zoneOwner.HeroismAvailable);
+                        kvp.Value.UpdateRequirements(zoneOwner);
                     } else {
                         kvp.Value.ClearRequirements();
                     }
@@ -630,7 +630,7 @@ namespace Ashworld {
         private System.Collections.IEnumerator HandleQuestAdvancement(Player p) {
             
             // 1. Update Model
-            p.StartNextQuestChapter();
+            p.StartNextQuestChapter(allPlayers);
             DecrementActions();
 
             // 2. Identify Animation & Data

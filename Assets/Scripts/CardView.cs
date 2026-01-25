@@ -266,12 +266,13 @@ namespace Ashworld
             }
         }
 
-        public void UpdateRequirements(List<Card> party, List<Card> defense, bool heroismAvailable)
+        public void UpdateRequirements(Player zoneOwner)
         {
-            if (currentCard == null || iconSlots == null || uiDefinitions == null) return;
+            if (currentCard == null || iconSlots == null || uiDefinitions == null || zoneOwner == null) return;
 
-            bool inParty = party != null && party.Contains(currentCard);
-            bool inDefense = defense != null && defense.Contains(currentCard);
+            bool inParty = zoneOwner.party.Contains(currentCard);
+            bool inDefense = zoneOwner.defense.Contains(currentCard);
+            bool isOwnedByZoneOwner = currentCard.OwnerId == zoneOwner.Id;
 
             if (!inParty && !inDefense)
             {
@@ -279,8 +280,9 @@ namespace Ashworld
                 return;
             }
 
-            List<CardDefinition> partyDefs = party?.ConvertAll(c => c.Definition) ?? new List<CardDefinition>();
-            List<CardDefinition> defenseDefs = defense?.ConvertAll(c => c.Definition) ?? new List<CardDefinition>();
+            List<CardDefinition> partyDefs = zoneOwner.party.ConvertAll(c => c.Definition);
+            List<CardDefinition> defenseDefs = zoneOwner.defense.ConvertAll(c => c.Definition);
+            bool heroismAvailable = zoneOwner.HeroismAvailable;
 
             int currentSlot = 0;
 
@@ -290,7 +292,7 @@ namespace Ashworld
                 if (currentSlot >= iconSlots.Count) break;
                 var slot = iconSlots[currentSlot];
                 
-                if (inParty)
+                if (isOwnedByZoneOwner)
                 {
                     bool isMet = CardDefinition.MeetsRequirement(req, partyDefs, defenseDefs, heroismAvailable);
                     if (slot.metRoot != null) slot.metRoot.SetActive(isMet);
