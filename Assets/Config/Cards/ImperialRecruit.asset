@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7036eda132653dc99a2fefcdfe479d, type: 3}
-  m_Name: Xinlar
+  m_Name: ImperialRecruit
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
-    cardName: Xinlar
+    cardName: Imperial Recruit
     subtitle: 
-    rank: 8
-    suits: 02000000
-    historyCost: 2
-    abilities: 02000000
-    lockRequirements: 04000000
-    holdRequirements: 
+    rank: 3
+    suits: 0300000006000000
+    historyCost: 0
+    abilities: 
+    lockRequirements: 
+    holdRequirements: 04000000
     subtypes:
-    - Dragon
+    - Human
+    - Soldier
     flavorText: 
-    illustration: {fileID: 0}
+    illustration: {fileID: 21300000, guid: af58593095e8856a692e766542e8d9e7, type: 3}

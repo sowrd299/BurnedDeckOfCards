@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7036eda132653dc99a2fefcdfe479d, type: 3}
-  m_Name: Xinlar
+  m_Name: JossenEclecticHermit
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
-    cardName: Xinlar
-    subtitle: 
-    rank: 8
-    suits: 02000000
-    historyCost: 2
+    cardName: Jossen Viersen
+    subtitle: Hermit Outside the Cave
+    rank: 4
+    suits: 0000000007000000
+    historyCost: 0
     abilities: 02000000
-    lockRequirements: 04000000
-    holdRequirements: 
+    lockRequirements: 
+    holdRequirements: 01000000
     subtypes:
-    - Dragon
+    - Human
+    - Wanderer
+    - Ranger
     flavorText: 
-    illustration: {fileID: 0}
+    illustration: {fileID: 21300000, guid: d1a229b8552185d5094892f7c01f6fe6, type: 3}

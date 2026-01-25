@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: d1a229b8552185d5094892f7c01f6fe6
+guid: 85e6881d67810c3ba892cdadbd072a84
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6586198075215150366
-    second: craiyon_220306_A_rough_medieval_style_hand_inked_line_art_drawing_of_a_roguish_human_adventurer__eager_to_serve_the_0
+      213: -1372854618120499777
+    second: RequirementRings_0
   - first:
-      213: -6739966177741818404
-    second: craiyon_220306_A_rough_medieval_style_hand_inked_line_art_drawing_of_a_roguish_human_adventurer__eager_to_serve_the_1
+      213: 4265475143220292076
+    second: RequirementRings_1
+  - first:
+      213: -1392450978799150965
+    second: RequirementRings_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 655
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,45 +106,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: craiyon_220306_A_rough_medieval_style_hand_inked_line_art_drawing_of_a_roguish_human_adventurer__eager_to_serve_the_0
+      name: RequirementRings_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 387
-        width: 55
-        height: 291
+        x: 63
+        y: 205
+        width: 655
+        height: 655
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1d7f851140e66b50800000000000000
-      internalID: 6586198075215150366
+      spriteID: fbd4cae9ff3a2fce0800000000000000
+      internalID: -1372854618120499777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: craiyon_220306_A_rough_medieval_style_hand_inked_line_art_drawing_of_a_roguish_human_adventurer__eager_to_serve_the_1
+      name: RequirementRings_1
       rect:
         serializedVersion: 2
-        x: 5
-        y: 0
-        width: 1016
-        height: 1022
+        x: 802
+        y: 205
+        width: 655
+        height: 655
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd53d81a874d672a0800000000000000
-      internalID: -6739966177741818404
+      spriteID: ce967e51b03023b30800000000000000
+      internalID: 4265475143220292076
       vertices: []
       indices: 
       edges: []
@@ -150,7 +153,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 968a182727f79ba1da81dc113da19fe8
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +163,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      craiyon_220306_A_rough_medieval_style_hand_inked_line_art_drawing_of_a_roguish_human_adventurer__eager_to_serve_the_0: 6586198075215150366
-      craiyon_220306_A_rough_medieval_style_hand_inked_line_art_drawing_of_a_roguish_human_adventurer__eager_to_serve_the_1: -6739966177741818404
+      RequirementRings_0: -1372854618120499777
+      RequirementRings_1: 4265475143220292076
+      RequirementRings_2: -1392450978799150965
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
