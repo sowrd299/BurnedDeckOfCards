@@ -41,6 +41,8 @@ namespace Ashworld {
         private Player opponent;
         private List<Player> allPlayers = new List<Player>();
 
+        private bool isGameInProgress = true;
+
         private Player currentTurnPlayer;
 
         private int currentTurnActions;
@@ -56,7 +58,7 @@ namespace Ashworld {
         }
 
         private void SetUpInput() {
-            input.CanStartDrag = (view) => isPlayerTurn && CanUse(view.Card, player);
+            input.CanStartDrag = (view) => isGameInProgress && isPlayerTurn && CanUse(view.Card, player);
             input.RegisterZoneCallback(playerPartyView, OnCardDroppedInParty);
             input.RegisterZoneCallback(playerHandView, OnCardDroppedInHand); // Pick Card Up (Drag)
             if (opponentDefenseView != null) input.RegisterZoneCallback(opponentDefenseView, OnCardDroppedInOpponentDefense);
@@ -127,7 +129,7 @@ namespace Ashworld {
 
             // 4. Update Statuses (Exhausted & CanUse & Requirements)
             foreach(var kvp in cardViewCache) {
-                 if (kvp.Value != null) {
+                if (kvp.Value != null) {
                     kvp.Value.UpdateExhaustedStatus();
                     kvp.Value.SetCanUse(isPlayerTurn && CanUse(kvp.Key, player));
 
@@ -202,7 +204,7 @@ namespace Ashworld {
         }
 
         private void OnEndTurnPressed() {
-             if (isPlayerTurn) {
+             if (isGameInProgress && isPlayerTurn) {
                 StartOpponentTurn();
              }
         }
@@ -216,7 +218,7 @@ namespace Ashworld {
             Debug.Log("AI Turn Start");
             
             // AI takes 3 actions
-            while (currentTurnActions > 0) {
+            while (currentTurnActions > 0 && isGameInProgress) {
                 yield return new WaitForSeconds(1.5f); // Simulated thinking
 
                 OpponentAction action = GetBestAction(opponent, player);
@@ -263,7 +265,10 @@ namespace Ashworld {
             yield return new WaitForSeconds(1.0f);
             Debug.Log("AI Turn End. Player Start.");
             
-            StartTurn(player);
+            if (isGameInProgress) {
+                StartTurn(player);
+            }
+
             UpdateCardViews();
         }
 
@@ -617,7 +622,7 @@ namespace Ashworld {
         }
 
         private void OnAdvanceButtonPressed() {
-            if (isPlayerTurn) {
+            if (isGameInProgress && isPlayerTurn) {
                 if (currentTurnActions <= 0) {
                     Debug.Log("Cannot advance: No actions left.");
                     return;
@@ -633,15 +638,26 @@ namespace Ashworld {
             p.StartNextQuestChapter(allPlayers);
             DecrementActions();
 
-            // 2. Identify Animation & Data
-            ChapterAnimationView anim = (p == player) ? playerChapterAnim : opponentChapterAnim;
-            string chapterName = "The End";
-            
-            // Get Chapter Name from the appropriate QuestDefinition
+            // 2. Check Win Condition
             var questDef = p.questDefinition;
-            chapterName = questDef.GetChapterName(p.chapterInd);
+            string chapterName = questDef.GetChapterName(p.chapterInd);
 
-            // 3. Play Animation
+            if (p.chapterInd >= questDef.ChapterCount) {
+                isGameInProgress = false;
+                UpdateUI(); // Enable/Disable buttons based on state
+                UpdateCardViews(); // Refresh statuses
+
+                ChapterAnimationView victoryAnim = (p == player) ? playerChapterAnim : opponentChapterAnim;
+                if (victoryAnim != null) {
+                    yield return victoryAnim.PlayVictoryTransition(chapterName);
+                }
+                yield break;
+            }
+
+            // 3. Identify Animation & Data
+            ChapterAnimationView anim = (p == player) ? playerChapterAnim : opponentChapterAnim;
+
+            // 4. Play Animation
             if (anim != null) {
                 yield return anim.PlayTransition(p.chapterInd, chapterName, () => {
                     UpdateCardViews();
@@ -653,6 +669,8 @@ namespace Ashworld {
         }
 
         private void DecrementActions() {
+            if (!isGameInProgress) return;
+            
             currentTurnActions--;
             UpdateUI();
 
@@ -662,10 +680,10 @@ namespace Ashworld {
         }
 
         private void UpdateUI() {
-            playerUIView.SetTurnInfo(currentTurnActions, isPlayerTurn);
-            if (opponentUIView != null) opponentUIView.SetTurnInfo(currentTurnActions, !isPlayerTurn);
-            advanceButtonRoot.SetActive(isPlayerTurn && player.CanAdvance());
-            if (endTurnButton != null) endTurnButton.gameObject.SetActive(isPlayerTurn);
+            playerUIView.SetTurnInfo(currentTurnActions, isGameInProgress && isPlayerTurn);
+            if (opponentUIView != null) opponentUIView.SetTurnInfo(currentTurnActions, isGameInProgress && !isPlayerTurn);
+            advanceButtonRoot.SetActive(isGameInProgress && isPlayerTurn && player.CanAdvance());
+            if (endTurnButton != null) endTurnButton.gameObject.SetActive(isGameInProgress && isPlayerTurn);
         }
 
         private CardZoneView GetZoneViewForCard(Card c) {

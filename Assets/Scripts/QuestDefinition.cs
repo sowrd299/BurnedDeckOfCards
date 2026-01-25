@@ -13,6 +13,7 @@ namespace Ashworld {
     public class QuestDefinition
     {
         [SerializeField] private List<QuestChapterDefinition> chapters;
+        public int ChapterCount => chapters.Count;
 
         public List<Card> GetCardsForChapter(int chapterInd, string ownerId = "") {
 
@@ -28,7 +29,8 @@ namespace Ashworld {
         }
 
         public string GetChapterName(int index) {
-            if (index < 0 || index >= chapters.Count) return "Unknown";
+            if (index < 0 || index >= chapters.Count) index = chapters.Count - 1;
+
             if (chapters[index].cards == null || chapters[index].cards.Count == 0) return "Empty";
             
             var def = chapters[index].cards[0].Definition;

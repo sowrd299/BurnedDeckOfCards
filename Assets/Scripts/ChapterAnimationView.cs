@@ -9,7 +9,9 @@ namespace Ashworld
     {
         [Header("Configuration")]
         [SerializeField] private bool reverseAnimationDirection; // False: Top->Bot, True: Bot->Top
-        [SerializeField] private string victorySuffix = "draw closer to victory";
+        [SerializeField] private string advancementSuffix = "draw closer to victory";
+        [SerializeField] private string victoryTitle = "Victory!";
+        [SerializeField] private string victorySuffix = "You have completed your quest";
 
         [Header("References")]
         [SerializeField] private TextMeshPro chapterTitleText;
@@ -40,7 +42,7 @@ namespace Ashworld
         {
             // 1. Setup Text
             if (chapterTitleText != null) chapterTitleText.text = "Chapter " + chapterNum;
-            if (descriptionText != null) descriptionText.text = $"{cardName}\n-\n{victorySuffix}";
+            if (descriptionText != null) descriptionText.text = $"{cardName}\n-\n{advancementSuffix}";
 
             // 2. Slide In
             yield return StartCoroutine(MoveTo(screenCenter, slideDuration));
@@ -56,6 +58,18 @@ namespace Ashworld
 
             // 6. Reset to start for next time
             transform.position = screenStart;
+        }
+
+        public IEnumerator PlayVictoryTransition(string cardName)
+        {
+            // 1. Setup Text
+            if (chapterTitleText != null) chapterTitleText.text = victoryTitle;
+            if (descriptionText != null) descriptionText.text = $"{cardName}\n-\n{victorySuffix}";
+
+            // 2. Slide In
+            yield return StartCoroutine(MoveTo(screenCenter, slideDuration));
+            
+            // Note: Does not slide out, stays persistent
         }
 
         private IEnumerator MoveTo(Vector3 target, float duration)

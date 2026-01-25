@@ -3548,7 +3548,15 @@ PrefabInstance:
       value: OpponentAdvanceAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 8699604225126621508, guid: 42d1466196ede32d4b654e4cba5444ae, type: 3}
+      propertyPath: victoryTitle
+      value: Defeat!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699604225126621508, guid: 42d1466196ede32d4b654e4cba5444ae, type: 3}
       propertyPath: victorySuffix
+      value: You have allowed your foes to achieve their ends.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699604225126621508, guid: 42d1466196ede32d4b654e4cba5444ae, type: 3}
+      propertyPath: advancementSuffix
       value: You draw closer to defeat.
       objectReference: {fileID: 0}
     - target: {fileID: 8699604225126621508, guid: 42d1466196ede32d4b654e4cba5444ae, type: 3}
@@ -4280,6 +4288,18 @@ PrefabInstance:
     - target: {fileID: 6089128242985630531, guid: 42d1466196ede32d4b654e4cba5444ae, type: 3}
       propertyPath: m_Name
       value: PlayerAdvanceAnimation
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699604225126621508, guid: 42d1466196ede32d4b654e4cba5444ae, type: 3}
+      propertyPath: victorySuffix
+      value: You have completed your quest.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699604225126621508, guid: 42d1466196ede32d4b654e4cba5444ae, type: 3}
+      propertyPath: advancementSuffix
+      value: You draw closer to victory.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699604225126621508, guid: 42d1466196ede32d4b654e4cba5444ae, type: 3}
+      propertyPath: reverseAnimationDirection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
