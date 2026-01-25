@@ -10,6 +10,8 @@ namespace Ashworld
         public struct IconSlot {
             public SpriteRenderer mainIcon;
             public SpriteRenderer typeIcon;
+            public GameObject unmetRoot;
+            public GameObject metRoot;
         }
         
         [Header("Definitions")]
@@ -246,6 +248,85 @@ namespace Ashworld
                         icon.enabled = false;
                     }
                 }
+            }
+
+            ClearRequirements();
+        }
+
+        public void ClearRequirements() 
+        {
+            if (iconSlots == null) return;
+            foreach (var slot in iconSlots)
+            {
+                if (slot.unmetRoot != null) slot.unmetRoot.SetActive(false);
+                if (slot.metRoot != null) slot.metRoot.SetActive(false);
+            }
+        }
+
+        public void UpdateRequirements(List<Card> party, List<Card> defense, bool heroismAvailable)
+        {
+            if (currentCard == null || iconSlots == null || uiDefinitions == null) return;
+
+            bool inParty = party != null && party.Contains(currentCard);
+            bool inDefense = defense != null && defense.Contains(currentCard);
+
+            if (!inParty && !inDefense)
+            {
+                ClearRequirements();
+                return;
+            }
+
+            List<CardDefinition> partyDefs = party?.ConvertAll(c => c.Definition) ?? new List<CardDefinition>();
+            List<CardDefinition> defenseDefs = defense?.ConvertAll(c => c.Definition) ?? new List<CardDefinition>();
+
+            int currentSlot = 0;
+
+            // 1. Hold Requirements (Priority 1)
+            foreach (var req in currentCard.HoldRequirements)
+            {
+                if (currentSlot >= iconSlots.Count) break;
+                var slot = iconSlots[currentSlot];
+                
+                if (inParty)
+                {
+                    bool isMet = CardDefinition.MeetsRequirement(req, partyDefs, defenseDefs, heroismAvailable);
+                    if (slot.metRoot != null) slot.metRoot.SetActive(isMet);
+                    if (slot.unmetRoot != null) slot.unmetRoot.SetActive(false);
+                }
+                else
+                {
+                    if (slot.metRoot != null) slot.metRoot.SetActive(false);
+                    if (slot.unmetRoot != null) slot.unmetRoot.SetActive(false);
+                }
+                currentSlot++;
+            }
+
+            // 2. Lock Requirements (Priority 2)
+            foreach (var req in currentCard.LockRequirements)
+            {
+                if (currentSlot >= iconSlots.Count) break;
+                var slot = iconSlots[currentSlot];
+
+                if (inDefense)
+                {
+                    bool isMet = CardDefinition.MeetsRequirement(req, partyDefs, defenseDefs, heroismAvailable);
+                    if (slot.unmetRoot != null) slot.unmetRoot.SetActive(!isMet);
+                    if (slot.metRoot != null) slot.metRoot.SetActive(false);
+                }
+                else
+                {
+                    if (slot.metRoot != null) slot.metRoot.SetActive(false);
+                    if (slot.unmetRoot != null) slot.unmetRoot.SetActive(false);
+                }
+                currentSlot++;
+            }
+
+            // 3. Clear remaining slots (Abilities/Cost don't have req visual state yet)
+            for (int i = currentSlot; i < iconSlots.Count; i++)
+            {
+                var slot = iconSlots[i];
+                if (slot.unmetRoot != null) slot.unmetRoot.SetActive(false);
+                if (slot.metRoot != null) slot.metRoot.SetActive(false);
             }
         }
 

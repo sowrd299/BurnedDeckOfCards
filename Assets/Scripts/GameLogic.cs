@@ -125,11 +125,18 @@ namespace Ashworld {
             if (opponentPartyView != null) opponentPartyView.SyncCards(opponent.party, cardViewCache);
             if (opponentDefenseView != null) opponentDefenseView.SyncCards(opponent.defense, cardViewCache);
 
-            // 4. Update Statuses (Exhausted & CanUse)
+            // 4. Update Statuses (Exhausted & CanUse & Requirements)
             foreach(var kvp in cardViewCache) {
                  if (kvp.Value != null) {
                     kvp.Value.UpdateExhaustedStatus();
                     kvp.Value.SetCanUse(isPlayerTurn && CanUse(kvp.Key, player));
+
+                    Player zoneOwner = GetOwnerOfZoneForCard(kvp.Key);
+                    if (zoneOwner != null) {
+                        kvp.Value.UpdateRequirements(zoneOwner.party, zoneOwner.defense, zoneOwner.HeroismAvailable);
+                    } else {
+                        kvp.Value.ClearRequirements();
+                    }
                  }
             }
 

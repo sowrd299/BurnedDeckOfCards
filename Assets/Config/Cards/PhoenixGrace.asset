@@ -20,7 +20,7 @@ MonoBehaviour:
     historyCost: 0
     abilities: 03000000
     lockRequirements: 
-    holdRequirements: 01000000
+    holdRequirements: 04000000
     subtypes: []
     flavorText: 
     illustration: {fileID: 0}
