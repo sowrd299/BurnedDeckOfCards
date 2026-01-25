@@ -60,9 +60,16 @@ namespace Ashworld
         [Header("Animations")]
         [SerializeField] private AttackAnimationView attackAnim;
         [SerializeField] private FireEffectView fireEffect;
+        [SerializeField] private float movementLerpSpeed = 10f;
+        [SerializeField] private float rotationLerpSpeed = 10f;
 
         public AttackAnimationView AttackAnim => attackAnim;
         public FireEffectView FireEffect => fireEffect;
+
+        private Vector3 targetPosition;
+        private Quaternion targetRotation;
+        private bool isPositionInitialized;
+        private bool isRotationInitialized;
 
         private Card currentCard;
         public Card Card => currentCard;
@@ -92,6 +99,8 @@ namespace Ashworld
             highlightedSuit = Suit.None;
             targetVignetteColor = defaultColor;
             if (vignette != null) vignette.color = defaultColor;
+
+            isPositionInitialized = false;
 
             // Name
             if (nameText != null)
@@ -197,6 +206,22 @@ namespace Ashworld
             RefreshVignette();
         }
 
+        public void SetTargetPosition(Vector3 position, bool setImmediate = false) {
+            targetPosition = position;
+            if (!isPositionInitialized || setImmediate) {
+                transform.position = position;
+                isPositionInitialized = true;
+            }
+        }
+
+        public void SetTargetRotation(Quaternion rotation, bool setImmediate = false) {
+            targetRotation = rotation;
+            if (!isRotationInitialized || setImmediate) {
+                transform.rotation = rotation;
+                isRotationInitialized = true;
+            }
+        }
+
         private void RefreshVignette() {
             if (vignette == null) return;
 
@@ -220,6 +245,14 @@ namespace Ashworld
         private void Update() {
             if (vignette != null) {
                 vignette.color = Color.Lerp(vignette.color, targetVignetteColor, Time.deltaTime * vignetteLerpSpeed);
+            }
+
+            if (isPositionInitialized) {
+                Vector3 lerpPos = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * movementLerpSpeed);
+                lerpPos.z = targetPosition.z;
+                transform.position = lerpPos;
+
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationLerpSpeed);
             }
         }
 
@@ -254,6 +287,7 @@ namespace Ashworld
             }
 
             ClearRequirements();
+            isPositionInitialized = false;
         }
 
         public void ClearRequirements() 

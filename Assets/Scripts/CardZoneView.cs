@@ -107,8 +107,8 @@ namespace Ashworld
             activeCardViews[cardView.Card] = cardView;
             activeCardPositions[cardView.Card] = targetPos;
 
-            cardView.transform.position = targetPos;
-            cardView.transform.rotation = targetRotation;
+            cardView.SetTargetPosition(targetPos);
+            cardView.SetTargetRotation(targetRotation);
         }
 
         public void RemoveCardView(CardView cardView) {

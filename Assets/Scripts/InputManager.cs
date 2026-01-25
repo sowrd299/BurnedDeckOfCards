@@ -19,8 +19,6 @@ namespace Ashworld
         private Vector3 originalPosition;
         private bool isDragging;
 
-        private Dictionary<Transform, Coroutine> activeLerps = new Dictionary<Transform, Coroutine>();
-
         public delegate bool OnCardViewDroppedCallback(CardView view);
 
         // Registered callbacks per zone
@@ -102,15 +100,10 @@ namespace Ashworld
             if (!isDragging || draggingCard == null) return;
 
             Vector2 mouseWorld = mainCam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            Vector3 currentPos = draggingCard.transform.position;
             Vector3 targetPos = (Vector3)mouseWorld + dragOffset;
-            currentPos.z = dragOffsetZ;
             targetPos.z = dragOffsetZ;
 
-            draggingCard.transform.position = Vector3.Lerp(
-                currentPos,
-                targetPos,
-                Time.deltaTime * followSpeed);
+            draggingCard.SetTargetPosition(targetPos);
         }
 
         private void EndDragging()
@@ -169,50 +162,23 @@ namespace Ashworld
         public void CancelAnimationAndSnap(CardView card, Vector3 worldPosition)
         {
             if (card == null) return;
-            Transform t = card.transform;
-
-            if (activeLerps.TryGetValue(t, out Coroutine existing))
-            {
-                if (existing != null) StopCoroutine(existing);
-                activeLerps.Remove(t);
-            }
-
-            t.position = worldPosition;
+            card.SetTargetPosition(worldPosition, true);
         }
 
         private void SnapCardToZone(CardView card, CardZoneView zone)
         {
             if (card == null) return;
 
-            StartLerpToPositionCoroutine(card.transform, zone.GetDropPosition(card.Card), snapSpeed);
+            card.SetTargetPosition(zone.GetDropPosition(card.Card));
         }
 
         private void ReturnCardToOrigin(CardView card)
         {
             if (card == null) return;
 
-            StartLerpToPositionCoroutine(card.transform, originalPosition, snapSpeed);
+            card.SetTargetPosition(originalPosition);
         }
 
-        private void StartLerpToPositionCoroutine(Transform obj, Vector3 target, float speed)
-        {
-            if (activeLerps.TryGetValue(obj, out Coroutine existing))
-            {
-                if (existing != null) StopCoroutine(existing);
-            }
-            activeLerps[obj] = StartCoroutine(LerpToPositionInternal(obj, target, speed));
-        }
-
-        private System.Collections.IEnumerator LerpToPositionInternal(Transform obj, Vector3 target, float speed)
-        {
-            while (Vector3.Distance(obj.position, target) > 0.01f)
-            {
-                obj.position = Vector3.Lerp(obj.position, target, Time.deltaTime * speed);
-                yield return null;
-            }
-            obj.position = target;
-            activeLerps.Remove(obj);
-        }
 
         /// <summary>
         /// Register a callback for when a card is dropped in this zone.
