@@ -246,6 +246,9 @@ MonoBehaviour:
   - {fileID: 1522297660535453864}
   cardsRoot: {fileID: 5344636557871896916}
   cardViewPrefab: {fileID: 475022325919730322, guid: 3ea98039f1b19ae9bb4513ec7841617f, type: 3}
+  background: {fileID: 1816829767408357554}
+  highlightColor: {r: 1, g: 0.97690845, b: 0.745, a: 1}
+  highlightLerpSpeed: 10
 --- !u!61 &2245908098927139718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -372,7 +375,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2698410384040680007, guid: cd6be89a3c16faed491d363e6dfb09d8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.6}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

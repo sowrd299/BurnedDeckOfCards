@@ -477,6 +477,12 @@ namespace Ashworld {
                     targetView.SetCanBeAttacked(canBeAttacked);
                 }
             }
+
+            // Highlight valid zones
+            Card card = draggedView.Card;
+            if (playerPartyView != null) playerPartyView.SetHighlighted(CanPlayCard(player, card, player));
+            if (opponentDefenseView != null) opponentDefenseView.SetHighlighted(CanPlayCard(player, card, opponent));
+            if (playerHandView != null) playerHandView.SetHighlighted(CanPickUp(player, card));
         }
 
         private void HandleCardDragEnded(CardView draggedView) {
@@ -485,6 +491,11 @@ namespace Ashworld {
                     kvp.Value.SetCanBeAttacked(false);
                 }
             }
+
+            // Clear zone highlights
+            if (playerPartyView != null) playerPartyView.SetHighlighted(false);
+            if (opponentDefenseView != null) opponentDefenseView.SetHighlighted(false);
+            if (playerHandView != null) playerHandView.SetHighlighted(false);
         }
 
         // Attack

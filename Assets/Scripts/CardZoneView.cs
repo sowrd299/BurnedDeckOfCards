@@ -10,8 +10,33 @@ namespace Ashworld
         [SerializeField] private Transform cardsRoot;
         [SerializeField] private CardView cardViewPrefab;
 
+        [Header("Highlighting")]
+        [SerializeField] private SpriteRenderer background;
+        [SerializeField] private Color highlightColor = new Color(1f, 1f, 1f, 1f);
+        [SerializeField] private float highlightLerpSpeed = 10f;
+
         private readonly Dictionary<Card, CardView> activeCardViews = new Dictionary<Card, CardView>();
         private readonly Dictionary<Card, Vector3> activeCardPositions = new Dictionary<Card, Vector3>();
+
+        private Color targetColor;
+        private Color originalColor;
+
+        private void Awake()
+        {
+            if (background != null)
+            {
+                originalColor = background.color;
+                targetColor = originalColor;
+            }
+        }
+
+        private void Update()
+        {
+            if (background != null)
+            {
+                background.color = Color.Lerp(background.color, targetColor, Time.deltaTime * highlightLerpSpeed);
+            }
+        }
 
         public void SyncCards(List<Card> cards, Dictionary<Card, CardView> globalCache, bool faceDown = false, bool keepPositions = true)
         {
@@ -138,6 +163,11 @@ namespace Ashworld
                     Destroy(kvp.Value.gameObject);
             }
             activeCardViews.Clear();
+        }
+
+        public void SetHighlighted(bool highlighted)
+        {
+            targetColor = highlighted ? highlightColor : originalColor;
         }
     }
 }
