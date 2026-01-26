@@ -368,7 +368,10 @@ namespace Ashworld
             }
         }
 
+        public bool IsFaceDown { get; private set; }
+
         public void SetFaceDown(bool isFaceDown) {
+            IsFaceDown = isFaceDown;
             if (faceDownRoot != null) faceDownRoot.SetActive(isFaceDown);
             if (faceUpRoot != null) faceUpRoot.SetActive(!isFaceDown);
         }

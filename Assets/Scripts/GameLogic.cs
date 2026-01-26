@@ -161,7 +161,7 @@ namespace Ashworld {
             }
 
             if (cardDetailsView != null) {
-                if (hoveredView != null) {
+                if (hoveredView != null && !hoveredView.IsFaceDown) {
                     cardDetailsView.ShowCard(hoveredView.Card, hoveredView.GetTargetPosition());
                 } else {
                     cardDetailsView.Hide();

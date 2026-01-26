@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 namespace Ashworld
 {
@@ -6,6 +7,7 @@ namespace Ashworld
     {
         [Header("Configuration")]
         [SerializeField] private Vector3 viewOffset = new Vector3(3f, 3f, 0f);
+        [SerializeField] private float showDelay = 1.0f;
         
         [Header("References")]
         [SerializeField] private CardView cardView;
@@ -13,6 +15,11 @@ namespace Ashworld
 
 
         private float originalZ;
+        private Coroutine showCoroutine;
+
+        private Card currentCard;
+        private Vector3 currentTargetPos;
+        private DateTime currentStartTime;
 
         private void Awake()
         {
@@ -22,11 +29,19 @@ namespace Ashworld
 
         public void ShowCard(Card card, Vector3 cardTargetPos)
         {
+            if (showCoroutine != null) StopCoroutine(showCoroutine);
+            showCoroutine = StartCoroutine(ShowCardDelayed(card, cardTargetPos));
+        }
+
+        private System.Collections.IEnumerator ShowCardDelayed(Card card, Vector3 cardTargetPos)
+        {
             if (card == null || cardView == null)
             {
                 Hide();
-                return;
+                yield break;
             }
+
+            yield return new WaitForSeconds(showDelay);
 
             root.SetActive(true);
             cardView.SetUpForCard(card);
@@ -47,6 +62,11 @@ namespace Ashworld
 
         public void Hide()
         {
+            if (showCoroutine != null)
+            {
+                StopCoroutine(showCoroutine);
+                showCoroutine = null;
+            }
             root.SetActive(false);
         }
     }
