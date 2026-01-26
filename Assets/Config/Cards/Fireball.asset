@@ -21,6 +21,7 @@ MonoBehaviour:
     abilities: 03000000
     lockRequirements: 
     holdRequirements: 
-    subtypes: []
+    subtypes:
+    - Spell
     flavorText: 
     illustration: {fileID: 21300000, guid: 4ef06b3d5fc4e463a9bc1ff4fc77d12b, type: 3}

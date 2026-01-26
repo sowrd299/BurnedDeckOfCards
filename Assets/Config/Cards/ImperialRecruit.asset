@@ -22,7 +22,7 @@ MonoBehaviour:
     lockRequirements: 
     holdRequirements: 04000000
     subtypes:
-    - Human
     - Soldier
+    - Human
     flavorText: 
     illustration: {fileID: 21300000, guid: af58593095e8856a692e766542e8d9e7, type: 3}

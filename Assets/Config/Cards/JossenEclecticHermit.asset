@@ -22,8 +22,8 @@ MonoBehaviour:
     lockRequirements: 
     holdRequirements: 01000000
     subtypes:
-    - Human
     - Wanderer
     - Ranger
+    - Human
     flavorText: 
     illustration: {fileID: 21300000, guid: d1a229b8552185d5094892f7c01f6fe6, type: 3}

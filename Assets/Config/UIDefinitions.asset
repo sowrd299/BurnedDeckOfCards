@@ -53,16 +53,16 @@ MonoBehaviour:
   historySprite: {fileID: 21300000, guid: 527700d905156463c84f48e575280fdc, type: 3}
   requirementStrings:
   - requirement: 1
-    displayText: Harmony
+    displayText: Of-a-Kind
     sprite: {fileID: 184950751378207249, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - requirement: 2
-    displayText: Hierarchy
+    displayText: Straight
     sprite: {fileID: 1202984965197363600, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - requirement: 3
-    displayText: Might
+    displayText: Total Rank
     sprite: {fileID: 5543941588292853863, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - requirement: 4
-    displayText: Fealty
+    displayText: Flush
     sprite: {fileID: -1863859237976802683, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   - requirement: 5
     displayText: Heroism

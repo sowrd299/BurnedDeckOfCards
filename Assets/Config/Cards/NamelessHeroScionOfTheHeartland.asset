@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
     cardName: Nameless Hero
-    subtitle: Scion of the Heartland
+    subtitle: Heartland's Scion
     rank: 3
     suits: 0300000006000000
     historyCost: 0
@@ -22,8 +22,8 @@ MonoBehaviour:
     lockRequirements: 
     holdRequirements: 05000000
     subtypes:
-    - Human
     - Imperial
     - Knight
+    - Human
     flavorText: 
     illustration: {fileID: 21300000, guid: b1f35683597cee658b189b21a1c7350d, type: 3}

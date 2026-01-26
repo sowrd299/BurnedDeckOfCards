@@ -22,8 +22,8 @@ MonoBehaviour:
     lockRequirements: 
     holdRequirements: 
     subtypes:
-    - Human
-    - Arcane
     - Mystic
+    - Arcane
+    - Human
     flavorText: 
     illustration: {fileID: 21300000, guid: b7270ae779b5d318db5c14ab25a9edb6, type: 3}

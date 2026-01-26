@@ -10,6 +10,7 @@ namespace Ashworld
         public struct IconSlot {
             public SpriteRenderer mainIcon;
             public SpriteRenderer typeIcon;
+            public TextMeshPro displayText;
             public GameObject unmetRoot;
             public GameObject metRoot;
         }
@@ -19,15 +20,15 @@ namespace Ashworld
 
         [Header("UI References")]
         [SerializeField] private TextMeshPro nameText;
+        [SerializeField] private TextMeshPro subtitleText;
+        [SerializeField] private TextMeshPro subtypesText;
         [SerializeField] private TextMeshPro rankText;
         [SerializeField] private TextMeshPro boonRankText;
         [SerializeField] private List<SpriteRenderer> suitIcons; // slots for suits
-        [SerializeField] private TextMeshPro abilitiesText;
         [SerializeField] private SpriteRenderer illustration;
 
         [Header("Requirement UI")]
-        [SerializeField] private TextMeshPro lockRequirementsText;
-        [SerializeField] private TextMeshPro holdRequirementsText;
+        [SerializeField] private string allTextPrefix = "<line-height=65%>";
         [SerializeField] private string lockPrefix = "Lock: ";
         [SerializeField] private string holdPrefix = "Hold: ";
 
@@ -102,9 +103,20 @@ namespace Ashworld
 
             isPositionInitialized = false;
 
-            // Name
+            // Name & Subtitle & Subtypes
             if (nameText != null)
-                nameText.text = card.CardName ?? "Unnamed";
+                nameText.text = allTextPrefix + (card.CardName ?? "Unnamed");
+
+            if (subtitleText != null)
+                subtitleText.text = allTextPrefix + (card.Definition.Subtitle ?? string.Empty);
+
+            if (subtypesText != null && card.Definition.Subtypes != null)
+            {
+                if (card.Definition.Subtypes.Count > 0)
+                    subtypesText.text = allTextPrefix + string.Join(". ", card.Definition.Subtypes) + ".";
+                else
+                    subtypesText.text = string.Empty;
+            }
 
             // Rank
             if (rankText != null)
@@ -124,48 +136,6 @@ namespace Ashworld
 
             // Suits
             UpdateSuits(card);
-
-            // Abilities
-            if (abilitiesText != null)
-            {
-                if (uiDefinitions != null && card.Abilities.Count > 0)
-                {
-                    abilitiesText.text = string.Join(", ",
-                        card.Abilities.ConvertAll(a => uiDefinitions.GetStringForAbility(a)));
-                }
-                else
-                {
-                    abilitiesText.text = string.Empty;
-                }
-            }
-
-            // Lock requirements
-            if (lockRequirementsText != null)
-            {
-                if (uiDefinitions != null && card.LockRequirements.Count > 0)
-                {
-                    var lockReqs = card.LockRequirements.ConvertAll(r => uiDefinitions.GetStringForRequirement(r));
-                    lockRequirementsText.text = lockPrefix + string.Join(" or ", lockReqs);
-                }
-                else
-                {
-                    lockRequirementsText.text = string.Empty;
-                }
-            }
-
-            // Hold requirements
-            if (holdRequirementsText != null)
-            {
-                if (uiDefinitions != null && card.HoldRequirements.Count > 0)
-                {
-                    var holdReqs = card.HoldRequirements.ConvertAll(r => uiDefinitions.GetStringForRequirement(r));
-                    holdRequirementsText.text = holdPrefix + string.Join(" or ", holdReqs);
-                }
-                else
-                {
-                    holdRequirementsText.text = string.Empty;
-                }
-            }
 
             // Icon Pool Update (Prioritized: Hold > Lock > Ability > Cost)
             UpdateIconSlots(card);
@@ -222,6 +192,8 @@ namespace Ashworld
             }
         }
 
+        public Vector3 GetTargetPosition() => targetPosition;
+
         private void RefreshVignette() {
             if (vignette == null) return;
 
@@ -259,11 +231,10 @@ namespace Ashworld
         private void ClearView()
         {
             if (nameText != null) nameText.text = string.Empty;
+            if (subtitleText != null) subtitleText.text = string.Empty;
+            if (subtypesText != null) subtypesText.text = string.Empty;
             if (rankText != null) rankText.text = string.Empty;
             if (boonRankText != null) boonRankText.text = string.Empty;
-            if (abilitiesText != null) abilitiesText.text = string.Empty;
-            if (lockRequirementsText != null) lockRequirementsText.text = string.Empty;
-            if (holdRequirementsText != null) holdRequirementsText.text = string.Empty;
 
             if (iconSlots != null)
             {
@@ -271,6 +242,7 @@ namespace Ashworld
                 {
                     if (slot.mainIcon != null) { slot.mainIcon.sprite = null; slot.mainIcon.enabled = false; }
                     if (slot.typeIcon != null) { slot.typeIcon.sprite = null; slot.typeIcon.enabled = false; }
+                    if (slot.displayText != null) slot.displayText.text = string.Empty;
                 }
             }
 
@@ -410,6 +382,7 @@ namespace Ashworld
             {
                 if (slot.mainIcon != null) { slot.mainIcon.sprite = null; slot.mainIcon.enabled = false; }
                 if (slot.typeIcon != null) { slot.typeIcon.sprite = null; slot.typeIcon.enabled = false; }
+                if (slot.displayText != null) slot.displayText.text = string.Empty;
             }
 
             int currentSlot = 0;
@@ -418,7 +391,8 @@ namespace Ashworld
             foreach (var req in card.HoldRequirements)
             {
                 if (currentSlot >= iconSlots.Count) break;
-                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForRequirement(req), uiDefinitions.holdTypeSprite);
+                string label = holdPrefix + uiDefinitions.GetStringForRequirement(req);
+                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForRequirement(req), uiDefinitions.holdTypeSprite, label);
                 currentSlot++;
             }
 
@@ -426,7 +400,8 @@ namespace Ashworld
             foreach (var req in card.LockRequirements)
             {
                 if (currentSlot >= iconSlots.Count) break;
-                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForRequirement(req), uiDefinitions.lockTypeSprite);
+                string label = lockPrefix + uiDefinitions.GetStringForRequirement(req);
+                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForRequirement(req), uiDefinitions.lockTypeSprite, label);
                 currentSlot++;
             }
 
@@ -434,7 +409,8 @@ namespace Ashworld
             foreach (var ability in card.Abilities)
             {
                 if (currentSlot >= iconSlots.Count) break;
-                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForAbility(ability), null);
+                string label = uiDefinitions.GetStringForAbility(ability);
+                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForAbility(ability), null, label);
                 currentSlot++;
             }
 
@@ -444,13 +420,14 @@ namespace Ashworld
                 if (currentSlot < iconSlots.Count)
                 {
                     Sprite typeSprite = (card.HistoryCost > 1) ? uiDefinitions.historySprite : null;
-                    AssignIconSlot(currentSlot, uiDefinitions.historySprite, typeSprite);
+                    string label = card.HistoryCost == 1 ? "Costs 1 History or Card" : $"Costs {card.HistoryCost} History or Cards";
+                    AssignIconSlot(currentSlot, uiDefinitions.historySprite, typeSprite, label);
                     currentSlot++;
                 }
             }
         }
 
-        private void AssignIconSlot(int index, Sprite main, Sprite type)
+        private void AssignIconSlot(int index, Sprite main, Sprite type, string text)
         {
             if (index < 0 || index >= iconSlots.Count) return;
             var slot = iconSlots[index];
@@ -459,6 +436,11 @@ namespace Ashworld
             {
                 slot.mainIcon.sprite = main;
                 slot.mainIcon.enabled = true;
+            }
+
+            if (slot.displayText != null)
+            {
+                slot.displayText.text = allTextPrefix + text;
             }
 
             if (slot.typeIcon != null)

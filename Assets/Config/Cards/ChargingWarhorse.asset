@@ -21,6 +21,7 @@ MonoBehaviour:
     abilities: 
     lockRequirements: 
     holdRequirements: 
-    subtypes: []
+    subtypes:
+    - Beast
     flavorText: 
     illustration: {fileID: 21300000, guid: ab11bbc989ad130efa7282502e7c71c7, type: 3}

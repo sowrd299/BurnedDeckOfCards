@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OrcPup
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
-    cardName: Orc Pup
+    cardName: Pup
     subtitle: 
     rank: 2
     suits: 

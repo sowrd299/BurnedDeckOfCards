@@ -22,9 +22,9 @@ MonoBehaviour:
     lockRequirements: 
     holdRequirements: 05000000
     subtypes:
-    - Human
     - Imperial
-    - Devout
     - Mystic
+    - Devout
+    - Human
     flavorText: 
     illustration: {fileID: 21300000, guid: 098c88a71ecc0b9479f6c2ee76c3a8f0, type: 3}

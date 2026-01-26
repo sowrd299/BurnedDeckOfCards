@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OrcTroglodyte
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
-    cardName: Orc Troglodyte
+    cardName: Troglodyte
     subtitle: 
     rank: 4
     suits: 0000000006000000

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OrcSkirmisher
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
-    cardName: Orc Skirmisher
+    cardName: Skirmisher
     subtitle: 
     rank: 3
     suits: 0000000007000000

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
     cardName: Xinlar
-    subtitle: 
+    subtitle: Subtle Invader
     rank: 8
     suits: 02000000
     historyCost: 2

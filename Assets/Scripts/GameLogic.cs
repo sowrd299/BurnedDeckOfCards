@@ -33,6 +33,9 @@ namespace Ashworld {
         [SerializeField] private ChapterAnimationView playerChapterAnim;
         [SerializeField] private ChapterAnimationView opponentChapterAnim;
 
+        [Header("Card Details")]
+        [SerializeField] private CardDetailsView cardDetailsView;
+
         [Header("AI Opponent")]
         [SerializeField] private DeckDefinitionAsset opponentDeckDefinition;
         [SerializeField] private QuestDefinitionAsset opponentQuestDefinition;
@@ -155,6 +158,14 @@ namespace Ashworld {
             foreach (CardView v in cardViewCache.Values) {
                 v.SetHovered(v == hoveredView);
                 v.SetHighlightedSuit(Suit.None);
+            }
+
+            if (cardDetailsView != null) {
+                if (hoveredView != null) {
+                    cardDetailsView.ShowCard(hoveredView.Card, hoveredView.GetTargetPosition());
+                } else {
+                    cardDetailsView.Hide();
+                }
             }
 
             if (hoveredView != null) {

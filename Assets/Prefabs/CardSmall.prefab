@@ -1112,28 +1112,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardView
   uiDefinitions: {fileID: 11400000, guid: cb9bd882bbf9d4c8dbf807d221804877, type: 2}
   nameText: {fileID: 0}
+  subtitleText: {fileID: 0}
+  subtypesText: {fileID: 0}
   rankText: {fileID: 9011219701616446468}
   boonRankText: {fileID: 7167141763061506465}
   suitIcons:
   - {fileID: 5664717080403193985}
   - {fileID: 3993381433981778813}
-  abilitiesText: {fileID: 0}
   illustration: {fileID: 8370386227523413395}
-  lockRequirementsText: {fileID: 0}
-  holdRequirementsText: {fileID: 0}
   lockPrefix: 'Lock: '
   holdPrefix: 'Hold: '
   iconSlots:
   - mainIcon: {fileID: 1810266434608171915}
     typeIcon: {fileID: 115382285736464010}
+    displayText: {fileID: 0}
     unmetRoot: {fileID: 8040430392175343971}
     metRoot: {fileID: 4341700189560353564}
   - mainIcon: {fileID: 2553534119620003273}
     typeIcon: {fileID: 8408329541998650831}
+    displayText: {fileID: 0}
     unmetRoot: {fileID: 8121385446135735875}
     metRoot: {fileID: 5186580180958940010}
   - mainIcon: {fileID: 2130969971876411299}
     typeIcon: {fileID: 0}
+    displayText: {fileID: 0}
     unmetRoot: {fileID: 0}
     metRoot: {fileID: 0}
   faceDownRoot: {fileID: 4810474892095776690}
@@ -1154,6 +1156,8 @@ MonoBehaviour:
   vignetteLerpSpeed: 5
   attackAnim: {fileID: 962648211411385521}
   fireEffect: {fileID: 7200955282900877267}
+  movementLerpSpeed: 10
+  rotationLerpSpeed: 10
 --- !u!114 &962648211411385521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,7 +1720,6 @@ Transform:
   - {fileID: 5091590492549839208}
   - {fileID: 6636962874453797628}
   - {fileID: 3696566591580625632}
-  - {fileID: 6458821066206175106}
   - {fileID: 1368759760432709336}
   m_Father: {fileID: 4903912461563776968}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2016,11 +2019,11 @@ Transform:
   m_GameObject: {fileID: 7412083741204099481}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.47000003, y: -0.39, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4930192949323683224}
+  m_Father: {fileID: 6636962874453797628}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1856527187515681020
 SpriteRenderer:
@@ -2371,7 +2374,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6458821066206175106}
   m_Father: {fileID: 4930192949323683224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
