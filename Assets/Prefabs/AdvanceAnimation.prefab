@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9087955520656126882, guid: f62b16bafba71a25db2c3ff38faf8532, type: 2}
+  - {fileID: -2006737327673172166, guid: 819dcebb80221f1819867a05e7739928, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -201,8 +201,8 @@ MonoBehaviour:
 
     You draw closer to victory.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f62b16bafba71a25db2c3ff38faf8532, type: 2}
-  m_sharedMaterial: {fileID: 9087955520656126882, guid: f62b16bafba71a25db2c3ff38faf8532, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 819dcebb80221f1819867a05e7739928, type: 2}
+  m_sharedMaterial: {fileID: -2006737327673172166, guid: 819dcebb80221f1819867a05e7739928, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -335,7 +335,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 9087955520656126882, guid: f62b16bafba71a25db2c3ff38faf8532, type: 2}
+  - {fileID: -107634524450426650, guid: 794ce2d0123f8a300b6b126a6c33fff8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -380,8 +380,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Chapter 1
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f62b16bafba71a25db2c3ff38faf8532, type: 2}
-  m_sharedMaterial: {fileID: 9087955520656126882, guid: f62b16bafba71a25db2c3ff38faf8532, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 794ce2d0123f8a300b6b126a6c33fff8, type: 2}
+  m_sharedMaterial: {fileID: -107634524450426650, guid: 794ce2d0123f8a300b6b126a6c33fff8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -501,6 +501,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.ChapterAnimationView
   reverseAnimationDirection: 0
+  advancementSuffix: draw closer to victory
+  victoryTitle: Victory!
   victorySuffix: You draw closer to victory
   chapterTitleText: {fileID: 8477046704596705697}
   descriptionText: {fileID: 2675017512349973255}
