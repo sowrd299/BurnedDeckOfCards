@@ -18,17 +18,17 @@ namespace Ashworld {
     {
         private OpponentAction GetBestAction(Player opponentPlayer, Player humanPlayer) {
             
-            // PRIORITY 1: Halt Player (Attack)
-            // Rule: Find Opponent Party Card > Human Party Card (rank).
-            // Tie-breaker: Lowest rank that wins.
-            OpponentAction attackAction = GetBestAttack(opponentPlayer, humanPlayer);
-            if (attackAction != null) return attackAction;
+            // PRIORITY 1: Defensive Attack (AI Defense -> Human Party)
+            OpponentAction defensiveAttackAction = GetBestDefenseAttack(opponentPlayer, humanPlayer);
+            if (defensiveAttackAction != null) return defensiveAttackAction;
 
-            // PRIORITY 2: Defend against Player (Strategic)
+            // PRIORITY 2: Strategic Defend (ONLY if Human has <= Party + 2 defenders)
             // Play into Human.Defense
             // Heuristic: Lock requirement NOT already present AND NOT met by Human.
-            OpponentAction strategicDefend = GetStrategicDefend(opponentPlayer, humanPlayer);
-            if (strategicDefend != null) return strategicDefend;
+            if (humanPlayer.defense.Count <= humanPlayer.party.Count + 2) {
+                OpponentAction strategicDefend = GetStrategicDefend(opponentPlayer, humanPlayer);
+                if (strategicDefend != null) return strategicDefend;
+            }
 
             // PRIORITY 3: Advance Own Quest (Button)
             // If we have enough dominance to advance, do it. 
@@ -37,51 +37,46 @@ namespace Ashworld {
                 return new OpponentAction { Type = OpponentAction.ActionType.Advance };
             }
 
-            // PRIORITY 4: Advance Own Quest (Strategic Play)
+            // PRIORITY 4: Party Attack (AI Party -> AI Defense blocker)
+            OpponentAction partyAttackAction = GetBestPartyAttack(opponentPlayer);
+            if (partyAttackAction != null) return partyAttackAction;
+
+            // PRIORITY 5: Strategic Play to Party
             // Play into AI.Party
             // Heuristic: Hold Requirement Met > Hold Requirement Unmet
-            OpponentAction strategicAdvance = GetStrategicPlayToParty(opponentPlayer);
-            if (strategicAdvance != null) return strategicAdvance;
+            OpponentAction strategicPlayToPartyAction = GetStrategicPlayToParty(opponentPlayer);
+            if (strategicPlayToPartyAction != null) return strategicPlayToPartyAction;
 
-            // PRIORITY 5: Defend against Player (Fallback)
+            // PRIORITY 6: Fallback Defend
             // Play *any* valid card into Human.Defense. Tie-break: High Rank.
-            OpponentAction fallbackDefend = GetFallbackDefend(opponentPlayer, humanPlayer);
-            if (fallbackDefend != null) return fallbackDefend;
+            OpponentAction fallbackDefendAction = GetFallbackDefend(opponentPlayer, humanPlayer);
+            if (fallbackDefendAction != null) return fallbackDefendAction;
 
-            // PRIORITY 6: Advance Own Quest (Fallback)
+            // PRIORITY 7: Fallback Play to Party
             // Play *any* valid card into AI.Party. Tie-break: High Rank.
-            OpponentAction fallbackAdvance = GetFallbackPlayToParty(opponentPlayer);
-            if (fallbackAdvance != null) return fallbackAdvance;
+            OpponentAction fallbackPlayToPartyAction = GetFallbackPlayToParty(opponentPlayer);
+            if (fallbackPlayToPartyAction != null) return fallbackPlayToPartyAction;
 
             // No valid moves
             return null;
         }
 
-        private OpponentAction GetBestAttack(Player ai, Player human) {
-            // Context: AI Party attacking Human Cards (in AI Defense) logic.
-            // Using GameLogic.CanCardAttack.
-
+        private OpponentAction GetBestAttack(Player ai, Player targetPlayer, List<Card> attackerZone, List<Card> targetZone) {
             int bestRankDiff = int.MaxValue; 
             Card bestAttacker = null;
             Card bestTarget = null;
-            Player bestTargetPlayer = null;
 
-            foreach (var attacker in human.defense) {
+            foreach (var attacker in attackerZone) {
                 if (attacker.IsExhausted) continue;
+                if (attacker.OwnerId != ai.Id) continue; // Safety check
 
-                // Check against Human Party
-                foreach (var target in human.party) {
-                     if (CanCardAttack(ai, human, attacker, target)) {
-                         // We prefer successful attacks (Rank > Rank) which CanCardAttack checks?
-                         // Wait, CanCardAttack returns bool based on Rank > Rank.
-                         // So if it returns true, it's a win.
-                         
-                         int diff = attacker.Rank - target.Rank; // Rough estimate, technically we should use EffectiveRank but simple rank diff is ok heuristic
+                foreach (var target in targetZone) {
+                     if (CanCardAttack(ai, targetPlayer, attacker, target)) {
+                         int diff = attacker.Rank - target.Rank; 
                          if (diff < bestRankDiff) {
                              bestRankDiff = diff;
                              bestAttacker = attacker;
                              bestTarget = target;
-                             bestTargetPlayer = ai;
                          }
                      }
                 }
@@ -95,6 +90,16 @@ namespace Ashworld {
                 };
             }
             return null;
+        }
+
+        private OpponentAction GetBestDefenseAttack(Player ai, Player human) {
+            // AI Defense cards (belonging to AI) attacking Human Party
+            return GetBestAttack(ai, human, human.defense, human.party);
+        }
+
+        private OpponentAction GetBestPartyAttack(Player ai) {
+            // AI Party cards attacking AI Defense blockers
+            return GetBestAttack(ai, ai, ai.party, ai.defense);
         }
 
         private OpponentAction GetStrategicDefend(Player ai, Player human) {
