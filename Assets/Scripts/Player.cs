@@ -130,7 +130,17 @@ namespace Ashworld {
                 } else {
                     List<Card> candidates = hand.FindAll(c => c != cardToPlay);
                     if (candidates.Count > 0) {
-                        Card discard = candidates[Random.Range(0, candidates.Count)];
+                        // Priority: Prefer non-hero cards
+                        Card heroCard = GetHeroCard();
+                        List<Card> nonHeroCandidates = candidates.FindAll(c => !c.IsSameCard(heroCard));
+                        
+                        Card discard = null;
+                        if (nonHeroCandidates.Count > 0) {
+                            discard = nonHeroCandidates[Random.Range(0, nonHeroCandidates.Count)];
+                        } else {
+                            discard = candidates[Random.Range(0, candidates.Count)];
+                        }
+
                         hand.Remove(discard);
                         historyCards.Add(discard);
                         discards.Add(discard);
