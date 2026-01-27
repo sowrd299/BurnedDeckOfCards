@@ -568,31 +568,39 @@ namespace Ashworld {
             cardViewCache.TryGetValue(attacker, out CardView attackerView);
             cardViewCache.TryGetValue(defender, out CardView defenderView);
 
-            if (defenderView != null) defenderView.SetCanBeAttacked(true);
-
             // 2. Immediate Model Update (Apply logic changes)
+            List<CardDefinition> partyContext = targetPlayer.party.ConvertAll(c => c.Definition);
+            List<CardDefinition> defenseContext = targetPlayer.defense.ConvertAll(c => c.Definition);
+            bool held = defender.OwnerId == targetPlayer.Id && targetPlayer.TryHoldCard(defender, partyContext, defenseContext);
+
             if (targetPlayer.defense.Contains(defender)) {
                 targetPlayer.defense.Remove(defender);
 
-                // This is bit of a heuristic; we should be checking if started in the acting player's quest, not just if its theirs.
-                if (defender.OwnerId == actingPlayer.Id) {
-                    actingPlayer.MoveToAsh(defender);
-                } else {
-                    foreach (Player player in allPlayers) {
-                        if (player.Id == defender.OwnerId) {
-                            player.MoveToHistory(defender);
+                if (!held) {
+                    // This is bit of a heuristic; we should be checking if started in the acting player's quest, not just if its theirs.
+                    if (defender.OwnerId == actingPlayer.Id) {
+                        actingPlayer.MoveToAsh(defender);
+                    } else {
+                        foreach (Player player in allPlayers) {
+                            if (player.Id == defender.OwnerId) {
+                                player.MoveToHistory(defender);
+                            }
                         }
                     }
                 }
             } else if (targetPlayer.party.Contains(defender)) {
                 targetPlayer.party.Remove(defender);
-                targetPlayer.MoveToHistory(defender);
+                if (!held) {
+                    targetPlayer.MoveToHistory(defender);
+                }
             }
 
             attacker.Exhaust();
             DecrementActions();
 
             // 3. Play Visuals
+            if (!held && defenderView != null) defenderView.SetCanBeAttacked(true);
+
             if (attackerView != null && defenderView != null && attackerView.AttackAnim != null) {
                 
                 // Snap attacker to its proper slot first (in case it was being dragged)
@@ -606,7 +614,7 @@ namespace Ashworld {
                     defenderView.transform,
                     () => {
                         // On Hit
-                        if (defenderView.FireEffect != null) {
+                        if (!held && defenderView.FireEffect != null) {
                             StartCoroutine(defenderView.FireEffect.PlayFire(() => {
                                 // On Fire Complete
                                 effectDone = true;

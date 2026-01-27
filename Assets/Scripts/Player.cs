@@ -140,6 +140,28 @@ namespace Ashworld {
             return discards;
         }
 
+        public bool TryHoldCard(Card card, List<CardDefinition> partyContext, List<CardDefinition> defenseContext) {
+            if (card.HoldRequirements.Count == 0) return false;
+
+            bool meetsHold = true;
+            bool usedHeroism = false;
+            foreach (var req in card.HoldRequirements) {
+                if (!CardDefinition.MeetsRequirement(req, partyContext, defenseContext, HeroismAvailable)) {
+                    meetsHold = false;
+                    break;
+                }
+                if (req == Requirement.Heroism) usedHeroism = true;
+            }
+
+            if (meetsHold) {
+                if (usedHeroism) HeroismAvailable = false;
+                this.AddToHand(card);
+                return true;
+            }
+
+            return false;
+        }
+
         public void StartNextQuestChapter(List<Player> allPlayers) {
             List<CardDefinition> partyDefs = party.ConvertAll(c => c.Definition);
             List<CardDefinition> defenseDefs = defense.ConvertAll(c => c.Definition);
@@ -176,19 +198,8 @@ namespace Ashworld {
                 bool isOwnedByThisPlayer = (card.OwnerId == this.Id);
 
                 if (isOwnedByThisPlayer) {
-                    bool meetsHold = true;
-                    bool usedHeroism = false;
-                    foreach(var req in card.HoldRequirements) {
-                        if (!CardDefinition.MeetsRequirement(req, partyDefs, defenseDefs, HeroismAvailable)) {
-                            meetsHold = false;
-                            break;
-                        }
-                        if (req == Requirement.Heroism) usedHeroism = true;
-                    }
-
-                    if (card.HoldRequirements.Count > 0 && meetsHold) {
-                        if (usedHeroism) HeroismAvailable = false;
-                        this.AddToHand(card);
+                    if (TryHoldCard(card, partyDefs, defenseDefs)) {
+                        // Already handled inside TryHoldCard
                     } else {
                         // If not held: Party cards -> History, Defense cards (owned/quest) -> Ash
                         if (partyCopy.Contains(card)) {
