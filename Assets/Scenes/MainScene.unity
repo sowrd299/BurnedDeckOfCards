@@ -4149,7 +4149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.GameLogic
   playerDeckDefinition: {fileID: 11400000, guid: aaf594937872d351b86d64ae44b488bf, type: 2}
-  playerQuestDefintiion: {fileID: 11400000, guid: 5d69fa835825087d4ad6da3399d19520, type: 2}
+  playerQuestDefintiion: {fileID: 11400000, guid: 440012209bbd17c7baaa058f9fd0d2a0, type: 2}
   input: {fileID: 1507613714}
   playerUIView: {fileID: 584188450}
   playerHandView: {fileID: 373394863}
