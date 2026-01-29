@@ -35,6 +35,10 @@ namespace Ashworld
         [Header("Icon Pool")]
         [SerializeField] private List<IconSlot> iconSlots;
 
+        [Header("Dialog UI")]
+        [SerializeField] private GameObject dialogRoot;
+        [SerializeField] private TextMeshPro dialogText;
+
         [Header("State UI")]
         [SerializeField] private GameObject faceDownRoot;
         [SerializeField] private GameObject faceUpRoot; // Optional wrapper for content
@@ -147,6 +151,9 @@ namespace Ashworld
 
             // Exhaustion State
             UpdateExhaustedStatus();
+
+            // Dialog
+            HideDialog();
         }
 
         public void UpdateExhaustedStatus() {
@@ -226,6 +233,17 @@ namespace Ashworld
 
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * rotationLerpSpeed);
             }
+        }
+
+        public void ShowDialog(string text)
+        {
+            if (dialogRoot != null) dialogRoot.SetActive(true);
+            if (dialogText != null) dialogText.text = text;
+        }
+
+        public void HideDialog()
+        {
+            if (dialogRoot != null) dialogRoot.SetActive(false);
         }
 
         private void ClearView()

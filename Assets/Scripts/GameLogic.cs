@@ -39,6 +39,9 @@ namespace Ashworld {
         [Header("AI Opponent")]
         [SerializeField] private DeckDefinitionAsset opponentDeckDefinition;
         [SerializeField] private QuestDefinitionAsset opponentQuestDefinition;
+
+        [Header("Dialog")]
+        [SerializeField] private DialogManager dialogManager;
         
         private Player player;
         private Player opponent;
@@ -56,6 +59,7 @@ namespace Ashworld {
         {
             SetUpPlayer();
             SetUpInput();
+            if (dialogManager != null) dialogManager.Reset();
             StartTurn(player);
             UpdateCardViews();
         }
@@ -147,6 +151,8 @@ namespace Ashworld {
 
             // 5. Default History Feedback
             if (playerUIView != null) playerUIView.UpdateHistoryFeedback(null, player);
+
+            TryTriggerDialog();
         }
 
         private void HandleCardHoverChanged(CardView hoveredView) {
@@ -466,6 +472,8 @@ namespace Ashworld {
         private void HandleCardDragBegan(CardView draggedView) {
             if (draggedView == null || draggedView.Card == null) return;
             
+            ClearAllDialogs();
+
             foreach (var kvp in cardViewCache) {
                 Card targetCard = kvp.Key;
                 CardView targetView = kvp.Value;
@@ -747,6 +755,36 @@ namespace Ashworld {
         private void Update()
         {
             
+        }
+
+        private void TryTriggerDialog()
+        {
+            if (dialogManager == null) return;
+
+            var line = dialogManager.GetNextDialogLine(player, opponent);
+            if (line != null)
+            {
+                foreach (Card card in cardViewCache.Keys)
+                {
+                    if (card.Definition == line.Speaker.Card)
+                    {
+                        if (cardViewCache.TryGetValue(card, out CardView view))
+                        {
+                            view.ShowDialog(line.Text);
+                            dialogManager.MarkSeen(line);
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void ClearAllDialogs()
+        {
+            foreach (var view in cardViewCache.Values)
+            {
+                if (view != null) view.HideDialog();
+            }
         }
     }
 }
