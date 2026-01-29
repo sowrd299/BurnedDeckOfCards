@@ -47,11 +47,11 @@ namespace Ashworld
             // 2. Slide In
             yield return StartCoroutine(MoveTo(screenCenter, slideDuration));
 
-            // 3. Callback while covered
-            onCovered?.Invoke();
-
-            // 4. Stay
+            // 3. Stay
             yield return new WaitForSeconds(stayDuration);
+
+            // 4. Callback while covered
+            onCovered?.Invoke();
 
             // 5. Slide Out
             yield return StartCoroutine(MoveTo(screenEnd, slideDuration));

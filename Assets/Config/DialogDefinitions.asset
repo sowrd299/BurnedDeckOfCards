@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba88017b323d2ea295e0a454dc00b86, type: 3}
+  m_Name: DialogDefinitions
+  m_EditorClassIdentifier: Assembly-CSharp::Ashworld.DialogDefinitions
+  lines:
+  - speaker:
+      cardAsset: {fileID: 11400000, guid: afeb6b92552fdf8b394b4161f03e4285, type: 2}
+      allowedZones: 02000000
+    otherConditions: []
+    text: I wouldn't go in there, friend. Not sure what's in there, but if the engulfs
+      don't like it, I don't either.
+  - speaker:
+      cardAsset: {fileID: 11400000, guid: 2b75bd41a40ebac8eb263cb1bb952e70, type: 2}
+      allowedZones: 02000000
+    otherConditions: []
+    text: Technically only half of what I said was a lie. I really did think we could
+      be allies.
