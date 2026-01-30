@@ -9,5 +9,9 @@ namespace Ashworld
         [SerializeField] private List<DialogLineDefinition> lines = new List<DialogLineDefinition>();
 
         public IReadOnlyList<DialogLineDefinition> Lines => lines;
+
+        private void OnValidate() {
+            foreach(var line in lines) line.DoOnValidate();
+        }
     }
 }

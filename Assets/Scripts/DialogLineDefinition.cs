@@ -27,6 +27,8 @@ namespace Ashworld
     [Serializable]
     public class DialogLineDefinition
     {
+        [HideInInspector] public string title;
+
         [SerializeField] private DialogCondition speaker;
         [SerializeField] private List<DialogCondition> otherConditions;
         [TextArea(3, 10)]
@@ -47,6 +49,10 @@ namespace Ashworld
                 }
                 return list;
             }
+        }
+
+        public void DoOnValidate() {
+            title = (Speaker.Card?.CardName ?? "") + " - " + Text;
         }
     }
 }
