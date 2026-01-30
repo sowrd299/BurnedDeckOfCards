@@ -57,7 +57,7 @@ namespace Ashworld {
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         private void Start()
         {
-            SetUpPlayer();
+            SetUpPlayer(true); // TODO: Temp value for experimenting with the tutorial
             SetUpInput();
             if (dialogManager != null) dialogManager.Reset();
             StartTurn(player);
@@ -82,7 +82,7 @@ namespace Ashworld {
 
         private readonly Dictionary<Card, CardView> cardViewCache = new Dictionary<Card, CardView>();
 
-        private void SetUpPlayer() {
+        private void SetUpPlayer(bool drawBeforeShuffle = false) {
             player = new Player("Player", playerDeckDefinition.Definition, playerQuestDefintiion.Definition);
 
             var aiDeck = (opponentDeckDefinition != null ? opponentDeckDefinition : playerDeckDefinition).Definition;
@@ -96,9 +96,10 @@ namespace Ashworld {
 
             foreach (var p in allPlayers) 
             {
-                p.Shuffle();
-                p.Draw(4);
+                if (!drawBeforeShuffle) p.Shuffle();
                 p.AddToHand(p.GetHeroCard());
+                p.Draw(4);
+                if (drawBeforeShuffle) p.Shuffle();
                 p.AddCardForQuestChapterToDefense();
             }
 

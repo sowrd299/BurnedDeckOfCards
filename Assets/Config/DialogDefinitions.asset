@@ -13,15 +13,51 @@ MonoBehaviour:
   m_Name: DialogDefinitions
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.DialogDefinitions
   lines:
-  - speaker:
+  - title: Jossen Viersen - I wouldn't go in there, friend. Not sure what's in there,
+      but if the engulfs don't like it, I don't either.
+    speaker:
       cardAsset: {fileID: 11400000, guid: afeb6b92552fdf8b394b4161f03e4285, type: 2}
       allowedZones: 02000000
     otherConditions: []
     text: I wouldn't go in there, friend. Not sure what's in there, but if the engulfs
       don't like it, I don't either.
-  - speaker:
+  - title: Jossen Viersen - Technically only half of what I said was a lie. I really
+      did think we could be allies.
+    speaker:
       cardAsset: {fileID: 11400000, guid: 2b75bd41a40ebac8eb263cb1bb952e70, type: 2}
       allowedZones: 02000000
     otherConditions: []
     text: Technically only half of what I said was a lie. I really did think we could
       be allies.
+  - title: Sir Ersdotter - I've never one for dallying, not even when I was your
+      age; the sooner we get beyond this city, the sooner we can start serving our
+      Empress. Let's set out.
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
+      allowedZones: 00000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 6482391e3e4fde594b828b85f0c8a495, type: 2}
+      allowedZones: 02000000
+    text: I've never one for dallying, not even when I was your age; the sooner we
+      get beyond this city, the sooner we can start serving our Empress. Let's set
+      out.
+  - title: Sir Brighteyes - Don't worry about me; it's not my job to stop you from
+      leaving. Apply yourself and travel well.
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 8404180b17b50f407bb80203d8858a01, type: 2}
+      allowedZones: 02000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: aa82e4737592fcd0b851045d232e53c6, type: 2}
+      allowedZones: 01000000
+    text: Don't worry about me; it's not my job to stop you from leaving. Apply yourself
+      and travel well.
+  - title: Sir Ersdotter - Ah so we found our first monsters of the quest. Griffin's
+      won't harry us if we march on with confidence. Let's keep applying ourselves.
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
+      allowedZones: 00000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: f1dd9dd848d82f9978d8418c18ba65f2, type: 2}
+      allowedZones: 02000000
+    text: Ah so we found our first monsters of the quest. Griffin's won't harry us
+      if we march on with confidence. Let's keep applying ourselves.
