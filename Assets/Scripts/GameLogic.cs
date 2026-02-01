@@ -326,13 +326,19 @@ namespace Ashworld {
                 return false;
             }
 
+            // Zone Capacity (Target Context)
+            if (actingPlayer == targetPlayer) {
+                if (targetPlayer.party.Count >= MAX_PARTY_SIZE) return false;
+            } else {
+                if (targetPlayer.defense.Count >= MAX_DEFENSE_SIZE) return false;
+            }
+
             return true;
         }
 
         public bool TryPlayCardToParty(Player actingPlayer, Card card) {
             if (!CanPlayCard(actingPlayer, card, actingPlayer)) return false;
             
-            if (actingPlayer.party.Count >= MAX_PARTY_SIZE) return false;
 
             List<Card> discards = actingPlayer.PayHistoryCost(card.HistoryCost, card);
             foreach(var d in discards) {
@@ -366,7 +372,6 @@ namespace Ashworld {
         public bool TryPlayCardToDefense(Player actingPlayer, Player targetPlayer, Card card) {
              if (!CanPlayCard(actingPlayer, card, targetPlayer)) return false;
              
-             if (targetPlayer.defense.Count >= MAX_DEFENSE_SIZE) return false;
 
              List<Card> discards = actingPlayer.PayHistoryCost(card.HistoryCost, card);
              foreach(var d in discards) {
@@ -509,6 +514,10 @@ namespace Ashworld {
 
         // Attack
         public bool CanCardAttack(Player actingPlayer, Player targetPlayer, Card attacker, Card defender) {
+            return CanCardAttack(actingPlayer, attacker, defender, targetPlayer.party, targetPlayer.defense);
+        }
+
+        public bool CanCardAttack(Player actingPlayer, Card attacker, Card defender, List<Card> targetParty, List<Card> targetDefense) {
             if (currentTurnActions <= 0) return false;
 
             // Validate Ownership: You can only attack with cards you own.
@@ -517,28 +526,18 @@ namespace Ashworld {
             // Boons cannot attack
             if (attacker.HasAbility(SpecialAbility.Boon)) return false;
 
-            // Context: Attack happens on targetPlayer's board
-            bool attackerInParty = targetPlayer.party.Contains(attacker);
-            bool attackerInDefense = targetPlayer.defense.Contains(attacker);
+            // Context: Attack happens in the provided zones
+            bool attackerInParty = targetParty.Contains(attacker);
+            bool attackerInDefense = targetDefense.Contains(attacker);
             
-            bool defenderInParty = targetPlayer.party.Contains(defender);
-            bool defenderInDefense = targetPlayer.defense.Contains(defender);
+            bool defenderInParty = targetParty.Contains(defender);
+            bool defenderInDefense = targetDefense.Contains(defender);
 
             if (!attackerInParty && !attackerInDefense) return false;
             if (!defenderInParty && !defenderInDefense) return false;
 
             // Control Check
-            if (actingPlayer == targetPlayer) {
-                // Attacking on own board.
-                // Must act with Party cards against Defense cards.
-                if (!attackerInParty) return false;
-                if (!defenderInDefense) return false;
-            } else {
-                // Attacking on opponent's board.
-                // Must act with Defense cards against Party cards.
-                if (!attackerInDefense) return false;
-                if (!defenderInParty) return false;
-            }
+            if (!((attackerInParty && defenderInDefense) || (attackerInDefense && defenderInParty))) return false;
             
             // Validate State
             if (attacker.IsExhausted) {
@@ -547,8 +546,8 @@ namespace Ashworld {
             }
 
             // Compare Ranks
-            int attackRank = GetEffectiveRank(attacker, attackerInParty ? targetPlayer.party : targetPlayer.defense);
-            int defenseRank = GetEffectiveRank(defender, defenderInParty ? targetPlayer.party : targetPlayer.defense); 
+            int attackRank = GetEffectiveRank(attacker, attackerInParty ? targetParty : targetDefense);
+            int defenseRank = GetEffectiveRank(defender, defenderInParty ? targetParty : targetDefense); 
 
             Debug.Log($"Attack: {attacker.CardName}({attackRank}) vs {defender.CardName}({defenseRank})");
 

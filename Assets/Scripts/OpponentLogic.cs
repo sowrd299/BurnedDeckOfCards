@@ -37,25 +37,29 @@ namespace Ashworld {
                 return new OpponentAction { Type = OpponentAction.ActionType.Advance };
             }
 
-            // PRIORITY 4: Party Attack (AI Party -> AI Defense blocker)
+            // PRIORITY 4: Rank Advantage Defend
+            OpponentAction rankAdvantageDefend = GetRankAdvantageDefend(opponentPlayer, humanPlayer);
+            if (rankAdvantageDefend != null) return rankAdvantageDefend;
+
+            // PRIORITY 5: Party Attack (AI Party -> AI Defense blocker)
             OpponentAction partyAttackAction = GetBestPartyAttack(opponentPlayer);
             if (partyAttackAction != null) return partyAttackAction;
 
-            // PRIORITY 5: Strategic Play to Party
+            // PRIORITY 6: Strategic Play to Party
             // Play into AI.Party
             // Heuristic: Hold Requirement Met > Hold Requirement Unmet
             OpponentAction strategicPlayToPartyAction = GetStrategicPlayToParty(opponentPlayer);
             if (strategicPlayToPartyAction != null) return strategicPlayToPartyAction;
 
-            // PRIORITY 6: Fallback Defend
-            // Play *any* valid card into Human.Defense. Tie-break: High Rank.
-            OpponentAction fallbackDefendAction = GetFallbackDefend(opponentPlayer, humanPlayer);
-            if (fallbackDefendAction != null) return fallbackDefendAction;
-
             // PRIORITY 7: Fallback Play to Party
             // Play *any* valid card into AI.Party. Tie-break: High Rank.
             OpponentAction fallbackPlayToPartyAction = GetFallbackPlayToParty(opponentPlayer);
             if (fallbackPlayToPartyAction != null) return fallbackPlayToPartyAction;
+
+            // PRIORITY 8: Fallback Defend
+            // Play *any* valid card into Human.Defense. Tie-break: High Rank.
+            OpponentAction fallbackDefendAction = GetFallbackDefend(opponentPlayer, humanPlayer);
+            if (fallbackDefendAction != null) return fallbackDefendAction;
 
             // No valid moves
             return null;
@@ -103,8 +107,6 @@ namespace Ashworld {
         }
 
         private OpponentAction GetStrategicDefend(Player ai, Player human) {
-            if (human.defense.Count >= MAX_DEFENSE_SIZE) return null;
-
             // Play into Human.Defense
             foreach (var card in ai.hand) {
                 if (!CanPlayCard(ai, card, human)) continue;
@@ -125,8 +127,6 @@ namespace Ashworld {
         }
 
         private OpponentAction GetStrategicPlayToParty(Player ai) {
-            if (ai.party.Count >= MAX_PARTY_SIZE) return null;
-
             // Play into AI.Party
             Card bestCard = null;
             int bestScore = -1; // 2 = Met, 1 = Unmet, 0 = No Hold
@@ -160,10 +160,26 @@ namespace Ashworld {
             }
             return null;
         }
+
+        private OpponentAction GetRankAdvantageDefend(Player ai, Player human) {
+            foreach (var card in ai.hand) {
+                if (!CanPlayCard(ai, card, human)) continue;
+                if (card.HasAbility(SpecialAbility.Boon)) continue;
+
+                // Simulate play to human's defense
+                List<Card> simulatedDefense = new List<Card>(human.defense);
+                simulatedDefense.Add(card);
+
+                foreach (var partyCard in human.party) {
+                    if (CanCardAttack(ai, card, partyCard, human.party, simulatedDefense)) {
+                        return new OpponentAction { Type = OpponentAction.ActionType.Play, CardToPlay = card, PlayToDefense = true };
+                    }
+                }
+            }
+            return null;
+        }
         
         private OpponentAction GetFallbackDefend(Player ai, Player human) {
-            if (human.defense.Count >= MAX_DEFENSE_SIZE) return null;
-
             Card bestCard = null;
             foreach (var card in ai.hand) {
                  if (!CanPlayCard(ai, card, human)) continue;
@@ -179,8 +195,6 @@ namespace Ashworld {
         }
 
         private OpponentAction GetFallbackPlayToParty(Player ai) {
-            if (ai.party.Count >= MAX_PARTY_SIZE) return null;
-
             Card bestCard = null;
             foreach (var card in ai.hand) {
                  if (!CanPlayCard(ai, card, ai)) continue;
