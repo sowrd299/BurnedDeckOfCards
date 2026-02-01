@@ -107,8 +107,6 @@ namespace Ashworld {
         }
 
         private OpponentAction GetStrategicDefend(Player ai, Player human) {
-            if (human.defense.Count >= MAX_DEFENSE_SIZE) return null;
-
             // Play into Human.Defense
             foreach (var card in ai.hand) {
                 if (!CanPlayCard(ai, card, human)) continue;
@@ -129,8 +127,6 @@ namespace Ashworld {
         }
 
         private OpponentAction GetStrategicPlayToParty(Player ai) {
-            if (ai.party.Count >= MAX_PARTY_SIZE) return null;
-
             // Play into AI.Party
             Card bestCard = null;
             int bestScore = -1; // 2 = Met, 1 = Unmet, 0 = No Hold
@@ -166,8 +162,6 @@ namespace Ashworld {
         }
 
         private OpponentAction GetRankAdvantageDefend(Player ai, Player human) {
-            if (human.defense.Count >= MAX_DEFENSE_SIZE) return null;
-
             foreach (var card in ai.hand) {
                 if (!CanPlayCard(ai, card, human)) continue;
                 if (card.HasAbility(SpecialAbility.Boon)) continue;
@@ -186,8 +180,6 @@ namespace Ashworld {
         }
         
         private OpponentAction GetFallbackDefend(Player ai, Player human) {
-            if (human.defense.Count >= MAX_DEFENSE_SIZE) return null;
-
             Card bestCard = null;
             foreach (var card in ai.hand) {
                  if (!CanPlayCard(ai, card, human)) continue;
@@ -203,8 +195,6 @@ namespace Ashworld {
         }
 
         private OpponentAction GetFallbackPlayToParty(Player ai) {
-            if (ai.party.Count >= MAX_PARTY_SIZE) return null;
-
             Card bestCard = null;
             foreach (var card in ai.hand) {
                  if (!CanPlayCard(ai, card, ai)) continue;

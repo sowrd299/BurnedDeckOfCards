@@ -325,13 +325,19 @@ namespace Ashworld {
                 return false;
             }
 
+            // Zone Capacity (Target Context)
+            if (actingPlayer == targetPlayer) {
+                if (targetPlayer.party.Count >= MAX_PARTY_SIZE) return false;
+            } else {
+                if (targetPlayer.defense.Count >= MAX_DEFENSE_SIZE) return false;
+            }
+
             return true;
         }
 
         public bool TryPlayCardToParty(Player actingPlayer, Card card) {
             if (!CanPlayCard(actingPlayer, card, actingPlayer)) return false;
             
-            if (actingPlayer.party.Count >= MAX_PARTY_SIZE) return false;
 
             List<Card> discards = actingPlayer.PayHistoryCost(card.HistoryCost, card);
             foreach(var d in discards) {
@@ -365,7 +371,6 @@ namespace Ashworld {
         public bool TryPlayCardToDefense(Player actingPlayer, Player targetPlayer, Card card) {
              if (!CanPlayCard(actingPlayer, card, targetPlayer)) return false;
              
-             if (targetPlayer.defense.Count >= MAX_DEFENSE_SIZE) return false;
 
              List<Card> discards = actingPlayer.PayHistoryCost(card.HistoryCost, card);
              foreach(var d in discards) {
