@@ -16,6 +16,7 @@ namespace Ashworld
         public List<Suit> Suits => definition.Suits;
         public int HistoryCost => definition.HistoryCost;
         public List<SpecialAbility> Abilities => definition.Abilities;
+        public List<TriggeredAbility> TriggeredAbilities => definition.TriggeredAbilities;
         public List<Requirement> LockRequirements => definition.LockRequirements;
         public List<Requirement> HoldRequirements => definition.HoldRequirements;
 

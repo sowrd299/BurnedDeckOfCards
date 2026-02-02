@@ -352,6 +352,7 @@ namespace Ashworld {
             actingPlayer.party.Add(card);
 
             DecrementActions();
+            ResolveTriggeredAbilities(card, AbilityTrigger.WhenPlayed, actingPlayer);
             UpdateCardViews();
 
             return true;
@@ -386,6 +387,7 @@ namespace Ashworld {
              targetPlayer.defense.Add(card); 
 
              DecrementActions();
+             ResolveTriggeredAbilities(card, AbilityTrigger.WhenPlayed, actingPlayer);
              UpdateCardViews();
 
              return true;
@@ -784,6 +786,32 @@ namespace Ashworld {
             foreach (var view in cardViewCache.Values)
             {
                 if (view != null) view.HideDialog();
+            }
+        }
+
+        private void ResolveTriggeredAbilities(Card card, AbilityTrigger trigger, Player actingPlayer)
+        {
+            foreach (var ability in card.TriggeredAbilities)
+            {
+                if (ability.trigger == trigger)
+                {
+                    ApplyEffect(ability.effect, actingPlayer);
+                }
+            }
+        }
+
+        private void ApplyEffect(AbilityEffect effect, Player actingPlayer)
+        {
+            switch (effect)
+            {
+                case AbilityEffect.Draw1:
+                    actingPlayer.Draw(1);
+                    break;
+                case AbilityEffect.Draw2:
+                    actingPlayer.Draw(2);
+                    break;
+                default:
+                    break;
             }
         }
     }
