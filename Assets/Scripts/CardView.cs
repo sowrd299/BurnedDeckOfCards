@@ -426,7 +426,18 @@ namespace Ashworld
                 currentSlot++;
             }
 
-            // 4. Priority 3: Abilities
+            // 4. Priority 3: Triggered Abilities
+            foreach (var triggered in card.TriggeredAbilities)
+            {
+                if (currentSlot >= iconSlots.Count) break;
+                string triggerText = uiDefinitions.GetStringForTrigger(triggered.trigger);
+                string effectText = uiDefinitions.GetStringForEffect(triggered.effect);
+                string label = $"{triggerText}, {effectText}";
+                AssignIconSlot(currentSlot, uiDefinitions.GetSpriteForTrigger(triggered.trigger), null, label);
+                currentSlot++;
+            }
+
+            // 5. Priority 4: Abilities
             foreach (var ability in card.Abilities)
             {
                 if (currentSlot >= iconSlots.Count) break;
@@ -435,7 +446,7 @@ namespace Ashworld
                 currentSlot++;
             }
 
-            // 5. Priority 4: History Cost
+            // 6. Priority 5: History Cost
             if (card.HistoryCost > 0)
             {
                 if (currentSlot < iconSlots.Count)

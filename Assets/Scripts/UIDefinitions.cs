@@ -31,6 +31,21 @@ namespace Ashworld
             public Sprite sprite;
         }
 
+        [Serializable]
+        public class TriggerStringMapping
+        {
+            public AbilityTrigger trigger;
+            [TextArea] public string displayText;
+            public Sprite sprite;
+        }
+
+        [Serializable]
+        public class EffectStringMapping
+        {
+            public AbilityEffect effect;
+            [TextArea] public string displayText;
+        }
+
         [Header("Suit Sprites")]
         [SerializeField] private List<SuitSpriteMapping> suitSprites;
 
@@ -42,6 +57,10 @@ namespace Ashworld
         [SerializeField] private List<RequirementStringMapping> requirementStrings;
         public Sprite holdTypeSprite;
         public Sprite lockTypeSprite;
+
+        [Header("Trigger and Effect Strings")]
+        [SerializeField] private List<TriggerStringMapping> triggerStrings;
+        [SerializeField] private List<EffectStringMapping> effectStrings;
 
         // --- Public Lookup Methods ---
         public Sprite GetSpriteForSuit(Suit suit)
@@ -78,6 +97,24 @@ namespace Ashworld
         {
             var mapping = requirementStrings.Find(m => m.requirement == requirement);
             return mapping != null ? mapping.sprite : null;
+        }
+
+        public string GetStringForTrigger(AbilityTrigger trigger)
+        {
+            var mapping = triggerStrings.Find(m => m.trigger == trigger);
+            return mapping != null ? mapping.displayText : trigger.ToString();
+        }
+
+        public Sprite GetSpriteForTrigger(AbilityTrigger trigger)
+        {
+            var mapping = triggerStrings.Find(m => m.trigger == trigger);
+            return mapping != null ? mapping.sprite : null;
+        }
+
+        public string GetStringForEffect(AbilityEffect effect)
+        {
+            var mapping = effectStrings.Find(m => m.effect == effect);
+            return mapping != null ? mapping.displayText : effect.ToString();
         }
     }
 }

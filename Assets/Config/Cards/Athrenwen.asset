@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb7036eda132653dc99a2fefcdfe479d, type: 3}
+  m_Name: Athrenwen
+  m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
+  definition:
+    cardName: Sir Athrenwen
+    subtitle: Not Lost nor Found
+    rank: 2
+    suits: 0000000006000000
+    historyCost: 0
+    abilities: 02000000
+    triggeredAbilities:
+    - trigger: 1
+      effect: 1
+    lockRequirements: 
+    holdRequirements: 05000000
+    subtypes:
+    - Imperial
+    - Knight
+    - Ashtide
+    - Human
+    flavorText: 
+    illustration: {fileID: 0}

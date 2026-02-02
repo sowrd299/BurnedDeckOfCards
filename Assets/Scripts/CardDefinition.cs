@@ -30,6 +30,26 @@ namespace Ashworld
         Boon,
     }
 
+    public enum AbilityTrigger
+    {
+        None,
+        WhenPlayed,
+    }
+
+    public enum AbilityEffect
+    {
+        None,
+        Draw1,
+        Draw2,
+    }
+
+    [Serializable]
+    public class TriggeredAbility
+    {
+        public AbilityTrigger trigger;
+        public AbilityEffect effect;
+    }
+
     public enum Requirement
     {
         None,
@@ -49,6 +69,7 @@ namespace Ashworld
         [SerializeField] private List<Suit> suits;
         [SerializeField] private int historyCost;
         [SerializeField] private List<SpecialAbility> abilities;
+        [SerializeField] private List<TriggeredAbility> triggeredAbilities;
         [SerializeField] private List<Requirement> lockRequirements;
         [SerializeField] private List<Requirement> holdRequirements;
         [SerializeField] private List<string> subtypes;
@@ -63,6 +84,7 @@ namespace Ashworld
         public List<Suit> Suits => suits;
         public int HistoryCost => historyCost;
         public List<SpecialAbility> Abilities => abilities;
+        public List<TriggeredAbility> TriggeredAbilities => triggeredAbilities;
         public List<Requirement> LockRequirements => lockRequirements;
         public List<Requirement> HoldRequirements => holdRequirements;
         public Sprite Illustration => illustration;
@@ -73,13 +95,15 @@ namespace Ashworld
         public CardDefinition(string name, int rank, List<Suit> suits, int historyCost = 0,
                     List<SpecialAbility> abilities = null,
                     List<Requirement> lockReqs = null,
-                    List<Requirement> holdReqs = null)
+                    List<Requirement> holdReqs = null,
+                    List<TriggeredAbility> triggeredAbilities = null)
         {
             this.cardName = name;
             this.rank = rank;
             this.suits = suits ?? new List<Suit>();
             this.historyCost = historyCost;
             this.abilities = abilities ?? new List<SpecialAbility>();
+            this.triggeredAbilities = triggeredAbilities ?? new List<TriggeredAbility>();
             this.lockRequirements = lockReqs ?? new List<Requirement>();
             this.holdRequirements = holdReqs ?? new List<Requirement>();
         }
