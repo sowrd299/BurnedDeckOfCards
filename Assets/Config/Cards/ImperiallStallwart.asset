@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7036eda132653dc99a2fefcdfe479d, type: 3}
-  m_Name: Cultist
+  m_Name: ImperiallStallwart
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
-    cardName: Cultist
-    subtitle: '"Oh Mother in 5s!"'
-    rank: 3
-    suits: 0200000008000000
+    cardName: Imperial Stallwart
+    subtitle: 
+    rank: 4
+    suits: 0300000006000000
     historyCost: 0
     abilities: 
-    lockRequirements: 
+    lockRequirements: 03000000
     holdRequirements: 
     subtypes:
-    - Rogue
-    - Occult
-    - Dwarf
+    - Imperial
+    - Human
+    - Knight
     flavorText: 
-    illustration: {fileID: 21300000, guid: 78773401fe0ce75edb123501f54f7acb, type: 3}
+    illustration: {fileID: 21300000, guid: 71e7b137a984640688176539990d43ce, type: 3}

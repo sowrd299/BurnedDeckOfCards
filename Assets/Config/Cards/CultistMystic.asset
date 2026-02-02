@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7036eda132653dc99a2fefcdfe479d, type: 3}
-  m_Name: Cultist
+  m_Name: CultistMystic
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
     cardName: Cultist
-    subtitle: '"Oh Mother in 5s!"'
-    rank: 3
-    suits: 0200000008000000
-    historyCost: 0
+    subtitle: Mother's Mourner
+    rank: 5
+    suits: 0200000009000000
+    historyCost: 1
     abilities: 
     lockRequirements: 
     holdRequirements: 
     subtypes:
-    - Rogue
+    - Mystic
     - Occult
     - Dwarf
     flavorText: 
-    illustration: {fileID: 21300000, guid: 78773401fe0ce75edb123501f54f7acb, type: 3}
+    illustration: {fileID: 21300000, guid: 0fd79458f08373973b05d2f0e7a37bdb, type: 3}

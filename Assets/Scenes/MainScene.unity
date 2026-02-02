@@ -4181,7 +4181,7 @@ MonoBehaviour:
   playerChapterAnim: {fileID: 1852473435}
   opponentChapterAnim: {fileID: 1765611680}
   cardDetailsView: {fileID: 953084452}
-  opponentDeckDefinition: {fileID: 11400000, guid: 4b803d3ae31cbeba38c4627f53da3477, type: 2}
+  opponentDeckDefinition: {fileID: 11400000, guid: cc9a2944055917a2e92c2ca9020cd4d3, type: 2}
   opponentQuestDefinition: {fileID: 11400000, guid: 23d1774dea54cd8b889c218a8bcea4c5, type: 2}
   dialogManager: {fileID: 1507613715}
 --- !u!114 &1507613714

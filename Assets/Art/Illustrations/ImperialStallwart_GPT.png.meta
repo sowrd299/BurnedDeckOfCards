@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: 71e7b137a984640688176539990d43ce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5435369453117731680
+    second: ImperialStallwart_GPT_0
+  - first:
+      213: 5968663606146171472
+    second: ImperialStallwart_GPT_1
+  - first:
+      213: 8674569731172389820
+    second: ImperialStallwart_GPT_2
+  - first:
+      213: 7660367486906062164
+    second: ImperialStallwart_GPT_3
+  - first:
+      213: -5407833739531252029
+    second: ImperialStallwart_GPT_4
+  - first:
+      213: -7896060455357159884
+    second: ImperialStallwart_GPT_5
+  - first:
+      213: 7187556410949438657
+    second: ImperialStallwart_GPT_6
+  - first:
+      213: -7565394012970911927
+    second: ImperialStallwart_GPT_7
+  - first:
+      213: -5688465041886807116
+    second: ImperialStallwart_GPT_8
+  - first:
+      213: 2130314231483867732
+    second: ImperialStallwart_GPT_9
+  - first:
+      213: -2150610101838878496
+    second: ImperialStallwart_GPT_10
+  - first:
+      213: 2702739633654019024
+    second: ImperialStallwart_GPT_11
+  - first:
+      213: -2752720351130298779
+    second: ImperialStallwart_GPT_12
+  - first:
+      213: -1298029696506030019
+    second: ImperialStallwart_GPT_13
+  - first:
+      213: 2555988847534295259
+    second: ImperialStallwart_GPT_14
+  - first:
+      213: -5774952631300291885
+    second: ImperialStallwart_GPT_15
+  - first:
+      213: -6711245575509777543
+    second: ImperialStallwart_GPT_16
+  - first:
+      213: -7478231733320494397
+    second: ImperialStallwart_GPT_17
+  - first:
+      213: 858666911688728771
+    second: ImperialStallwart_GPT_18
+  - first:
+      213: -4739809353952877498
+    second: ImperialStallwart_GPT_19
+  - first:
+      213: -1130467319089226086
+    second: ImperialStallwart_GPT_20
+  - first:
+      213: 1931890864570753512
+    second: ImperialStallwart_GPT_21
+  - first:
+      213: 3303004570716647852
+    second: ImperialStallwart_GPT_22
+  - first:
+      213: 3613422195087234836
+    second: ImperialStallwart_GPT_23
+  - first:
+      213: -5258196777514796505
+    second: ImperialStallwart_GPT_24
+  - first:
+      213: 3809792166911143519
+    second: ImperialStallwart_GPT_25
+  - first:
+      213: -7847202860668635471
+    second: ImperialStallwart_GPT_26
+  - first:
+      213: -9132006919666129850
+    second: ImperialStallwart_GPT_27
+  - first:
+      213: -3265515251873885686
+    second: ImperialStallwart_GPT_28
+  - first:
+      213: -6938595340132973377
+    second: ImperialStallwart_GPT_29
+  - first:
+      213: -8010252409746666219
+    second: ImperialStallwart_GPT_30
+  - first:
+      213: 239865506417395130
+    second: ImperialStallwart_GPT_31
+  - first:
+      213: 7045934668087179437
+    second: ImperialStallwart_GPT_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 1
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1024
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1517
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 063771448bf4e6b40800000000000000
+      internalID: 5435369453117731680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1514
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 052052c2de3f4d250800000000000000
+      internalID: 5968663606146171472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1508
+        width: 104
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb3d2ede533426870800000000000000
+      internalID: 8674569731172389820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_3
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 1505
+        width: 56
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455dcf994a71f4a60800000000000000
+      internalID: 7660367486906062164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_4
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1517
+        width: 37
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce0ed6add383f4b0800000000000000
+      internalID: -5407833739531252029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_5
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1507
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4366d69d9de8b6290800000000000000
+      internalID: -7896060455357159884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_6
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 1521
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cc09b579745fb360800000000000000
+      internalID: 7187556410949438657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1511
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94770077a32520790800000000000000
+      internalID: -7565394012970911927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 1505
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bbfb15ee238e01b0800000000000000
+      internalID: -5688465041886807116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_9
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1506
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4522e83b185609d10800000000000000
+      internalID: 2130314231483867732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_10
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 1503
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e8e68db18f7722e0800000000000000
+      internalID: -2150610101838878496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1485
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d33158806f028520800000000000000
+      internalID: 2702739633654019024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_12
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1490
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 566d3e8dc6f5cc9d0800000000000000
+      internalID: -2752720351130298779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_13
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 1485
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3899d74ed87cfde0800000000000000
+      internalID: -1298029696506030019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_14
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1475
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8442b8052b87320800000000000000
+      internalID: 2555988847534295259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_15
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1453
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d283a8cd2f3bdfa0800000000000000
+      internalID: -5774952631300291885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_16
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1460
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973e35fe4bddcd2a0800000000000000
+      internalID: -6711245575509777543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_17
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1467
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2d0632cdbf73890800000000000000
+      internalID: -7478231733320494397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_18
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 808
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0a69bb1099aeb00800000000000000
+      internalID: 858666911688728771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_19
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 560
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 644a0925180d83eb0800000000000000
+      internalID: -4739809353952877498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_20
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 207
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e9f7776f5cf40f0800000000000000
+      internalID: -1130467319089226086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_21
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 114
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1ef8771847fca10800000000000000
+      internalID: 1931890864570753512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_22
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 100
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca1be013821a6dd20800000000000000
+      internalID: 3303004570716647852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_23
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 75
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 417dfa97754752230800000000000000
+      internalID: 3613422195087234836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_24
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 63
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a7025d3e12707b0800000000000000
+      internalID: -5258196777514796505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_25
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 46
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5eedc86ac91fd430800000000000000
+      internalID: 3809792166911143519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_26
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 9
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6ba611392291390800000000000000
+      internalID: -7847202860668635471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_27
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 10
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64424ea0718944180800000000000000
+      internalID: -9132006919666129850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_28
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 5
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02df6b0e2f8ea2d0800000000000000
+      internalID: -3265515251873885686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_29
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 9
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb48137ec4825bf90800000000000000
+      internalID: -6938595340132973377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_30
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 3
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51d45db9fddd5d090800000000000000
+      internalID: -8010252409746666219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_31
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 0
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5c0ef386c245300800000000000000
+      internalID: 239865506417395130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImperialStallwart_GPT_32
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da832f9ef3038c160800000000000000
+      internalID: 7045934668087179437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ImperialStallwart_GPT_0: 5435369453117731680
+      ImperialStallwart_GPT_1: 5968663606146171472
+      ImperialStallwart_GPT_10: -2150610101838878496
+      ImperialStallwart_GPT_11: 2702739633654019024
+      ImperialStallwart_GPT_12: -2752720351130298779
+      ImperialStallwart_GPT_13: -1298029696506030019
+      ImperialStallwart_GPT_14: 2555988847534295259
+      ImperialStallwart_GPT_15: -5774952631300291885
+      ImperialStallwart_GPT_16: -6711245575509777543
+      ImperialStallwart_GPT_17: -7478231733320494397
+      ImperialStallwart_GPT_18: 858666911688728771
+      ImperialStallwart_GPT_19: -4739809353952877498
+      ImperialStallwart_GPT_2: 8674569731172389820
+      ImperialStallwart_GPT_20: -1130467319089226086
+      ImperialStallwart_GPT_21: 1931890864570753512
+      ImperialStallwart_GPT_22: 3303004570716647852
+      ImperialStallwart_GPT_23: 3613422195087234836
+      ImperialStallwart_GPT_24: -5258196777514796505
+      ImperialStallwart_GPT_25: 3809792166911143519
+      ImperialStallwart_GPT_26: -7847202860668635471
+      ImperialStallwart_GPT_27: -9132006919666129850
+      ImperialStallwart_GPT_28: -3265515251873885686
+      ImperialStallwart_GPT_29: -6938595340132973377
+      ImperialStallwart_GPT_3: 7660367486906062164
+      ImperialStallwart_GPT_30: -8010252409746666219
+      ImperialStallwart_GPT_31: 239865506417395130
+      ImperialStallwart_GPT_32: 7045934668087179437
+      ImperialStallwart_GPT_4: -5407833739531252029
+      ImperialStallwart_GPT_5: -7896060455357159884
+      ImperialStallwart_GPT_6: 7187556410949438657
+      ImperialStallwart_GPT_7: -7565394012970911927
+      ImperialStallwart_GPT_8: -5688465041886807116
+      ImperialStallwart_GPT_9: 2130314231483867732
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590380d2a41709306aa159cfae7a5c32, type: 3}
+  m_Name: DragonCultDeck
+  m_EditorClassIdentifier: Assembly-CSharp::Ashworld.DeckDefinitionAsset
+  deckDefinition:
+    heroCard: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+    entries:
+    - cardDefinitionAsset: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+      count: 20
+    - cardDefinitionAsset: {fileID: 11400000, guid: 9485ad4a4e03da0d6bd625d08fb0e9cf, type: 2}
+      count: 5

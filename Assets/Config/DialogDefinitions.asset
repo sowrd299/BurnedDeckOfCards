@@ -34,15 +34,15 @@ MonoBehaviour:
       to the Empire.
     speaker:
       cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
-      allowedZones: 00000000
+      allowedZones: 0000000001000000
     otherConditions:
     - cardAsset: {fileID: 11400000, guid: 342315741d421c1a6954df6af85ef946, type: 2}
-      allowedZones: 02000000
+      allowedZones: 05000000
     text: Someone's overrun the outer bulwarks! Let us send some of our retainers
       to help in the defense, or who knows what threat they'll pose to the Empire.
   - title: Sir Ersdotter - I've never been for dallying, not even when I was your
-      age; the sooner we get beyond this city, the sooner we can start serving our
-      Empress. Let's set out.
+      age; the sooner we get beyond this city, the sooner we can start serving the
+      Liberator-Daughter. Let's set out.
     speaker:
       cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
       allowedZones: 00000000
@@ -50,8 +50,8 @@ MonoBehaviour:
     - cardAsset: {fileID: 11400000, guid: 6482391e3e4fde594b828b85f0c8a495, type: 2}
       allowedZones: 02000000
     text: I've never been for dallying, not even when I was your age; the sooner
-      we get beyond this city, the sooner we can start serving our Empress. Let's
-      set out.
+      we get beyond this city, the sooner we can start serving the Liberator-Daughter.
+      Let's set out.
   - title: Sir Brighteyes - Don't worry about me; it's not my job to stop you from
       leaving. Apply yourself and travel well.
     speaker:
@@ -84,3 +84,33 @@ MonoBehaviour:
     text: These hooligans, however, seem set on blocking our way. We might be able
       to push past them with numbers alone, but it would be easier if we took out
       their leader.
+  - title: Sir Ersdotter - Whoever these dwarves are, it seems they've come to harass
+      us. We'll muscle past them same as anyone else.
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
+      allowedZones: 0000000001000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+      allowedZones: 02000000
+    text: Whoever these dwarves are, it seems they've come to harass us. We'll muscle
+      past them same as anyone else.
+  - title: Sir Ersdotter - Whoever these herretics are, it seems they've come to
+      harass us. We'll muscle past them same as anyone else.
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
+      allowedZones: 0000000001000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+      allowedZones: 02000000
+    text: Whoever these herretics are, it seems they've come to harass us. We'll
+      muscle past them same as anyone else.
+  - title: Imperial Stallwart - Hey! You in the red! Whatever skulkery you're doing,
+      there's no worse city to try and do it in. Scram!
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 495ee94677c0a784196be489e9cacc77, type: 2}
+      allowedZones: 05000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+      allowedZones: 04000000
+    text: Hey! You in the red! Whatever skulkery you're doing, there's no worse city
+      to try and do it in. Scram!
