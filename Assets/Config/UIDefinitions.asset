@@ -72,7 +72,7 @@ MonoBehaviour:
   triggerStrings:
   - trigger: 1
     displayText: When played
-    sprite: {fileID: 0}
+    sprite: {fileID: 21300000, guid: 579f17d3081990f97abf45c36264a0dd, type: 3}
   effectStrings:
   - effect: 1
     displayText: draw 1

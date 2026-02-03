@@ -30,4 +30,4 @@ MonoBehaviour:
     - Ashtide
     - Human
     flavorText: 
-    illustration: {fileID: 0}
+    illustration: {fileID: 21300000, guid: eb3f123c9f9ea148fbf2537bb9051417, type: 3}

@@ -18,7 +18,8 @@ MonoBehaviour:
     rank: 9
     suits: 03000000
     historyCost: 0
-    abilities: 0200000001000000
+    abilities: 01000000
+    triggeredAbilities: []
     lockRequirements: 
     holdRequirements: 
     subtypes:

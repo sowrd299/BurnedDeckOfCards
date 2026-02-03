@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: DragonCultDeck
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.DeckDefinitionAsset
   deckDefinition:
-    heroCard: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+    heroCard: {fileID: 11400000, guid: c88c366bb6eca5b688430c9fb32ce0a4, type: 2}
     entries:
     - cardDefinitionAsset: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
       count: 20
     - cardDefinitionAsset: {fileID: 11400000, guid: 9485ad4a4e03da0d6bd625d08fb0e9cf, type: 2}
       count: 5
+    - cardDefinitionAsset: {fileID: 11400000, guid: c88c366bb6eca5b688430c9fb32ce0a4, type: 2}
+      count: 5
+    - cardDefinitionAsset: {fileID: 11400000, guid: f3cf9d3a219d156b0857d4784b4bd76a, type: 2}
+      count: 3

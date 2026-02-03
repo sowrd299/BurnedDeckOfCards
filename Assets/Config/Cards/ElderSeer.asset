@@ -10,18 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb7036eda132653dc99a2fefcdfe479d, type: 3}
-  m_Name: AthrenwenDragonic
+  m_Name: ElderSeer
   m_EditorClassIdentifier: Assembly-CSharp::Ashworld.CardDefinitionAsset
   definition:
-    cardName: Sir Athrenwen
-    subtitle: By Right of Might
-    rank: 6
-    suits: 0200000006000000
-    historyCost: 1
-    abilities: 02000000
-    triggeredAbilities: []
+    cardName: Seer
+    subtitle: Trusted Elder
+    rank: 1
+    suits: 0000000009000000
+    historyCost: 2
+    abilities: 
+    triggeredAbilities:
+    - trigger: 1
+      effect: 2
     lockRequirements: 
-    holdRequirements: 05000000
-    subtypes: []
+    holdRequirements: 
+    subtypes:
+    - Mystic
+    - Arcane
+    - Halfling
     flavorText: 
-    illustration: {fileID: 21300000, guid: eb3f123c9f9ea148fbf2537bb9051417, type: 3}
+    illustration: {fileID: 0}
