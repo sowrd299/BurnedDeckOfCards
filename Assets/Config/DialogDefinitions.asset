@@ -114,3 +114,54 @@ MonoBehaviour:
       allowedZones: 04000000
     text: Hey! You in the red! Whatever skulkery you're doing, there's no worse city
       to try and do it in. Scram!
+  - title: Sir Athrenwen - Does a Knight-Ashtiden get as little respect in the Imperial
+      City as she gets in the Protectorates?
+    speaker:
+      cardAsset: {fileID: 11400000, guid: c88c366bb6eca5b688430c9fb32ce0a4, type: 2}
+      allowedZones: 04000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 495ee94677c0a784196be489e9cacc77, type: 2}
+      allowedZones: 05000000
+    text: Does a Knight-Ashtiden get as little respect in the Imperial City as she
+      gets in the Protectorates?
+  - title: Sir Athrenwen - The Empire was awefully keen to keep me here during my
+      squirehood, and now that I've slain a few Dragondorn for it I can't even come
+      and visit?
+    speaker:
+      cardAsset: {fileID: 11400000, guid: c88c366bb6eca5b688430c9fb32ce0a4, type: 2}
+      allowedZones: 04000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 495ee94677c0a784196be489e9cacc77, type: 2}
+      allowedZones: 05000000
+    text: The Empire was awefully keen to keep me here during my squirehood, and
+      now that I've slain a few Dragondorn for it I can't even come and visit?
+  - title: Sir Athrenwen - With every knight I meet in passing, the more I think
+      I'm the only one of us going east and not west.
+    speaker:
+      cardAsset: {fileID: 11400000, guid: f3cf9d3a219d156b0857d4784b4bd76a, type: 2}
+      allowedZones: 02000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
+      allowedZones: 01000000
+    text: With every knight I meet in passing, the more I think I'm the only one
+      of us going east and not west.
+  - title: Sir Athrenwen - You oafs have been able to whorship the Mother of Dragons
+      all this time under Imperial noses with this little grace? It's this easy?
+    speaker:
+      cardAsset: {fileID: 11400000, guid: c88c366bb6eca5b688430c9fb32ce0a4, type: 2}
+      allowedZones: 04000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+      allowedZones: 04000000
+    text: You oafs have been able to whorship the Mother of Dragons all this time
+      under Imperial noses with this little grace? It's this easy?
+  - title: Cultist - Eh, yup. Never thought I'd being doing it alongside someone
+      with that bird on her chest though.
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+      allowedZones: 04000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: c88c366bb6eca5b688430c9fb32ce0a4, type: 2}
+      allowedZones: 04000000
+    text: Eh, yup. Never thought I'd being doing it alongside someone with that bird
+      on her chest though.
