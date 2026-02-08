@@ -62,6 +62,7 @@ namespace Ashworld {
             if (dialogManager != null) dialogManager.Reset();
             StartTurn(player);
             UpdateCardViews();
+            TryTriggerDialog();
         }
 
         private void SetUpInput() {
@@ -77,7 +78,7 @@ namespace Ashworld {
             input.OnCardHoverChanged += HandleCardHoverChanged;
 
             advanceButton.onClick.AddListener(OnAdvanceButtonPressed);
-            if (endTurnButton != null) endTurnButton.onClick.AddListener(OnEndTurnPressed);
+            if (endTurnButton != null) endTurnButton.onClick.AddListener(OnEndTurnButtonClicked);
         }
 
         private readonly Dictionary<Card, CardView> cardViewCache = new Dictionary<Card, CardView>();
@@ -152,8 +153,6 @@ namespace Ashworld {
 
             // 5. Default History Feedback
             if (playerUIView != null) playerUIView.UpdateHistoryFeedback(null, player);
-
-            TryTriggerDialog();
         }
 
         private void HandleCardHoverChanged(CardView hoveredView) {
@@ -221,8 +220,16 @@ namespace Ashworld {
             UpdateUI();
         }
 
+        private void OnEndTurnButtonClicked() {
+            if (isGameInProgress && isPlayerTurn) {
+                OnEndTurnPressed();
+                TryTriggerDialog();
+            }
+        }
+
         private void OnEndTurnPressed() {
              if (isGameInProgress && isPlayerTurn) {
+                ClearAllDialogs();
                 StartOpponentTurn();
              }
         }
@@ -294,11 +301,11 @@ namespace Ashworld {
 
         // Play Card (to Party)
         private bool OnCardDroppedInParty(CardView cardView) {
-            return TryPlayCardToParty(player, cardView.Card);
+            return TryPlayCardToParty(player, cardView.Card, () => TryTriggerDialog());
         }
 
         private bool OnCardDroppedInOpponentDefense(CardView cardView) {
-            return TryPlayCardToDefense(player, opponent, cardView.Card);
+            return TryPlayCardToDefense(player, opponent, cardView.Card, () => TryTriggerDialog());
         }
 
         public bool CanPlayCard(Player actingPlayer, Card card, Player targetPlayer) {
@@ -336,7 +343,7 @@ namespace Ashworld {
             return true;
         }
 
-        public bool TryPlayCardToParty(Player actingPlayer, Card card) {
+        public bool TryPlayCardToParty(Player actingPlayer, Card card, System.Action onComplete = null) {
             if (!CanPlayCard(actingPlayer, card, actingPlayer)) return false;
             
 
@@ -354,6 +361,7 @@ namespace Ashworld {
             DecrementActions();
             ResolveTriggeredAbilities(card, AbilityTrigger.WhenPlayed, actingPlayer);
             UpdateCardViews();
+            onComplete?.Invoke();
 
             return true;
         }
@@ -370,7 +378,7 @@ namespace Ashworld {
             if (view != null) Destroy(view.gameObject);
         }
 
-        public bool TryPlayCardToDefense(Player actingPlayer, Player targetPlayer, Card card) {
+        public bool TryPlayCardToDefense(Player actingPlayer, Player targetPlayer, Card card, System.Action onComplete = null) {
              if (!CanPlayCard(actingPlayer, card, targetPlayer)) return false;
              
 
@@ -389,18 +397,19 @@ namespace Ashworld {
              DecrementActions();
              ResolveTriggeredAbilities(card, AbilityTrigger.WhenPlayed, actingPlayer);
              UpdateCardViews();
+             onComplete?.Invoke();
 
              return true;
         }
 
         // Pick Up (Drag)
         private bool OnCardDroppedInHand(CardView cardView) {
-             return TryPickUp(player, cardView.Card);
+             return TryPickUp(player, cardView.Card, () => TryTriggerDialog());
         }
 
         // Pick Up (Right Click)
         private void OnCardPickUpRequest(CardView cardView) {
-            TryPickUp(player, cardView.Card);
+            TryPickUp(player, cardView.Card, () => TryTriggerDialog());
         }
 
         public bool CanPickUp(Player actingPlayer, Card card) {
@@ -419,7 +428,7 @@ namespace Ashworld {
             return false;
         }
 
-        public bool TryPickUp(Player actingPlayer, Card card) {
+        public bool TryPickUp(Player actingPlayer, Card card, System.Action onComplete = null) {
             if (!CanPickUp(actingPlayer, card)) return false;
 
             // Remove from wherever it is
@@ -438,6 +447,7 @@ namespace Ashworld {
 
             UpdateCardViews();
             DecrementActions();
+            onComplete?.Invoke();
             return true;
         }
 
@@ -565,14 +575,14 @@ namespace Ashworld {
         public bool TryAttack(Player actingPlayer, Player targetPlayer, Card attacker, Card defender) {
             
             if (CanCardAttack(actingPlayer, targetPlayer, attacker, defender)) {
-                StartCoroutine(AttackCoroutine(actingPlayer, targetPlayer, attacker, defender));
+                StartCoroutine(AttackCoroutine(actingPlayer, targetPlayer, attacker, defender, () => TryTriggerDialog()));
                 return true;
             } else {
                 return false;
             }
         }
 
-        private System.Collections.IEnumerator AttackCoroutine(Player actingPlayer, Player targetPlayer, Card attacker, Card defender) {
+        private System.Collections.IEnumerator AttackCoroutine(Player actingPlayer, Player targetPlayer, Card attacker, Card defender, System.Action onComplete = null) {
             
             // 1. Gather Views
             cardViewCache.TryGetValue(attacker, out CardView attackerView);
@@ -648,6 +658,8 @@ namespace Ashworld {
                 // Fallback
                 UpdateCardViews();
             }
+
+            onComplete?.Invoke();
         }
 
         private int GetEffectiveRank(Card card, List<Card> containingZone) {
@@ -668,11 +680,12 @@ namespace Ashworld {
                     return;
                 }
 
-                StartCoroutine(HandleQuestAdvancement(player));
+                ClearAllDialogs();
+                StartCoroutine(HandleQuestAdvancement(player, () => TryTriggerDialog()));
             }
         }
 
-        private System.Collections.IEnumerator HandleQuestAdvancement(Player p) {
+        private System.Collections.IEnumerator HandleQuestAdvancement(Player p, System.Action onComplete = null) {
             
             // 1. Update Model
             p.StartNextQuestChapter(allPlayers);
@@ -701,10 +714,12 @@ namespace Ashworld {
             if (anim != null) {
                 yield return anim.PlayTransition(p.chapterInd, chapterName, () => {
                     UpdateCardViews();
+                    onComplete?.Invoke();
                 });
             } else {
                 // Fallback if no animation object
                 UpdateCardViews();
+                onComplete?.Invoke();
             }
         }
 
