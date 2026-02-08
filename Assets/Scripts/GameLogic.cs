@@ -42,6 +42,10 @@ namespace Ashworld {
 
         [Header("Dialog")]
         [SerializeField] private DialogManager dialogManager;
+
+        [Header("Treasure")]
+        [SerializeField] private DeckDefinitionAsset defaultTreasureDeckDefinition;
+        private Deck defaultTreasureDeck;
         
         private Player player;
         private Player opponent;
@@ -59,6 +63,12 @@ namespace Ashworld {
         {
             SetUpPlayer();
             SetUpInput();
+
+            if (defaultTreasureDeckDefinition != null) {
+                defaultTreasureDeck = defaultTreasureDeckDefinition.Definition.CreateDeck();
+                defaultTreasureDeck.Shuffle();
+            }
+
             if (dialogManager != null) dialogManager.Reset();
             StartTurn(player);
             UpdateCardViews();
@@ -351,7 +361,7 @@ namespace Ashworld {
             actingPlayer.party.Add(card);
 
             DecrementActions();
-            ResolveTriggeredAbilities(card, AbilityTrigger.WhenPlayed, actingPlayer);
+            ResolveTriggeredAbilities(card, AbilityTrigger.Played, actingPlayer);
             UpdateCardViews();
 
             return true;
@@ -386,7 +396,7 @@ namespace Ashworld {
              targetPlayer.defense.Add(card); 
 
              DecrementActions();
-             ResolveTriggeredAbilities(card, AbilityTrigger.WhenPlayed, actingPlayer);
+             ResolveTriggeredAbilities(card, AbilityTrigger.Played, actingPlayer);
              UpdateCardViews();
 
              return true;
@@ -607,6 +617,8 @@ namespace Ashworld {
             attacker.Exhaust();
             DecrementActions();
 
+            ResolveTriggeredAbilities(defender, AbilityTrigger.HeldFromDefenseOrAttacked, actingPlayer);
+
             // 3. Play Visuals
             if (!held && defenderView != null) defenderView.SetCanBeAttacked(true);
 
@@ -674,7 +686,9 @@ namespace Ashworld {
         private System.Collections.IEnumerator HandleQuestAdvancement(Player p) {
             
             // 1. Update Model
-            p.StartNextQuestChapter(allPlayers);
+            p.StartNextQuestChapter(allPlayers, (heldCard) => {
+                ResolveTriggeredAbilities(heldCard, AbilityTrigger.HeldFromDefenseOrAttacked, p);
+            });
             DecrementActions();
 
             // 2. Check Win Condition
@@ -809,8 +823,32 @@ namespace Ashworld {
                 case AbilityEffect.Draw2:
                     actingPlayer.Draw(2);
                     break;
+                case AbilityEffect.DrawTreasure1:
+                    DrawTreasure(actingPlayer, 1);
+                    break;
+                case AbilityEffect.DrawTreasure2:
+                    DrawTreasure(actingPlayer, 2);
+                    break;
                 default:
                     break;
+            }
+        }
+
+        private void DrawTreasure(Player player, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                Card treasure = player.chapterTreasureDeck.Draw();
+                if (treasure == null && defaultTreasureDeck != null)
+                {
+                    treasure = defaultTreasureDeck.Draw();
+                    treasure.OwnerId = player.Id;
+                }
+
+                if (treasure != null)
+                {
+                    player.AddToHand(treasure);
+                }
             }
         }
     }

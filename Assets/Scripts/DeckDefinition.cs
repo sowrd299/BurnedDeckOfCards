@@ -47,5 +47,10 @@ namespace Ashworld
 
             return cards;
         }
+
+        public Deck CreateDeck(string ownerId = null)
+        {
+            return new Deck(GetCards(ownerId));
+        }
     }
 }

@@ -73,8 +73,15 @@ MonoBehaviour:
   - trigger: 1
     displayText: When played
     sprite: {fileID: 0}
+  - trigger: 2
+    displayText: When recruited or slain
+    sprite: {fileID: 2130535880278150251, guid: 2283b85da0ae30c2286f29df5c66bc26, type: 3}
   effectStrings:
   - effect: 1
     displayText: draw 1
   - effect: 2
     displayText: draw 2
+  - effect: 3
+    displayText: earn 1 treasure
+  - effect: 4
+    displayText: earn 2 treasures

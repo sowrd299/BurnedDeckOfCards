@@ -33,7 +33,8 @@ namespace Ashworld
     public enum AbilityTrigger
     {
         None,
-        WhenPlayed,
+        Played,
+        HeldFromDefenseOrAttacked,
     }
 
     public enum AbilityEffect
@@ -41,6 +42,8 @@ namespace Ashworld
         None,
         Draw1,
         Draw2,
+        DrawTreasure1,
+        DrawTreasure2,
     }
 
     [Serializable]

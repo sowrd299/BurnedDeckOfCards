@@ -7,6 +7,7 @@ namespace Ashworld {
     [Serializable]
     public class QuestChapterDefinition {
         public List<CardDefinitionAsset> cards;
+        public DeckDefinition treasureDeck;
     }
 
     [Serializable]
@@ -26,6 +27,13 @@ namespace Ashworld {
             }
 
             return cards;
+        }
+
+        public Deck GetTreasureDeckForChapter(int chapterInd, string ownerId = "") {
+            if (chapterInd < chapters.Count && chapters[chapterInd].treasureDeck != null) {
+                return chapters[chapterInd].treasureDeck.CreateDeck(ownerId);
+            }
+            return new Deck();
         }
 
         public string GetChapterName(int index) {

@@ -4184,6 +4184,7 @@ MonoBehaviour:
   opponentDeckDefinition: {fileID: 11400000, guid: 4b803d3ae31cbeba38c4627f53da3477, type: 2}
   opponentQuestDefinition: {fileID: 11400000, guid: e74e25d802b4c2a339c1bc138d1cc47c, type: 2}
   dialogManager: {fileID: 1507613715}
+  defaultTreasureDeckDefinition: {fileID: 11400000, guid: 564eca5c601f4aff6b339244e68b9954, type: 2}
 --- !u!114 &1507613714
 MonoBehaviour:
   m_ObjectHideFlags: 0

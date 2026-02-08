@@ -10,12 +10,13 @@ namespace Ashworld {
         private DeckDefinition deckDefinition;
         public QuestDefinition questDefinition { get; private set; }
 
-        private List<Card> deck;
+        private Deck deck;
         public List<Card> hand { get; private set; }
         public List<Card> party { get; private set; }
         public List<Card> defense { get; private set; } // The defense AGAINST the player's party
         public List<Card> ashCards { get; private set; }
         public List<Card> historyCards { get; private set; }
+        public Deck chapterTreasureDeck { get; private set; }
 
         public int chapterInd { get; private set; } = 0;
         public bool HeroismAvailable { get; set; } = true;
@@ -27,32 +28,30 @@ namespace Ashworld {
         public Player (string id, DeckDefinition deckDefinition, QuestDefinition questDefintion) {
             this.id = id;
             this.deckDefinition = deckDefinition;
-            this.deck = deckDefinition.GetCards(id);
+            this.deck = deckDefinition.CreateDeck(id);
             this.questDefinition = questDefintion;
             this.hand = new List<Card>();
             this.party = new List<Card>();
             this.defense = new List<Card>();
             this.ashCards = new List<Card>();
             this.historyCards = new List<Card>();
+
+            InitializeChapterTreasureDeck();
+        }
+
+        private void InitializeChapterTreasureDeck() {
+            this.chapterTreasureDeck = questDefinition.GetTreasureDeckForChapter(chapterInd, id);
         }
 
         public void Shuffle () {
-            for (int n = deck.Count - 1; n > 1; n--) {  
-                int k = Random.Range(0, n);  
-                Card value = deck[k];  
-                deck[k] = deck[n];  
-                deck[n] = value;  
-            }  
+            deck.Shuffle();
         }
 
         public void Draw() {
-
-            if (deck.Count <= 0) {
-                return;
+            Card card = deck.Draw();
+            if (card != null) {
+                AddToHand(card);
             }
-
-            AddToHand(deck[0]);
-            deck.RemoveAt(0);
         }
 
         public void AddToHand(Card card) {
@@ -172,7 +171,7 @@ namespace Ashworld {
             return false;
         }
 
-        public void StartNextQuestChapter(List<Player> allPlayers) {
+        public void StartNextQuestChapter(List<Player> allPlayers, System.Action<Card> onCardHeldFromDefense = null) {
             List<CardDefinition> partyDefs = party.ConvertAll(c => c.Definition);
             List<CardDefinition> defenseDefs = defense.ConvertAll(c => c.Definition);
 
@@ -209,7 +208,10 @@ namespace Ashworld {
 
                 if (isOwnedByThisPlayer) {
                     if (TryHoldCard(card, partyDefs, defenseDefs)) {
-                        // Already handled inside TryHoldCard
+                        // Was it from defense?
+                        if (defenseCopy.Contains(card)) {
+                            onCardHeldFromDefense?.Invoke(card);
+                        }
                     } else {
                         // If not held: Party cards -> History, Defense cards (owned/quest) -> Ash
                         if (partyCopy.Contains(card)) {
@@ -235,6 +237,7 @@ namespace Ashworld {
             }
 
             chapterInd++;
+            InitializeChapterTreasureDeck();
             AddCardForQuestChapterToDefense();
         }
 
