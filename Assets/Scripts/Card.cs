@@ -23,7 +23,7 @@ namespace Ashworld
         // Properties
         public CardDefinition Definition => definition;
         public bool IsExhausted => exhausted;
-        public string OwnerId => ownerId;
+        public string OwnerId { get => ownerId; set => ownerId = value; }
 
         // Constructor
         public Card(CardDefinition definition, string ownerId = null)
