@@ -17,11 +17,9 @@ MonoBehaviour:
     entries:
     - cardDefinitionAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
       count: 1
-    - cardDefinitionAsset: {fileID: 11400000, guid: 8928b6504f64d43d19677b2a724168d1, type: 2}
+    - cardDefinitionAsset: {fileID: 11400000, guid: e4d65082cbb404f3b8da431c854c5038, type: 2}
       count: 5
     - cardDefinitionAsset: {fileID: 11400000, guid: 657d2db68697e2fc9a9a20fd2500f786, type: 2}
-      count: 3
-    - cardDefinitionAsset: {fileID: 11400000, guid: e4d65082cbb404f3b8da431c854c5038, type: 2}
       count: 3
     - cardDefinitionAsset: {fileID: 11400000, guid: 5b632246641ba6611a53df4ca8d9a08f, type: 2}
       count: 2

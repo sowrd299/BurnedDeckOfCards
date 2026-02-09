@@ -29,17 +29,6 @@ MonoBehaviour:
     otherConditions: []
     text: Technically only half of what I said was a lie. I really did think we could
       be allies.
-  - title: Sir Ersdotter - Someone's overrun the outer bulwarks! Let us send some
-      of our retainers to help in the defense, or who knows what threat they'll pose
-      to the Empire.
-    speaker:
-      cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
-      allowedZones: 0000000001000000
-    otherConditions:
-    - cardAsset: {fileID: 11400000, guid: 342315741d421c1a6954df6af85ef946, type: 2}
-      allowedZones: 05000000
-    text: Someone's overrun the outer bulwarks! Let us send some of our retainers
-      to help in the defense, or who knows what threat they'll pose to the Empire.
   - title: Sir Ersdotter - I've never been for dallying, not even when I was your
       age; the sooner we get beyond this city, the sooner we can start serving the
       Liberator-Daughter. Let's set out.
@@ -52,6 +41,16 @@ MonoBehaviour:
     text: I've never been for dallying, not even when I was your age; the sooner
       we get beyond this city, the sooner we can start serving the Liberator-Daughter.
       Let's set out.
+  - title: Sir Ersdotter - Whoever these herretics are, it seems they've come to
+      harass us. We'll muscle past them same as anyone else.
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
+      allowedZones: 0000000001000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+      allowedZones: 02000000
+    text: Whoever these herretics are, it seems they've come to harass us. We'll
+      muscle past them same as anyone else.
   - title: Sir Brighteyes - Don't worry about me; it's not my job to stop you from
       leaving. Apply yourself and travel well.
     speaker:
@@ -94,16 +93,36 @@ MonoBehaviour:
       allowedZones: 02000000
     text: Whoever these dwarves are, it seems they've come to harass us. We'll muscle
       past them same as anyone else.
-  - title: Sir Ersdotter - Whoever these herretics are, it seems they've come to
-      harass us. We'll muscle past them same as anyone else.
+  - title: Sir Ersdotter - Someone's overrun the outer bulwarks! Let us send some
+      of our retainers to help in the defense, or who knows what threat they'll pose
+      to the Empire.
     speaker:
       cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
       allowedZones: 0000000001000000
     otherConditions:
-    - cardAsset: {fileID: 11400000, guid: 512aa2ceb4f74c7a7960fecadda29cdf, type: 2}
+    - cardAsset: {fileID: 11400000, guid: 342315741d421c1a6954df6af85ef946, type: 2}
+      allowedZones: 05000000
+    text: Someone's overrun the outer bulwarks! Let us send some of our retainers
+      to help in the defense, or who knows what threat they'll pose to the Empire.
+  - title: Sir Ersdotter - It looks like we're not the only Knights-Errant to run
+      into this brigands. Let's let a hand to our comrades.
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
+      allowedZones: 0000000001000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 395b8de3acf10ad73b27c7a8715a12ae, type: 2}
       allowedZones: 02000000
-    text: Whoever these herretics are, it seems they've come to harass us. We'll
-      muscle past them same as anyone else.
+    text: It looks like we're not the only Knights-Errant to run into this brigands.
+      Let's let a hand to our comrades.
+  - title: Imperial Stallwart - Ah, thank the Liberator-Daughter! and thank you for
+      my rescue!
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 495ee94677c0a784196be489e9cacc77, type: 2}
+      allowedZones: 00000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: 395b8de3acf10ad73b27c7a8715a12ae, type: 2}
+      allowedZones: 02000000
+    text: Ah, thank the Liberator-Daughter! and thank you for my rescue!
   - title: Imperial Stallwart - Hey! You in the red! Whatever skulkery you're doing,
       there's no worse city to try and do it in. Scram!
     speaker:
@@ -145,6 +164,16 @@ MonoBehaviour:
       allowedZones: 01000000
     text: With every knight I meet in passing, the more I think I'm the only one
       of us going east and not west.
+  - title: Sir Ersdotter - It's always nice to meet a Knight-Ashtiden; you lot tell
+      such interesting stories. That cape of yours though, and that sword...
+    speaker:
+      cardAsset: {fileID: 11400000, guid: 8e2ced9b3a0f6c72ea1fa8560dfac792, type: 2}
+      allowedZones: 01000000
+    otherConditions:
+    - cardAsset: {fileID: 11400000, guid: f3cf9d3a219d156b0857d4784b4bd76a, type: 2}
+      allowedZones: 02000000
+    text: It's always nice to meet a Knight-Ashtiden; you lot tell such interesting
+      stories. That cape of yours though, and that sword...
   - title: Sir Athrenwen - You oafs have been able to whorship the Mother of Dragons
       all this time under Imperial noses with this little grace? It's this easy?
     speaker:
