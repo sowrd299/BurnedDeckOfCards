@@ -19,47 +19,59 @@ namespace Ashworld
             seenLines.Clear();
         }
 
-        public DialogLineDefinition GetNextDialogLine(Player player, Player opponent)
+        public (Card, DialogLineDefinition) GetNextDialogLine(Player player, Player opponent)
         {
-            if (definitions == null || definitions.Lines == null) return null;
+            if (definitions == null || definitions.Lines == null) return (null, null);
 
             foreach (var line in definitions.Lines)
             {
                 if (seenLines.Contains(line)) continue;
 
+                Card speakerCard = FindCardMeetingCondition(line.Speaker, player, opponent);
+                if (speakerCard == null) continue;
+
                 bool allConditionsMet = true;
-                foreach (var condition in line.AllConditions)
+                if (line.OtherConditions != null)
                 {
-                    if (!IsConditionMet(condition, player, opponent))
+                    foreach (var condition in line.OtherConditions)
                     {
-                        allConditionsMet = false;
-                        break;
+                        if (!IsConditionMet(condition, player, opponent))
+                        {
+                            allConditionsMet = false;
+                            break;
+                        }
                     }
                 }
 
                 if (allConditionsMet) {
                     Debug.Log($"Found dialog line: {line.Speaker.Card.CardName} - {line.Text}");
-                    return line;
+                    return (speakerCard, line);
                 }
             }
 
-            return null;
+            return (null, null);
         }
 
         private bool IsConditionMet(DialogCondition condition, Player player, Player opponent)
         {
-            if (condition.Card == null) return false;
+            return FindCardMeetingCondition(condition, player, opponent) != null;
+        }
+
+        private Card FindCardMeetingCondition(DialogCondition condition, Player player, Player opponent)
+        {
+            if (condition.Card == null) return null;
 
             foreach (var zone in condition.AllowedZones)
             {
                 List<Card> cardsInZone = GetCardsInZone(zone, player, opponent);
-                if (cardsInZone != null && cardsInZone.Exists(c => c.Definition == condition.Card))
+                if (cardsInZone != null)
                 {
-                    return true;
+                    Card card = cardsInZone.Find(c => c.Definition == condition.Card);
+                    if (card != null) return card;
                 }
             }
 
-            return false;
+            return null;
         }
 
         private List<Card> GetCardsInZone(DialogZone zone, Player player, Player opponent)

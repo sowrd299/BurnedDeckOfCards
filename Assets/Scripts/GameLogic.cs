@@ -792,20 +792,13 @@ namespace Ashworld {
         {
             if (dialogManager == null) return;
 
-            var line = dialogManager.GetNextDialogLine(player, opponent);
-            if (line != null)
+            var (card, line) = dialogManager.GetNextDialogLine(player, opponent);
+            if (card != null && line != null)
             {
-                foreach (Card card in cardViewCache.Keys)
+                if (cardViewCache.TryGetValue(card, out CardView view))
                 {
-                    if (card.Definition == line.Speaker.Card)
-                    {
-                        if (cardViewCache.TryGetValue(card, out CardView view))
-                        {
-                            view.ShowDialog(line.Text);
-                            dialogManager.MarkSeen(line);
-                        }
-                        break;
-                    }
+                    view.ShowDialog(line.Text);
+                    dialogManager.MarkSeen(line);
                 }
             }
         }
@@ -840,10 +833,10 @@ namespace Ashworld {
                     actingPlayer.Draw(2);
                     break;
                 case AbilityEffect.DrawTreasure1:
-                    DrawTreasure(actingPlayer, 1);
+                    DrawTreasure(actingPlayer, 1, source);
                     break;
                 case AbilityEffect.DrawTreasure2:
-                    DrawTreasure(actingPlayer, 2);
+                    DrawTreasure(actingPlayer, 2, source);
                     break;
                 default:
                     break;
